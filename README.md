@@ -1,2 +1,2 @@
 # msx-examples
-MSX Examples
+Media Station X - Examples
