@@ -1,0 +1,14 @@
+{    
+    "compilerOptions": {
+        "module": "commonjs",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "target": "ES2015"
+    }, 
+    "files": [
+        "src/template.ts",
+        "src/settings.ts",
+        "src/search.ts"
+    ]
+}
