@@ -6,7 +6,7 @@ http://msx.benzac.de/info/xp/?tab=InteractionPlugin
 
 ## Installing
 ```
-$ npm install -d
+$ npm install
 ```
 
 ## Testing on local server
