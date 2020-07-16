@@ -1,2 +1,2 @@
-# msx-examples
-Media Station X - Examples
+# msx-interaction-plugin-examples
+Media Station X - Interaction Plugin Examples
