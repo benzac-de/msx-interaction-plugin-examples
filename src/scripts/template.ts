@@ -1,6 +1,5 @@
 /******************************************************************************/
-//Template Interaction Plugin v0.0.2 (TypeScript Edition)
-//(c) 2020 Benjamin Zachey
+//Template Interaction Plugin (TypeScript Edition)
 /******************************************************************************/
 import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";

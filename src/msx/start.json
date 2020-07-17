@@ -1,0 +1,5 @@
+{
+    "name": "Interaction Plugin Examples (TypeScript Edition)",
+    "version": "1.0.1",
+    "parameter": "menu:request:interaction:init@{PREFIX}{SERVER}/index.html"
+}

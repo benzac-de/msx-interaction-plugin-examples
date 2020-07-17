@@ -1,6 +1,6 @@
 {
   "name": "msx-interaction-plugin-examples",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Media Station X - Interaction Plugin Examples",
   "scripts": {
     "dev": "parcel src/*.html",
@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "Benjamin Zachey",
-  "license": "ISC",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/jquery": "^3.5.0",
     "parcel-bundler": "^1.12.4",
