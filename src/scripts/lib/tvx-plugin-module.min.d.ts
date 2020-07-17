@@ -1,11 +1,15 @@
-// Type definitions for TVX Plugin v0.0.40.1 (Module)
+// Type definitions for TVX Plugin v0.0.40.2 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
-/** MSX - Start Object 
+declare interface AnyObject {
+    [key: string]: any;
+}
+
+/** MSX - Start Object
  * @see: {@link http://msx.benzac.de/info/?tab=StartAPI}
 */
-declare interface MSXStart {
+declare interface MSXStart extends AnyObject {
     name: string;
     version: string;
     parameter: string;
@@ -14,7 +18,7 @@ declare interface MSXStart {
 /** MSX - Menu Root Object
  * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI}
 */
-declare interface MSXMenuRoot {
+declare interface MSXMenuRoot extends AnyObject {
     name?: string;
     version?: string;
     reuse?: boolean;
@@ -29,7 +33,7 @@ declare interface MSXMenuRoot {
 /** MSX - Menu Item Object
  * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI}
 */
-declare interface MSXMenuItem {
+declare interface MSXMenuItem extends AnyObject {
     id?: string;
     type?: string;
     display?: boolean;
@@ -46,7 +50,7 @@ declare interface MSXMenuItem {
 /** MSX - Content Root Object
  * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
 */
-declare interface MSXContentRoot {
+declare interface MSXContentRoot extends AnyObject {
     name?: string;
     version?: string;
     reuse?: boolean;
@@ -60,6 +64,7 @@ declare interface MSXContentRoot {
     extension?: string;
     template?: MSXContentItem;
     items?: MSXContentItem[];
+    pages?: MSXContentPage[];
     header?: MSXContentPage;
     footer?: MSXContentPage;
     overlay?: MSXContentPage;
@@ -69,7 +74,7 @@ declare interface MSXContentRoot {
 /** MSX - Content Page Object
  * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
 */
-declare interface MSXContentPage {
+declare interface MSXContentPage extends AnyObject {
     display?: boolean;
     important?: boolean;
     wrap?: boolean;
@@ -82,7 +87,7 @@ declare interface MSXContentPage {
 /** MSX - Content Item Object
  * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
 */
-declare interface MSXContentItem {
+declare interface MSXContentItem extends AnyObject {
     id?: string;
     type?: string;
     layout?: string;
@@ -124,17 +129,17 @@ declare interface MSXContentItem {
     extensionIcon?: string;
     extensionLabel?: string;
     action?: string;
-    data?: object,
-    properties?: MSXProperties,
-    live?: MSXLive,
-    selection?: MSXSelection
+    data?: AnyObject;
+    properties?: MSXProperties;
+    live?: MSXLive;
+    selection?: MSXSelection;
 }
 
 /** MSX - Extended Properties
  * @see: {@link http://msx.benzac.de/info/xp/?tab=ExtendedProperties}
 */
 declare interface MSXProperties {
-    [propName: string]: string;
+    [key: string]: string;
 }
 
 /** MSX - Live Object
@@ -157,7 +162,7 @@ declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
 */
 declare interface MSXLiveAction {
     action?: string;
-    data?: object;
+    data?: AnyObject;
 }
 
 /** MSX - Live Content Properties
@@ -209,14 +214,14 @@ declare interface MSXSelection {
     headline?: string;
     background?: string;
     action?: string;
-    data?: object;
+    data?: AnyObject;
 }
 
 declare interface TVXSettings {
     readonly NAME: string;
     readonly SHORTCUT: string;
     readonly VERSION: string;
-    DUMMY_DATE: object;
+    DUMMY_DATE: Date;
     TIME_OFFSET: number;
     TIME_ZONE_OFFSET: number;
     ANIMATION_DURATION: number;
@@ -242,15 +247,15 @@ declare interface TVXSettings {
     SPEED: number;
     PLAYBACK: number;
     FULLSCREEN: number;
-    APP: object;
+    APP: AnyObject;
 }
 
 declare interface TVXStyles {
-    readonly COMMON: object;
-    readonly LOGGER: object;
-    readonly RENDERER: object;
-    readonly REMOTE: object;
-    APP: object;
+    readonly COMMON: AnyObject;
+    readonly LOGGER: AnyObject;
+    readonly RENDERER: AnyObject;
+    readonly REMOTE: AnyObject;
+    APP: AnyObject;
 }
 
 declare interface TVXVersion {
@@ -279,7 +284,7 @@ declare interface TVXTools {
     strTruncate(str: any, length: number): string;
     strShuffle(str: any): string;
     strReplace(str: any, find: string, replace?: any): string;
-    strReplaceMap(str: any, map: object): string;
+    strReplaceMap(str: any, map: AnyObject): string;
     strToBool(str: any, defaultValue: boolean): boolean;
     strToNum(str: any, defaultValue: number): number;
     strToAction(str: any): string;
@@ -324,51 +329,51 @@ declare interface TVXTools {
 declare interface TVXDateTools {
     applyDictionary(dictionary: TVXDictionary): void;
     getTimestamp(): number;
-    getNow(): object;
-    getFormattedDateStr(date: object | number, format: string, y?: number, m?: number, d?: number): string;
-    getDayStr(date: object | number, y?: number, m?: number, d?: number): string;
-    getDayLongStr(date: object | number, y?: number, m?: number, d?: number): string;
-    getDayFullStr(date: object | number, y?: number, m?: number, d?: number): string;
-    getDateStr(date: object | number, y?: number, m?: number, d?: number): string;
-    getDateLongStr(date: object | number, y?: number, m?: number, d?: number): string;
-    getFormattedTimeStr(date: object | number, format: string, y?: number, m?: number, d?: number): string;
-    getTimeStr(date: object | number, h?: number, m?: number, s?: number): string;
-    getTimeLongStr(date: object | number, h?: number, m?: number, s?: number): string;
-    getRecordingStr(date: object | number): string;
+    getNow(): Date;
+    getFormattedDateStr(date: Date | number, format: string, y?: number, m?: number, d?: number): string;
+    getDayStr(date: Date | number, y?: number, m?: number, d?: number): string;
+    getDayLongStr(date: Date | number, y?: number, m?: number, d?: number): string;
+    getDayFullStr(date: Date | number, y?: number, m?: number, d?: number): string;
+    getDateStr(date: Date | number, y?: number, m?: number, d?: number): string;
+    getDateLongStr(date: Date | number, y?: number, m?: number, d?: number): string;
+    getFormattedTimeStr(date: Date | number, format: string, y?: number, m?: number, d?: number): string;
+    getTimeStr(date: Date | number, h?: number, m?: number, s?: number): string;
+    getTimeLongStr(date: Date | number, h?: number, m?: number, s?: number): string;
+    getRecordingStr(date: Date | number): string;
     getFormattedDurationStr(timeInMs: number, format: string): string;
     getDurationStr(timeInMs: number, values?: string): string;
     getVideoStr(timeInMs: number, digits?: number): string;
 }
 
 declare interface TVXDateFormatter {
-    toTimeStr(date: object | number): string;
-    toTimeLongStr(date: object | number): string;
-    toTimeDayStr(date: object | number): string;
-    toTimeDayLongStr(date: object | number): string;
-    toDayStr(date: object | number): string;
-    toDayLongStr(date: object | number): string;
-    toDayFullStr(date: object | number): string;
-    toDateStr(date: object | number): string;
-    toDateLongStr(date: object | number): string;
-    toRecordingStr(date: object | number): string;
-    toDayTimeStr(date: object | number): string;
-    toDayTimeLongStr(date: object | number): string;
-    toDayTimeFullStr(date: object | number): string;
-    toDateTimeStr(date: object | number): string;
-    toDateTimeLongStr(date: object | number): string;
+    toTimeStr(date: Date | number): string;
+    toTimeLongStr(date: Date | number): string;
+    toTimeDayStr(date: Date | number): string;
+    toTimeDayLongStr(date: Date | number): string;
+    toDayStr(date: Date | number): string;
+    toDayLongStr(date: Date | number): string;
+    toDayFullStr(date: Date | number): string;
+    toDateStr(date: Date | number): string;
+    toDateLongStr(date: Date | number): string;
+    toRecordingStr(date: Date | number): string;
+    toDayTimeStr(date: Date | number): string;
+    toDayTimeLongStr(date: Date | number): string;
+    toDayTimeFullStr(date: Date | number): string;
+    toDateTimeStr(date: Date | number): string;
+    toDateTimeLongStr(date: Date | number): string;
 }
 
 declare interface TVXPropertyTools {
-    foreach(data: object, callback: (key: string, value: any) => void | boolean): void;
-    getValue(data: object, key: string, defaultValue: any): any;
-    get(data: object, key: string, defaultValue: string): string;
-    getFullStr(data: object, key: string, defaultValue: string): string;
-    getNum(data: object, ke: string, defaultValue: number): number;
-    getBool(data: object, key: string, defaultValue: boolean): boolean;
-    has(data: object, key: string, hasValue?: boolean): boolean;
-    put(data: object, key: string, value: any): void;
-    remove(data: object, key: string): void;
-    clear(data: object): void;
+    foreach(data: AnyObject, callback: (key: string, value: any) => void | boolean): void;
+    getValue(data: AnyObject, key: string, defaultValue: any): any;
+    get(data: AnyObject, key: string, defaultValue: string): string;
+    getFullStr(data: AnyObject, key: string, defaultValue: string): string;
+    getNum(data: AnyObject, ke: string, defaultValue: number): number;
+    getBool(data: AnyObject, key: string, defaultValue: boolean): boolean;
+    has(data: AnyObject, key: string, hasValue?: boolean): boolean;
+    put(data: AnyObject, key: string, value: any): void;
+    remove(data: AnyObject, key: string): void;
+    clear(data: AnyObject): void;
 }
 
 declare interface TVXVideoState {
@@ -451,7 +456,7 @@ declare interface TVXAction {
 
 declare abstract class TVXCookies {
     constructor();
-    set(name: string, value: any, expires?: object | number): void;
+    set(name: string, value: any, expires?: Date | number): void;
     get(name: string, defaultValue: string): string;
     getFullStr(name: string, defaultValue: string): string;
     getNum(name: string, defaultValue: number): number;
@@ -464,7 +469,7 @@ declare abstract class TVXCookies {
 
 declare abstract class TVXStorage {
     constructor();
-    set(name: string, value: any, expires?: object | number): void;
+    set(name: string, value: any, expires?: Date | number): void;
     get(name: string, defaultValue: string): string;
     getFullStr(name: string, defaultValue: string): string;
     getNum(name: string, defaultValue: number): number;
@@ -486,12 +491,12 @@ declare abstract class TVXUrlParams {
     foreach(callback: (name: string, value: any) => void | boolean): void;
     remove(name: string): void;
     clear(): void;
-    create(url: string): object;
+    create(url: string): AnyObject;
     build(encoded?: boolean, separator?: string): string;
 }
 
 declare abstract class TVXOptions {
-    constructor(options: object, defaultOptions?: object);
+    constructor(options: AnyObject, defaultOptions?: AnyObject);
     getValue(name: string): any;
     get(name: string): string;
     getFullStr(name: string): string;
@@ -504,27 +509,27 @@ declare abstract class TVXObservers {
     constructor();
     hasObserver(name: string): boolean;
     hasObservers(): boolean;
-    addObserver(name: string, handler: (data: object) => void): void;
+    addObserver(name: string, handler: (data: AnyObject) => void): void;
     removeObserver(name: string): void;
-    onEvent(name: string, handler?: (data: object) => void): void;
-    notifyObserver(name: string, data: object): void;
-    notifyObservers(data: object): void;
+    onEvent(name: string, handler?: (data: AnyObject) => void): void;
+    notifyObserver(name: string, data: AnyObject): void;
+    notifyObservers(data: AnyObject): void;
 }
 
 declare abstract class TVXEventObservers {
     constructor();
     hasObserver(eventName: string, handlerName: string): boolean;
     hasObservers(eventName: string): boolean;
-    addObserver(eventName: string, handlerName: string, handler: (data: object) => void): void;
+    addObserver(eventName: string, handlerName: string, handler: (data: AnyObject) => void): void;
     removeObserver(eventName: string, handlerName: string): void;
-    onEvent(eventName: string, handlerName: string, handler?: (data: object) => void): void;
-    notifyObserver(eventName: string, handlerName: string, data: object): void;
-    notifyObservers(eventName: string, data: object): void;
+    onEvent(eventName: string, handlerName: string, handler?: (data: AnyObject) => void): void;
+    notifyObserver(eventName: string, handlerName: string, data: AnyObject): void;
+    notifyObservers(eventName: string, data: AnyObject): void;
 }
 
 declare abstract class TVXQueue {
     constructor();
-    delegate: object;
+    delegate: AnyObject;
     execute(): void;
     process(): void;
     reset(): void;
@@ -555,7 +560,7 @@ declare abstract class TVXDelay {
 
 declare abstract class TVXClick {
     constructor();
-    click(clicked: object): number;
+    click(clicked: AnyObject): number;
 }
 
 declare interface TVXAjaxOptions {
@@ -563,7 +568,7 @@ declare interface TVXAjaxOptions {
     isForm?: boolean;
     withCredentials?: boolean;
     accurateHeaders?: boolean;
-    headers?: object;
+    headers?: AnyObject;
 }
 
 declare interface TVXAjaxCallback {
@@ -595,8 +600,8 @@ declare abstract class TVXLogger {
     maxInfoLength: number;
     maxWarnLength: number;
     maxErrorLength: number;
-    registerControl(control: object, print?: boolean): void;
-    unregisterControl(control: object): void;
+    registerControl(control: AnyObject, print?: boolean): void;
+    unregisterControl(control: AnyObject): void;
     print(): void;
     clear(): void;
     log(level: number, message: string): void;
@@ -609,7 +614,7 @@ declare abstract class TVXLogger {
 declare abstract class TVXDictionary {
     constructor();
     onReady(name: string, handler?: () => void): void;
-    init(dictionary: object): void;
+    init(dictionary: AnyObject): void;
     getValueForKey(key: string, defaultValue: string): string;
     isValidExpr(expr: string): boolean;
     getValueForExpr(expr: string): string;
@@ -618,7 +623,7 @@ declare abstract class TVXDictionary {
 declare abstract class TVXClock {
     constructor();
     readonly delay: number;
-    readonly now: object;
+    readonly now: Date;
     format: string;
     isRunning(): boolean;
     hasHook(name: string): boolean;
@@ -628,8 +633,8 @@ declare abstract class TVXClock {
     addHook(name: string, hook: () => void): void;
     removeHook(name: string): void;
     onTick(name: string, hook?: () => void): void;
-    registerControl(control: object): void;
-    unregisterControl(control: object): void;
+    registerControl(control: AnyObject): void;
+    unregisterControl(control: AnyObject): void;
     update(): void;
     validate(): void;
     process(): void;
@@ -659,13 +664,13 @@ declare abstract class TVXDataLoader {
 
 declare interface TVXDataServiceActionCallback {
     success?(data: any): void;
-    error?(message: string, status: number, reason: object): void;
+    error?(message: string, status: number, reason: AnyObject): void;
 }
 
 declare interface TVXDataServiceEntryCallback {
-    success?(entry: object): void;
-    error?(message: string, status: number, reason: object): void;
-    completed?(entry: object): void;
+    success?(entry: AnyObject): void;
+    error?(message: string, status: number, reason: AnyObject): void;
+    completed?(entry: AnyObject): void;
 }
 
 declare abstract class TVXDataService {
@@ -673,13 +678,13 @@ declare abstract class TVXDataService {
     onReady(name: string, handler?: TVXDataServiceEntryCallback): void;
     onError(name: string, handler?: TVXDataServiceEntryCallback): void;
     onCompleted(name: string, handler?: TVXDataServiceEntryCallback): void;
-    foreachEntry(callback: (entry: object) => void | boolean): void;
-    foreachError(callback: (error: object) => void | boolean): void;
+    foreachEntry(callback: (entry: AnyObject) => void | boolean): void;
+    foreachError(callback: (error: AnyObject) => void | boolean): void;
     getData(id: string): any;
-    getEntry(id: string): object;
-    setEntry(id: string, entry: object): void;
-    getError(id: string): object;
-    setError(id: string, error: object): void;
+    getEntry(id: string): AnyObject;
+    setEntry(id: string, entry: AnyObject): void;
+    getError(id: string): AnyObject;
+    setError(id: string, error: AnyObject): void;
     shouldStoreData(id: string): boolean;
     createData(id: string, resp: any): void;
     putData(url: string, data: string, callback?: TVXDataServiceActionCallback, options?: TVXAjaxOptions): void;
@@ -691,9 +696,9 @@ declare abstract class TVXDataService {
 }
 
 declare interface TVXBlobServiceCallback {
-    success?(entry: object): void;
-    error?(message: string, status: number, reason: object): void;
-    completed?(entry: object): void;
+    success?(entry: AnyObject): void;
+    error?(message: string, status: number, reason: AnyObject): void;
+    completed?(entry: AnyObject): void;
 }
 
 declare abstract class TVXBlobService {
@@ -701,14 +706,14 @@ declare abstract class TVXBlobService {
     onReady(name: string, handler?: TVXBlobServiceCallback): void;
     onError(name: string, handler?: TVXBlobServiceCallback): void;
     onCompleted(name: string, handler?: TVXBlobServiceCallback): void;
-    foreachEntry(callback: (entry: object) => void | boolean): void;
-    foreachError(callback: (error: object) => void | boolean): void;
-    getBlob(id: string): object;
+    foreachEntry(callback: (entry: AnyObject) => void | boolean): void;
+    foreachError(callback: (error: AnyObject) => void | boolean): void;
+    getBlob(id: string): AnyObject;
     getUrl(id: string): string;
-    getEntry(id: string): object;
-    setEntry(id: string, entry: object): void;
-    getError(id: string): object;
-    setError(id: string, error: object): void;
+    getEntry(id: string): AnyObject;
+    setEntry(id: string, entry: AnyObject): void;
+    getError(id: string): AnyObject;
+    setError(id: string, error: AnyObject): void;
     loadBlob(id: string, url: string, callback?: TVXBlobServiceCallback, options?: TVXAjaxOptions): void;
     clearBlob(id: string): void;
     clear(): void;
@@ -734,15 +739,15 @@ declare interface TVXPluginTools {
     createIFrame(frameClass: string, src: string): string;
     areSettingsValidated(): boolean;
     invalidateSettings(): void;
-    validateSettings(data: object): void;
+    validateSettings(data: AnyObject): void;
     onValidatedSettings(callback: () => void): void;
-    handleSettingsEvent(data: object): void;
-    getFrameworkInfo(data: object): string;
-    getApplicationInfo(data: object): string;
-    getContentInfo(data: object): string;
-    checkFramework(data: object, minVersion: string, requiredName?: string): boolean;
-    checkApplication(data: object, minVersion: string, requiredName?: string): boolean;
-    checkContent(data: object, minVersion: string, requiredName?: string): boolean;
+    handleSettingsEvent(data: AnyObject): void;
+    getFrameworkInfo(data: AnyObject): string;
+    getApplicationInfo(data: AnyObject): string;
+    getContentInfo(data: AnyObject): string;
+    checkFramework(data: AnyObject, minVersion: string, requiredName?: string): boolean;
+    checkApplication(data: AnyObject, minVersion: string, requiredName?: string): boolean;
+    checkContent(data: AnyObject, minVersion: string, requiredName?: string): boolean;
 }
 
 declare interface TVXVideoUpdateData {
@@ -809,14 +814,14 @@ declare interface TVXVideoPluginPlayer {
      * Handles any data. User-defined data is optionally available in the data.data property.
      * @param data Any data.
      */
-    handleData?(data: object): void;
+    handleData?(data: AnyObject): void;
     /**
      * Handles a request. User-defined data is optionally available in the data.data property.
      * @param dataId The data ID.
      * @param data Any data.
      * @param callback The callback that has to be called with the result data.
      */
-    handleRequest?(dataId: string, data: object, callback: (respData?: object) => void): void;
+    handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
 }
 
 /** This is the interface for a video/audio plugin. 
@@ -917,7 +922,7 @@ declare interface TVXVideoPlugin {
      * @param action Any action.
      * @param data Any action-related data.
      */
-    executeAction(action: string, data?: object): void;
+    executeAction(action: string, data?: AnyObject): void;
     /**
      * Logs a debug message.
      * @param message A message.
@@ -956,17 +961,17 @@ declare interface TVXVideoPlugin {
      * Shows (or loads) a menu (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showMenu(data: object | string): void;
+    showMenu(data: AnyObject | string): void;
     /**
      * Shows (or loads) a content page (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showContent(data: object | string): void;
+    showContent(data: AnyObject | string): void;
     /**
      * Shows (or loads) a panel (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showPanel(data: object | string): void;
+    showPanel(data: AnyObject | string): void;
     /** Shows the player. */
     showPlayer(): void;
     /** Shows the player action. */
@@ -1053,19 +1058,19 @@ declare interface TVXVideoPlugin {
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: object) => void, data?: object): void;
+    requestData(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
     /**
      * Requests a response from the interaction plugin.
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestInteractionResponse(dataId: string, callback?: (data: object) => void, data?: object): void;
+    requestInteractionResponse(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
     /**
      * Validates (or revalidates) the settings (see TVXSettings interface).
      * @param callback The callback that contains the result data with the validated settings.
      */
-    validateSettings(callback?: (data: object) => void): void;
+    validateSettings(callback?: (data: AnyObject) => void): void;
     /**
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
@@ -1076,7 +1081,7 @@ declare interface TVXVideoPlugin {
      * @param eventId The event ID.
      * @param data Any event-related data;
      */
-    triggerEvent(eventId: string, data?: object): void;
+    triggerEvent(eventId: string, data?: AnyObject): void;
     /**
      * Sets up a local steam.
      * @param baseSteam The base steam.
@@ -1111,14 +1116,14 @@ declare interface TVXVideoPlugin {
      * @param scope The scope.
      * @param callback The callback that contains the result data with the transformed string.
      */
-    transformStringAsync(string: string, scope?: string, callback?: (data: object) => void): void;
+    transformStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
     /**
      * Normalizes a string asynchronously.
      * @param string A string.
      * @param scope The scope.
      * @param callback The callback that contains the result data with the normalized string.
      */
-    normalizeStringAsync(string: string, scope?: string, callback?: (data: object) => void): void;
+    normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
     /** Initializes the player. */
     init(): void;
     /** Commits all player values. */
@@ -1179,19 +1184,19 @@ declare interface TVXInteractionPluginHander {
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
      * @param data The event data.
      */
-    handleEvent?(data: object): void;
+    handleEvent?(data: AnyObject): void;
     /**
      * Handles any data. User-defined data is optionally available in the data.data property.
      * @param data Any data.
      */
-    handleData?(data: object): void;
+    handleData?(data: AnyObject): void;
     /**
      * Handles a request. User-defined data is optionally available in the data.data property.
      * @param dataId The data ID.
      * @param data Any data.
      * @param callback The callback that has to be called with the result data.
      */
-    handleRequest?(dataId: string, data: object, callback: (respData?: object) => void): void;
+    handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
 }
 
 /** This is the interface for an interaction plugin. 
@@ -1215,7 +1220,7 @@ declare interface TVXInteractionPlugin {
      * @param action Any action.
      * @param data Any action-related data.
      */
-    executeAction(action: string, data?: object): void;
+    executeAction(action: string, data?: AnyObject): void;
     /**
      * Logs a debug message.
      * @param message A message.
@@ -1254,36 +1259,36 @@ declare interface TVXInteractionPlugin {
      * Shows (or loads) a menu (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showMenu(data: object | string): void;
+    showMenu(data: AnyObject | string): void;
     /**
      * Shows (or loads) a content page (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showContent(data: object | string): void;
+    showContent(data: AnyObject | string): void;
     /**
      * Shows (or loads) a panel (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showPanel(data: object | string): void;
+    showPanel(data: AnyObject | string): void;
     /**
      * Requests any data (e.g. "info", "video", "code", etc.).
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: object) => void, data?: object): void;
+    requestData(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
     /**
      * Requests a response from the player (handled by the video/audio plugin).
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestPlayerResponse(dataId: string, callback?: (data: object) => void, data?: object): void;
+    requestPlayerResponse(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
     /**
      * Validates (or revalidates) the settings (see TVXSettings interface).
      * @param callback The callback that contains the result data with the validated settings.
      */
-    validateSettings(callback?: (data: object) => void): void;
+    validateSettings(callback?: (data: AnyObject) => void): void;
     /**
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
@@ -1323,14 +1328,14 @@ declare interface TVXInteractionPlugin {
      * @param scope The scope.
      * @param callback The callback that contains the result data with the transformed string.
      */
-    transformStringAsync(string: string, scope?: string, callback?: (data: object) => void): void;
+    transformStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
     /**
      * Normalizes a string asynchronously.
      * @param string A string.
      * @param scope The scope.
      * @param callback The callback that contains the result data with the normalized string.
      */
-    normalizeStringAsync(string: string, scope?: string, callback?: (data: object) => void): void;
+    normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
     /** Initializes the interaction plugin. */
     init(): void;
     /** Indicates if the interaction plugin is initialized. */

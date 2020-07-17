@@ -20,15 +20,15 @@ class TemplateHandler implements tvx.TVXInteractionPluginHander {
         tvx.InteractionPlugin.success("Template handler ready.");
     }
 
-    handleEvent(data: object) {
+    handleEvent(data: tvx.AnyObject) {
         this.logger.debug("Handle event: " + tvx.Tools.serialize(data));
     }
 
-    handleData(data: object) {
+    handleData(data: tvx.AnyObject) {
         this.logger.debug("Handle data: " + tvx.Tools.serialize(data));
     }
 
-    handleRequest(dataId: string, data: object, callback: (respData?: object) => void) {
+    handleRequest(dataId: string, data: tvx.AnyObject, callback: (respData?: tvx.AnyObject) => void) {
         this.logger.debug("Handle request: " + dataId);
         this.logger.debug("Request data: " + tvx.Tools.serialize(data));
         callback(null);
