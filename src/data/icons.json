@@ -1,0 +1,2798 @@
+[
+    {
+        "icon": "3d-rotation"
+    },
+    {
+        "icon": "ac-unit"
+    },
+    {
+        "icon": "access-alarm"
+    },
+    {
+        "icon": "access-alarms"
+    },
+    {
+        "icon": "access-time"
+    },
+    {
+        "icon": "accessibility"
+    },
+    {
+        "icon": "accessible"
+    },
+    {
+        "icon": "account-balance"
+    },
+    {
+        "icon": "account-balance-wallet"
+    },
+    {
+        "icon": "account-box"
+    },
+    {
+        "icon": "account-circle"
+    },
+    {
+        "icon": "adb"
+    },
+    {
+        "icon": "add"
+    },
+    {
+        "icon": "add-a-photo"
+    },
+    {
+        "icon": "add-alarm"
+    },
+    {
+        "icon": "add-alert"
+    },
+    {
+        "icon": "add-box"
+    },
+    {
+        "icon": "add-circle"
+    },
+    {
+        "icon": "add-circle-outline"
+    },
+    {
+        "icon": "add-location"
+    },
+    {
+        "icon": "add-shopping-cart"
+    },
+    {
+        "icon": "add-to-photos"
+    },
+    {
+        "icon": "add-to-queue"
+    },
+    {
+        "icon": "adjust"
+    },
+    {
+        "icon": "airline-seat-flat"
+    },
+    {
+        "icon": "airline-seat-flat-angled"
+    },
+    {
+        "icon": "airline-seat-individual-suite"
+    },
+    {
+        "icon": "airline-seat-legroom-extra"
+    },
+    {
+        "icon": "airline-seat-legroom-normal"
+    },
+    {
+        "icon": "airline-seat-legroom-reduced"
+    },
+    {
+        "icon": "airline-seat-recline-extra"
+    },
+    {
+        "icon": "airline-seat-recline-normal"
+    },
+    {
+        "icon": "airplanemode-active"
+    },
+    {
+        "icon": "airplanemode-inactive"
+    },
+    {
+        "icon": "airplay"
+    },
+    {
+        "icon": "airport-shuttle"
+    },
+    {
+        "icon": "alarm"
+    },
+    {
+        "icon": "alarm-add"
+    },
+    {
+        "icon": "alarm-off"
+    },
+    {
+        "icon": "alarm-on"
+    },
+    {
+        "icon": "album"
+    },
+    {
+        "icon": "all-inclusive"
+    },
+    {
+        "icon": "all-out"
+    },
+    {
+        "icon": "android"
+    },
+    {
+        "icon": "announcement"
+    },
+    {
+        "icon": "apps"
+    },
+    {
+        "icon": "archive"
+    },
+    {
+        "icon": "arrow-back"
+    },
+    {
+        "icon": "arrow-downward"
+    },
+    {
+        "icon": "arrow-drop-down"
+    },
+    {
+        "icon": "arrow-drop-down-circle"
+    },
+    {
+        "icon": "arrow-drop-up"
+    },
+    {
+        "icon": "arrow-forward"
+    },
+    {
+        "icon": "arrow-upward"
+    },
+    {
+        "icon": "art-track"
+    },
+    {
+        "icon": "aspect-ratio"
+    },
+    {
+        "icon": "assessment"
+    },
+    {
+        "icon": "assignment"
+    },
+    {
+        "icon": "assignment-ind"
+    },
+    {
+        "icon": "assignment-late"
+    },
+    {
+        "icon": "assignment-return"
+    },
+    {
+        "icon": "assignment-returned"
+    },
+    {
+        "icon": "assignment-turned-in"
+    },
+    {
+        "icon": "assistant"
+    },
+    {
+        "icon": "assistant-photo"
+    },
+    {
+        "icon": "attach-file"
+    },
+    {
+        "icon": "attach-money"
+    },
+    {
+        "icon": "attachment"
+    },
+    {
+        "icon": "audiotrack"
+    },
+    {
+        "icon": "autorenew"
+    },
+    {
+        "icon": "av-timer"
+    },
+    {
+        "icon": "backspace"
+    },
+    {
+        "icon": "backup"
+    },
+    {
+        "icon": "battery-alert"
+    },
+    {
+        "icon": "battery-charging-full"
+    },
+    {
+        "icon": "battery-full"
+    },
+    {
+        "icon": "battery-std"
+    },
+    {
+        "icon": "battery-unknown"
+    },
+    {
+        "icon": "beach-access"
+    },
+    {
+        "icon": "beenhere"
+    },
+    {
+        "icon": "block"
+    },
+    {
+        "icon": "bluetooth"
+    },
+    {
+        "icon": "bluetooth-audio"
+    },
+    {
+        "icon": "bluetooth-connected"
+    },
+    {
+        "icon": "bluetooth-disabled"
+    },
+    {
+        "icon": "bluetooth-searching"
+    },
+    {
+        "icon": "blur-circular"
+    },
+    {
+        "icon": "blur-linear"
+    },
+    {
+        "icon": "blur-off"
+    },
+    {
+        "icon": "blur-on"
+    },
+    {
+        "icon": "book"
+    },
+    {
+        "icon": "bookmark"
+    },
+    {
+        "icon": "bookmark-border"
+    },
+    {
+        "icon": "border-all"
+    },
+    {
+        "icon": "border-bottom"
+    },
+    {
+        "icon": "border-clear"
+    },
+    {
+        "icon": "border-color"
+    },
+    {
+        "icon": "border-horizontal"
+    },
+    {
+        "icon": "border-inner"
+    },
+    {
+        "icon": "border-left"
+    },
+    {
+        "icon": "border-outer"
+    },
+    {
+        "icon": "border-right"
+    },
+    {
+        "icon": "border-style"
+    },
+    {
+        "icon": "border-top"
+    },
+    {
+        "icon": "border-vertical"
+    },
+    {
+        "icon": "branding-watermark"
+    },
+    {
+        "icon": "brightness-1"
+    },
+    {
+        "icon": "brightness-2"
+    },
+    {
+        "icon": "brightness-3"
+    },
+    {
+        "icon": "brightness-4"
+    },
+    {
+        "icon": "brightness-5"
+    },
+    {
+        "icon": "brightness-6"
+    },
+    {
+        "icon": "brightness-7"
+    },
+    {
+        "icon": "brightness-auto"
+    },
+    {
+        "icon": "brightness-high"
+    },
+    {
+        "icon": "brightness-low"
+    },
+    {
+        "icon": "brightness-medium"
+    },
+    {
+        "icon": "broken-image"
+    },
+    {
+        "icon": "brush"
+    },
+    {
+        "icon": "bubble-chart"
+    },
+    {
+        "icon": "bug-report"
+    },
+    {
+        "icon": "build"
+    },
+    {
+        "icon": "burst-mode"
+    },
+    {
+        "icon": "business"
+    },
+    {
+        "icon": "business-center"
+    },
+    {
+        "icon": "cached"
+    },
+    {
+        "icon": "cake"
+    },
+    {
+        "icon": "call"
+    },
+    {
+        "icon": "call-end"
+    },
+    {
+        "icon": "call-made"
+    },
+    {
+        "icon": "call-merge"
+    },
+    {
+        "icon": "call-missed"
+    },
+    {
+        "icon": "call-missed-outgoing"
+    },
+    {
+        "icon": "call-received"
+    },
+    {
+        "icon": "call-split"
+    },
+    {
+        "icon": "call-to-action"
+    },
+    {
+        "icon": "camera"
+    },
+    {
+        "icon": "camera-alt"
+    },
+    {
+        "icon": "camera-enhance"
+    },
+    {
+        "icon": "camera-front"
+    },
+    {
+        "icon": "camera-rear"
+    },
+    {
+        "icon": "camera-roll"
+    },
+    {
+        "icon": "cancel"
+    },
+    {
+        "icon": "card-giftcard"
+    },
+    {
+        "icon": "card-membership"
+    },
+    {
+        "icon": "card-travel"
+    },
+    {
+        "icon": "casino"
+    },
+    {
+        "icon": "cast"
+    },
+    {
+        "icon": "cast-connected"
+    },
+    {
+        "icon": "center-focus-strong"
+    },
+    {
+        "icon": "center-focus-weak"
+    },
+    {
+        "icon": "change-history"
+    },
+    {
+        "icon": "chat"
+    },
+    {
+        "icon": "chat-bubble"
+    },
+    {
+        "icon": "chat-bubble-outline"
+    },
+    {
+        "icon": "check"
+    },
+    {
+        "icon": "check-box"
+    },
+    {
+        "icon": "check-box-outline-blank"
+    },
+    {
+        "icon": "check-circle"
+    },
+    {
+        "icon": "chevron-left"
+    },
+    {
+        "icon": "chevron-right"
+    },
+    {
+        "icon": "child-care"
+    },
+    {
+        "icon": "child-friendly"
+    },
+    {
+        "icon": "chrome-reader-mode"
+    },
+    {
+        "icon": "class"
+    },
+    {
+        "icon": "clear"
+    },
+    {
+        "icon": "clear-all"
+    },
+    {
+        "icon": "close"
+    },
+    {
+        "icon": "closed-caption"
+    },
+    {
+        "icon": "cloud"
+    },
+    {
+        "icon": "cloud-circle"
+    },
+    {
+        "icon": "cloud-done"
+    },
+    {
+        "icon": "cloud-download"
+    },
+    {
+        "icon": "cloud-off"
+    },
+    {
+        "icon": "cloud-queue"
+    },
+    {
+        "icon": "cloud-upload"
+    },
+    {
+        "icon": "code"
+    },
+    {
+        "icon": "collections"
+    },
+    {
+        "icon": "collections-bookmark"
+    },
+    {
+        "icon": "color-lens"
+    },
+    {
+        "icon": "colorize"
+    },
+    {
+        "icon": "comment"
+    },
+    {
+        "icon": "compare"
+    },
+    {
+        "icon": "compare-arrows"
+    },
+    {
+        "icon": "computer"
+    },
+    {
+        "icon": "confirmation-number"
+    },
+    {
+        "icon": "contact-mail"
+    },
+    {
+        "icon": "contact-phone"
+    },
+    {
+        "icon": "contacts"
+    },
+    {
+        "icon": "content-copy"
+    },
+    {
+        "icon": "content-cut"
+    },
+    {
+        "icon": "content-paste"
+    },
+    {
+        "icon": "control-point"
+    },
+    {
+        "icon": "control-point-duplicate"
+    },
+    {
+        "icon": "copyright"
+    },
+    {
+        "icon": "create"
+    },
+    {
+        "icon": "create-new-folder"
+    },
+    {
+        "icon": "credit-card"
+    },
+    {
+        "icon": "crop"
+    },
+    {
+        "icon": "crop-16-9"
+    },
+    {
+        "icon": "crop-3-2"
+    },
+    {
+        "icon": "crop-5-4"
+    },
+    {
+        "icon": "crop-7-5"
+    },
+    {
+        "icon": "crop-din"
+    },
+    {
+        "icon": "crop-free"
+    },
+    {
+        "icon": "crop-landscape"
+    },
+    {
+        "icon": "crop-original"
+    },
+    {
+        "icon": "crop-portrait"
+    },
+    {
+        "icon": "crop-rotate"
+    },
+    {
+        "icon": "crop-square"
+    },
+    {
+        "icon": "dashboard"
+    },
+    {
+        "icon": "data-usage"
+    },
+    {
+        "icon": "date-range"
+    },
+    {
+        "icon": "dehaze"
+    },
+    {
+        "icon": "delete"
+    },
+    {
+        "icon": "delete-forever"
+    },
+    {
+        "icon": "delete-sweep"
+    },
+    {
+        "icon": "description"
+    },
+    {
+        "icon": "desktop-mac"
+    },
+    {
+        "icon": "desktop-windows"
+    },
+    {
+        "icon": "details"
+    },
+    {
+        "icon": "developer-board"
+    },
+    {
+        "icon": "developer-mode"
+    },
+    {
+        "icon": "device-hub"
+    },
+    {
+        "icon": "devices"
+    },
+    {
+        "icon": "devices-other"
+    },
+    {
+        "icon": "dialer-sip"
+    },
+    {
+        "icon": "dialpad"
+    },
+    {
+        "icon": "directions"
+    },
+    {
+        "icon": "directions-bike"
+    },
+    {
+        "icon": "directions-boat"
+    },
+    {
+        "icon": "directions-bus"
+    },
+    {
+        "icon": "directions-car"
+    },
+    {
+        "icon": "directions-railway"
+    },
+    {
+        "icon": "directions-run"
+    },
+    {
+        "icon": "directions-subway"
+    },
+    {
+        "icon": "directions-transit"
+    },
+    {
+        "icon": "directions-walk"
+    },
+    {
+        "icon": "disc-full"
+    },
+    {
+        "icon": "dns"
+    },
+    {
+        "icon": "do-not-disturb"
+    },
+    {
+        "icon": "do-not-disturb-alt"
+    },
+    {
+        "icon": "do-not-disturb-off"
+    },
+    {
+        "icon": "do-not-disturb-on"
+    },
+    {
+        "icon": "dock"
+    },
+    {
+        "icon": "domain"
+    },
+    {
+        "icon": "done"
+    },
+    {
+        "icon": "done-all"
+    },
+    {
+        "icon": "donut-large"
+    },
+    {
+        "icon": "donut-small"
+    },
+    {
+        "icon": "drafts"
+    },
+    {
+        "icon": "drag-handle"
+    },
+    {
+        "icon": "drive-eta"
+    },
+    {
+        "icon": "dvr"
+    },
+    {
+        "icon": "edit"
+    },
+    {
+        "icon": "edit-location"
+    },
+    {
+        "icon": "eject"
+    },
+    {
+        "icon": "email"
+    },
+    {
+        "icon": "enhanced-encryption"
+    },
+    {
+        "icon": "equalizer"
+    },
+    {
+        "icon": "error"
+    },
+    {
+        "icon": "error-outline"
+    },
+    {
+        "icon": "euro-symbol"
+    },
+    {
+        "icon": "ev-station"
+    },
+    {
+        "icon": "event"
+    },
+    {
+        "icon": "event-available"
+    },
+    {
+        "icon": "event-busy"
+    },
+    {
+        "icon": "event-note"
+    },
+    {
+        "icon": "event-seat"
+    },
+    {
+        "icon": "exit-to-app"
+    },
+    {
+        "icon": "expand-less"
+    },
+    {
+        "icon": "expand-more"
+    },
+    {
+        "icon": "explicit"
+    },
+    {
+        "icon": "explore"
+    },
+    {
+        "icon": "exposure"
+    },
+    {
+        "icon": "exposure-neg-1"
+    },
+    {
+        "icon": "exposure-neg-2"
+    },
+    {
+        "icon": "exposure-plus-1"
+    },
+    {
+        "icon": "exposure-plus-2"
+    },
+    {
+        "icon": "exposure-zero"
+    },
+    {
+        "icon": "extension"
+    },
+    {
+        "icon": "face"
+    },
+    {
+        "icon": "fast-forward"
+    },
+    {
+        "icon": "fast-rewind"
+    },
+    {
+        "icon": "favorite"
+    },
+    {
+        "icon": "favorite-border"
+    },
+    {
+        "icon": "featured-play-list"
+    },
+    {
+        "icon": "featured-video"
+    },
+    {
+        "icon": "feedback"
+    },
+    {
+        "icon": "fiber-dvr"
+    },
+    {
+        "icon": "fiber-manual-record"
+    },
+    {
+        "icon": "fiber-new"
+    },
+    {
+        "icon": "fiber-pin"
+    },
+    {
+        "icon": "fiber-smart-record"
+    },
+    {
+        "icon": "file-download"
+    },
+    {
+        "icon": "file-upload"
+    },
+    {
+        "icon": "filter"
+    },
+    {
+        "icon": "filter-1"
+    },
+    {
+        "icon": "filter-2"
+    },
+    {
+        "icon": "filter-3"
+    },
+    {
+        "icon": "filter-4"
+    },
+    {
+        "icon": "filter-5"
+    },
+    {
+        "icon": "filter-6"
+    },
+    {
+        "icon": "filter-7"
+    },
+    {
+        "icon": "filter-8"
+    },
+    {
+        "icon": "filter-9"
+    },
+    {
+        "icon": "filter-9-plus"
+    },
+    {
+        "icon": "filter-b-and-w"
+    },
+    {
+        "icon": "filter-center-focus"
+    },
+    {
+        "icon": "filter-drama"
+    },
+    {
+        "icon": "filter-frames"
+    },
+    {
+        "icon": "filter-hdr"
+    },
+    {
+        "icon": "filter-list"
+    },
+    {
+        "icon": "filter-none"
+    },
+    {
+        "icon": "filter-tilt-shift"
+    },
+    {
+        "icon": "filter-vintage"
+    },
+    {
+        "icon": "find-in-page"
+    },
+    {
+        "icon": "find-replace"
+    },
+    {
+        "icon": "fingerprint"
+    },
+    {
+        "icon": "first-page"
+    },
+    {
+        "icon": "fitness-center"
+    },
+    {
+        "icon": "flag"
+    },
+    {
+        "icon": "flare"
+    },
+    {
+        "icon": "flash-auto"
+    },
+    {
+        "icon": "flash-off"
+    },
+    {
+        "icon": "flash-on"
+    },
+    {
+        "icon": "flight"
+    },
+    {
+        "icon": "flight-land"
+    },
+    {
+        "icon": "flight-takeoff"
+    },
+    {
+        "icon": "flip"
+    },
+    {
+        "icon": "flip-to-back"
+    },
+    {
+        "icon": "flip-to-front"
+    },
+    {
+        "icon": "folder"
+    },
+    {
+        "icon": "folder-open"
+    },
+    {
+        "icon": "folder-shared"
+    },
+    {
+        "icon": "folder-special"
+    },
+    {
+        "icon": "font-download"
+    },
+    {
+        "icon": "format-align-center"
+    },
+    {
+        "icon": "format-align-justify"
+    },
+    {
+        "icon": "format-align-left"
+    },
+    {
+        "icon": "format-align-right"
+    },
+    {
+        "icon": "format-bold"
+    },
+    {
+        "icon": "format-clear"
+    },
+    {
+        "icon": "format-color-fill"
+    },
+    {
+        "icon": "format-color-reset"
+    },
+    {
+        "icon": "format-color-text"
+    },
+    {
+        "icon": "format-indent-decrease"
+    },
+    {
+        "icon": "format-indent-increase"
+    },
+    {
+        "icon": "format-italic"
+    },
+    {
+        "icon": "format-line-spacing"
+    },
+    {
+        "icon": "format-list-bulleted"
+    },
+    {
+        "icon": "format-list-numbered"
+    },
+    {
+        "icon": "format-paint"
+    },
+    {
+        "icon": "format-quote"
+    },
+    {
+        "icon": "format-shapes"
+    },
+    {
+        "icon": "format-size"
+    },
+    {
+        "icon": "format-strikethrough"
+    },
+    {
+        "icon": "format-textdirection-l-to-r"
+    },
+    {
+        "icon": "format-textdirection-r-to-l"
+    },
+    {
+        "icon": "format-underlined"
+    },
+    {
+        "icon": "forum"
+    },
+    {
+        "icon": "forward"
+    },
+    {
+        "icon": "forward-10"
+    },
+    {
+        "icon": "forward-30"
+    },
+    {
+        "icon": "forward-5"
+    },
+    {
+        "icon": "free-breakfast"
+    },
+    {
+        "icon": "fullscreen"
+    },
+    {
+        "icon": "fullscreen-exit"
+    },
+    {
+        "icon": "functions"
+    },
+    {
+        "icon": "g-translate"
+    },
+    {
+        "icon": "gamepad"
+    },
+    {
+        "icon": "games"
+    },
+    {
+        "icon": "gavel"
+    },
+    {
+        "icon": "gesture"
+    },
+    {
+        "icon": "get-app"
+    },
+    {
+        "icon": "gif"
+    },
+    {
+        "icon": "golf-course"
+    },
+    {
+        "icon": "gps-fixed"
+    },
+    {
+        "icon": "gps-not-fixed"
+    },
+    {
+        "icon": "gps-off"
+    },
+    {
+        "icon": "grade"
+    },
+    {
+        "icon": "gradient"
+    },
+    {
+        "icon": "grain"
+    },
+    {
+        "icon": "graphic-eq"
+    },
+    {
+        "icon": "grid-off"
+    },
+    {
+        "icon": "grid-on"
+    },
+    {
+        "icon": "group"
+    },
+    {
+        "icon": "group-add"
+    },
+    {
+        "icon": "group-work"
+    },
+    {
+        "icon": "hd"
+    },
+    {
+        "icon": "hdr-off"
+    },
+    {
+        "icon": "hdr-on"
+    },
+    {
+        "icon": "hdr-strong"
+    },
+    {
+        "icon": "hdr-weak"
+    },
+    {
+        "icon": "headset"
+    },
+    {
+        "icon": "headset-mic"
+    },
+    {
+        "icon": "healing"
+    },
+    {
+        "icon": "hearing"
+    },
+    {
+        "icon": "help"
+    },
+    {
+        "icon": "help-outline"
+    },
+    {
+        "icon": "high-quality"
+    },
+    {
+        "icon": "highlight"
+    },
+    {
+        "icon": "highlight-off"
+    },
+    {
+        "icon": "history"
+    },
+    {
+        "icon": "home"
+    },
+    {
+        "icon": "hot-tub"
+    },
+    {
+        "icon": "hotel"
+    },
+    {
+        "icon": "hourglass-empty"
+    },
+    {
+        "icon": "hourglass-full"
+    },
+    {
+        "icon": "http"
+    },
+    {
+        "icon": "https"
+    },
+    {
+        "icon": "image"
+    },
+    {
+        "icon": "image-aspect-ratio"
+    },
+    {
+        "icon": "import-contacts"
+    },
+    {
+        "icon": "import-export"
+    },
+    {
+        "icon": "important-devices"
+    },
+    {
+        "icon": "inbox"
+    },
+    {
+        "icon": "indeterminate-check-box"
+    },
+    {
+        "icon": "info"
+    },
+    {
+        "icon": "info-outline"
+    },
+    {
+        "icon": "input"
+    },
+    {
+        "icon": "insert-chart"
+    },
+    {
+        "icon": "insert-comment"
+    },
+    {
+        "icon": "insert-drive-file"
+    },
+    {
+        "icon": "insert-emoticon"
+    },
+    {
+        "icon": "insert-invitation"
+    },
+    {
+        "icon": "insert-link"
+    },
+    {
+        "icon": "insert-photo"
+    },
+    {
+        "icon": "invert-colors"
+    },
+    {
+        "icon": "invert-colors-off"
+    },
+    {
+        "icon": "iso"
+    },
+    {
+        "icon": "keyboard"
+    },
+    {
+        "icon": "keyboard-arrow-down"
+    },
+    {
+        "icon": "keyboard-arrow-left"
+    },
+    {
+        "icon": "keyboard-arrow-right"
+    },
+    {
+        "icon": "keyboard-arrow-up"
+    },
+    {
+        "icon": "keyboard-backspace"
+    },
+    {
+        "icon": "keyboard-capslock"
+    },
+    {
+        "icon": "keyboard-hide"
+    },
+    {
+        "icon": "keyboard-return"
+    },
+    {
+        "icon": "keyboard-tab"
+    },
+    {
+        "icon": "keyboard-voice"
+    },
+    {
+        "icon": "kitchen"
+    },
+    {
+        "icon": "label"
+    },
+    {
+        "icon": "label-outline"
+    },
+    {
+        "icon": "landscape"
+    },
+    {
+        "icon": "language"
+    },
+    {
+        "icon": "laptop"
+    },
+    {
+        "icon": "laptop-chromebook"
+    },
+    {
+        "icon": "laptop-mac"
+    },
+    {
+        "icon": "laptop-windows"
+    },
+    {
+        "icon": "last-page"
+    },
+    {
+        "icon": "launch"
+    },
+    {
+        "icon": "layers"
+    },
+    {
+        "icon": "layers-clear"
+    },
+    {
+        "icon": "leak-add"
+    },
+    {
+        "icon": "leak-remove"
+    },
+    {
+        "icon": "lens"
+    },
+    {
+        "icon": "library-add"
+    },
+    {
+        "icon": "library-books"
+    },
+    {
+        "icon": "library-music"
+    },
+    {
+        "icon": "lightbulb-outline"
+    },
+    {
+        "icon": "line-style"
+    },
+    {
+        "icon": "line-weight"
+    },
+    {
+        "icon": "linear-scale"
+    },
+    {
+        "icon": "link"
+    },
+    {
+        "icon": "linked-camera"
+    },
+    {
+        "icon": "list"
+    },
+    {
+        "icon": "live-help"
+    },
+    {
+        "icon": "live-tv"
+    },
+    {
+        "icon": "local-activity"
+    },
+    {
+        "icon": "local-airport"
+    },
+    {
+        "icon": "local-atm"
+    },
+    {
+        "icon": "local-bar"
+    },
+    {
+        "icon": "local-cafe"
+    },
+    {
+        "icon": "local-car-wash"
+    },
+    {
+        "icon": "local-convenience-store"
+    },
+    {
+        "icon": "local-dining"
+    },
+    {
+        "icon": "local-drink"
+    },
+    {
+        "icon": "local-florist"
+    },
+    {
+        "icon": "local-gas-station"
+    },
+    {
+        "icon": "local-grocery-store"
+    },
+    {
+        "icon": "local-hospital"
+    },
+    {
+        "icon": "local-hotel"
+    },
+    {
+        "icon": "local-laundry-service"
+    },
+    {
+        "icon": "local-library"
+    },
+    {
+        "icon": "local-mall"
+    },
+    {
+        "icon": "local-movies"
+    },
+    {
+        "icon": "local-offer"
+    },
+    {
+        "icon": "local-parking"
+    },
+    {
+        "icon": "local-pharmacy"
+    },
+    {
+        "icon": "local-phone"
+    },
+    {
+        "icon": "local-pizza"
+    },
+    {
+        "icon": "local-play"
+    },
+    {
+        "icon": "local-post-office"
+    },
+    {
+        "icon": "local-printshop"
+    },
+    {
+        "icon": "local-see"
+    },
+    {
+        "icon": "local-shipping"
+    },
+    {
+        "icon": "local-taxi"
+    },
+    {
+        "icon": "location-city"
+    },
+    {
+        "icon": "location-disabled"
+    },
+    {
+        "icon": "location-off"
+    },
+    {
+        "icon": "location-on"
+    },
+    {
+        "icon": "location-searching"
+    },
+    {
+        "icon": "lock"
+    },
+    {
+        "icon": "lock-open"
+    },
+    {
+        "icon": "lock-outline"
+    },
+    {
+        "icon": "looks"
+    },
+    {
+        "icon": "looks-3"
+    },
+    {
+        "icon": "looks-4"
+    },
+    {
+        "icon": "looks-5"
+    },
+    {
+        "icon": "looks-6"
+    },
+    {
+        "icon": "looks-one"
+    },
+    {
+        "icon": "looks-two"
+    },
+    {
+        "icon": "loop"
+    },
+    {
+        "icon": "loupe"
+    },
+    {
+        "icon": "low-priority"
+    },
+    {
+        "icon": "loyalty"
+    },
+    {
+        "icon": "mail"
+    },
+    {
+        "icon": "mail-outline"
+    },
+    {
+        "icon": "map"
+    },
+    {
+        "icon": "markunread"
+    },
+    {
+        "icon": "markunread-mailbox"
+    },
+    {
+        "icon": "memory"
+    },
+    {
+        "icon": "menu"
+    },
+    {
+        "icon": "merge-type"
+    },
+    {
+        "icon": "message"
+    },
+    {
+        "icon": "mic"
+    },
+    {
+        "icon": "mic-none"
+    },
+    {
+        "icon": "mic-off"
+    },
+    {
+        "icon": "mms"
+    },
+    {
+        "icon": "mode-comment"
+    },
+    {
+        "icon": "mode-edit"
+    },
+    {
+        "icon": "monetization-on"
+    },
+    {
+        "icon": "money-off"
+    },
+    {
+        "icon": "monochrome-photos"
+    },
+    {
+        "icon": "mood"
+    },
+    {
+        "icon": "mood-bad"
+    },
+    {
+        "icon": "more"
+    },
+    {
+        "icon": "more-horiz"
+    },
+    {
+        "icon": "more-vert"
+    },
+    {
+        "icon": "motorcycle"
+    },
+    {
+        "icon": "mouse"
+    },
+    {
+        "icon": "move-to-inbox"
+    },
+    {
+        "icon": "movie"
+    },
+    {
+        "icon": "movie-creation"
+    },
+    {
+        "icon": "movie-filter"
+    },
+    {
+        "icon": "multiline-chart"
+    },
+    {
+        "icon": "music-note"
+    },
+    {
+        "icon": "music-video"
+    },
+    {
+        "icon": "my-location"
+    },
+    {
+        "icon": "nature"
+    },
+    {
+        "icon": "nature-people"
+    },
+    {
+        "icon": "navigate-before"
+    },
+    {
+        "icon": "navigate-next"
+    },
+    {
+        "icon": "navigation"
+    },
+    {
+        "icon": "near-me"
+    },
+    {
+        "icon": "network-cell"
+    },
+    {
+        "icon": "network-check"
+    },
+    {
+        "icon": "network-locked"
+    },
+    {
+        "icon": "network-wifi"
+    },
+    {
+        "icon": "new-releases"
+    },
+    {
+        "icon": "next-week"
+    },
+    {
+        "icon": "nfc"
+    },
+    {
+        "icon": "no-encryption"
+    },
+    {
+        "icon": "no-sim"
+    },
+    {
+        "icon": "not-interested"
+    },
+    {
+        "icon": "note"
+    },
+    {
+        "icon": "note-add"
+    },
+    {
+        "icon": "notifications"
+    },
+    {
+        "icon": "notifications-active"
+    },
+    {
+        "icon": "notifications-none"
+    },
+    {
+        "icon": "notifications-off"
+    },
+    {
+        "icon": "notifications-paused"
+    },
+    {
+        "icon": "offline-pin"
+    },
+    {
+        "icon": "ondemand-video"
+    },
+    {
+        "icon": "opacity"
+    },
+    {
+        "icon": "open-in-browser"
+    },
+    {
+        "icon": "open-in-new"
+    },
+    {
+        "icon": "open-with"
+    },
+    {
+        "icon": "pages"
+    },
+    {
+        "icon": "pageview"
+    },
+    {
+        "icon": "palette"
+    },
+    {
+        "icon": "pan-tool"
+    },
+    {
+        "icon": "panorama"
+    },
+    {
+        "icon": "panorama-fish-eye"
+    },
+    {
+        "icon": "panorama-horizontal"
+    },
+    {
+        "icon": "panorama-vertical"
+    },
+    {
+        "icon": "panorama-wide-angle"
+    },
+    {
+        "icon": "party-mode"
+    },
+    {
+        "icon": "pause"
+    },
+    {
+        "icon": "pause-circle-filled"
+    },
+    {
+        "icon": "pause-circle-outline"
+    },
+    {
+        "icon": "payment"
+    },
+    {
+        "icon": "people"
+    },
+    {
+        "icon": "people-outline"
+    },
+    {
+        "icon": "perm-camera-mic"
+    },
+    {
+        "icon": "perm-contact-calendar"
+    },
+    {
+        "icon": "perm-data-setting"
+    },
+    {
+        "icon": "perm-device-information"
+    },
+    {
+        "icon": "perm-identity"
+    },
+    {
+        "icon": "perm-media"
+    },
+    {
+        "icon": "perm-phone-msg"
+    },
+    {
+        "icon": "perm-scan-wifi"
+    },
+    {
+        "icon": "person"
+    },
+    {
+        "icon": "person-add"
+    },
+    {
+        "icon": "person-outline"
+    },
+    {
+        "icon": "person-pin"
+    },
+    {
+        "icon": "person-pin-circle"
+    },
+    {
+        "icon": "personal-video"
+    },
+    {
+        "icon": "pets"
+    },
+    {
+        "icon": "phone"
+    },
+    {
+        "icon": "phone-android"
+    },
+    {
+        "icon": "phone-bluetooth-speaker"
+    },
+    {
+        "icon": "phone-forwarded"
+    },
+    {
+        "icon": "phone-in-talk"
+    },
+    {
+        "icon": "phone-iphone"
+    },
+    {
+        "icon": "phone-locked"
+    },
+    {
+        "icon": "phone-missed"
+    },
+    {
+        "icon": "phone-paused"
+    },
+    {
+        "icon": "phonelink"
+    },
+    {
+        "icon": "phonelink-erase"
+    },
+    {
+        "icon": "phonelink-lock"
+    },
+    {
+        "icon": "phonelink-off"
+    },
+    {
+        "icon": "phonelink-ring"
+    },
+    {
+        "icon": "phonelink-setup"
+    },
+    {
+        "icon": "photo"
+    },
+    {
+        "icon": "photo-album"
+    },
+    {
+        "icon": "photo-camera"
+    },
+    {
+        "icon": "photo-filter"
+    },
+    {
+        "icon": "photo-library"
+    },
+    {
+        "icon": "photo-size-select-actual"
+    },
+    {
+        "icon": "photo-size-select-large"
+    },
+    {
+        "icon": "photo-size-select-small"
+    },
+    {
+        "icon": "picture-as-pdf"
+    },
+    {
+        "icon": "picture-in-picture"
+    },
+    {
+        "icon": "picture-in-picture-alt"
+    },
+    {
+        "icon": "pie-chart"
+    },
+    {
+        "icon": "pie-chart-outlined"
+    },
+    {
+        "icon": "pin-drop"
+    },
+    {
+        "icon": "place"
+    },
+    {
+        "icon": "play-arrow"
+    },
+    {
+        "icon": "play-circle-filled"
+    },
+    {
+        "icon": "play-circle-outline"
+    },
+    {
+        "icon": "play-for-work"
+    },
+    {
+        "icon": "playlist-add"
+    },
+    {
+        "icon": "playlist-add-check"
+    },
+    {
+        "icon": "playlist-play"
+    },
+    {
+        "icon": "plus-one"
+    },
+    {
+        "icon": "poll"
+    },
+    {
+        "icon": "polymer"
+    },
+    {
+        "icon": "pool"
+    },
+    {
+        "icon": "portable-wifi-off"
+    },
+    {
+        "icon": "portrait"
+    },
+    {
+        "icon": "power"
+    },
+    {
+        "icon": "power-input"
+    },
+    {
+        "icon": "power-settings-new"
+    },
+    {
+        "icon": "pregnant-woman"
+    },
+    {
+        "icon": "present-to-all"
+    },
+    {
+        "icon": "print"
+    },
+    {
+        "icon": "priority-high"
+    },
+    {
+        "icon": "public"
+    },
+    {
+        "icon": "publish"
+    },
+    {
+        "icon": "query-builder"
+    },
+    {
+        "icon": "question-answer"
+    },
+    {
+        "icon": "queue"
+    },
+    {
+        "icon": "queue-music"
+    },
+    {
+        "icon": "queue-play-next"
+    },
+    {
+        "icon": "radio"
+    },
+    {
+        "icon": "radio-button-checked"
+    },
+    {
+        "icon": "radio-button-unchecked"
+    },
+    {
+        "icon": "rate-review"
+    },
+    {
+        "icon": "receipt"
+    },
+    {
+        "icon": "recent-actors"
+    },
+    {
+        "icon": "record-voice-over"
+    },
+    {
+        "icon": "redeem"
+    },
+    {
+        "icon": "redo"
+    },
+    {
+        "icon": "refresh"
+    },
+    {
+        "icon": "remove"
+    },
+    {
+        "icon": "remove-circle"
+    },
+    {
+        "icon": "remove-circle-outline"
+    },
+    {
+        "icon": "remove-from-queue"
+    },
+    {
+        "icon": "remove-red-eye"
+    },
+    {
+        "icon": "remove-shopping-cart"
+    },
+    {
+        "icon": "reorder"
+    },
+    {
+        "icon": "repeat"
+    },
+    {
+        "icon": "repeat-one"
+    },
+    {
+        "icon": "replay"
+    },
+    {
+        "icon": "replay-10"
+    },
+    {
+        "icon": "replay-30"
+    },
+    {
+        "icon": "replay-5"
+    },
+    {
+        "icon": "reply"
+    },
+    {
+        "icon": "reply-all"
+    },
+    {
+        "icon": "report"
+    },
+    {
+        "icon": "report-problem"
+    },
+    {
+        "icon": "restaurant"
+    },
+    {
+        "icon": "restaurant-menu"
+    },
+    {
+        "icon": "restore"
+    },
+    {
+        "icon": "restore-page"
+    },
+    {
+        "icon": "ring-volume"
+    },
+    {
+        "icon": "room"
+    },
+    {
+        "icon": "room-service"
+    },
+    {
+        "icon": "rotate-90-degrees-ccw"
+    },
+    {
+        "icon": "rotate-left"
+    },
+    {
+        "icon": "rotate-right"
+    },
+    {
+        "icon": "rounded-corner"
+    },
+    {
+        "icon": "router"
+    },
+    {
+        "icon": "rowing"
+    },
+    {
+        "icon": "rss-feed"
+    },
+    {
+        "icon": "rv-hookup"
+    },
+    {
+        "icon": "satellite"
+    },
+    {
+        "icon": "save"
+    },
+    {
+        "icon": "scanner"
+    },
+    {
+        "icon": "schedule"
+    },
+    {
+        "icon": "school"
+    },
+    {
+        "icon": "screen-lock-landscape"
+    },
+    {
+        "icon": "screen-lock-portrait"
+    },
+    {
+        "icon": "screen-lock-rotation"
+    },
+    {
+        "icon": "screen-rotation"
+    },
+    {
+        "icon": "screen-share"
+    },
+    {
+        "icon": "sd-card"
+    },
+    {
+        "icon": "sd-storage"
+    },
+    {
+        "icon": "search"
+    },
+    {
+        "icon": "security"
+    },
+    {
+        "icon": "select-all"
+    },
+    {
+        "icon": "send"
+    },
+    {
+        "icon": "sentiment-dissatisfied"
+    },
+    {
+        "icon": "sentiment-neutral"
+    },
+    {
+        "icon": "sentiment-satisfied"
+    },
+    {
+        "icon": "sentiment-very-dissatisfied"
+    },
+    {
+        "icon": "sentiment-very-satisfied"
+    },
+    {
+        "icon": "settings"
+    },
+    {
+        "icon": "settings-applications"
+    },
+    {
+        "icon": "settings-backup-restore"
+    },
+    {
+        "icon": "settings-bluetooth"
+    },
+    {
+        "icon": "settings-brightness"
+    },
+    {
+        "icon": "settings-cell"
+    },
+    {
+        "icon": "settings-ethernet"
+    },
+    {
+        "icon": "settings-input-antenna"
+    },
+    {
+        "icon": "settings-input-component"
+    },
+    {
+        "icon": "settings-input-composite"
+    },
+    {
+        "icon": "settings-input-hdmi"
+    },
+    {
+        "icon": "settings-input-svideo"
+    },
+    {
+        "icon": "settings-overscan"
+    },
+    {
+        "icon": "settings-phone"
+    },
+    {
+        "icon": "settings-power"
+    },
+    {
+        "icon": "settings-remote"
+    },
+    {
+        "icon": "settings-system-daydream"
+    },
+    {
+        "icon": "settings-voice"
+    },
+    {
+        "icon": "share"
+    },
+    {
+        "icon": "shop"
+    },
+    {
+        "icon": "shop-two"
+    },
+    {
+        "icon": "shopping-basket"
+    },
+    {
+        "icon": "shopping-cart"
+    },
+    {
+        "icon": "short-text"
+    },
+    {
+        "icon": "show-chart"
+    },
+    {
+        "icon": "shuffle"
+    },
+    {
+        "icon": "signal-cellular-4-bar"
+    },
+    {
+        "icon": "signal-cellular-connected-no-internet-4-bar"
+    },
+    {
+        "icon": "signal-cellular-no-sim"
+    },
+    {
+        "icon": "signal-cellular-null"
+    },
+    {
+        "icon": "signal-cellular-off"
+    },
+    {
+        "icon": "signal-wifi-4-bar"
+    },
+    {
+        "icon": "signal-wifi-4-bar-lock"
+    },
+    {
+        "icon": "signal-wifi-off"
+    },
+    {
+        "icon": "sim-card"
+    },
+    {
+        "icon": "sim-card-alert"
+    },
+    {
+        "icon": "skip-next"
+    },
+    {
+        "icon": "skip-previous"
+    },
+    {
+        "icon": "slideshow"
+    },
+    {
+        "icon": "slow-motion-video"
+    },
+    {
+        "icon": "smartphone"
+    },
+    {
+        "icon": "smoke-free"
+    },
+    {
+        "icon": "smoking-rooms"
+    },
+    {
+        "icon": "sms"
+    },
+    {
+        "icon": "sms-failed"
+    },
+    {
+        "icon": "snooze"
+    },
+    {
+        "icon": "sort"
+    },
+    {
+        "icon": "sort-by-alpha"
+    },
+    {
+        "icon": "spa"
+    },
+    {
+        "icon": "space-bar"
+    },
+    {
+        "icon": "speaker"
+    },
+    {
+        "icon": "speaker-group"
+    },
+    {
+        "icon": "speaker-notes"
+    },
+    {
+        "icon": "speaker-notes-off"
+    },
+    {
+        "icon": "speaker-phone"
+    },
+    {
+        "icon": "spellcheck"
+    },
+    {
+        "icon": "star"
+    },
+    {
+        "icon": "star-border"
+    },
+    {
+        "icon": "star-half"
+    },
+    {
+        "icon": "stars"
+    },
+    {
+        "icon": "stay-current-landscape"
+    },
+    {
+        "icon": "stay-current-portrait"
+    },
+    {
+        "icon": "stay-primary-landscape"
+    },
+    {
+        "icon": "stay-primary-portrait"
+    },
+    {
+        "icon": "stop"
+    },
+    {
+        "icon": "stop-screen-share"
+    },
+    {
+        "icon": "storage"
+    },
+    {
+        "icon": "store"
+    },
+    {
+        "icon": "store-mall-directory"
+    },
+    {
+        "icon": "straighten"
+    },
+    {
+        "icon": "streetview"
+    },
+    {
+        "icon": "strikethrough-s"
+    },
+    {
+        "icon": "style"
+    },
+    {
+        "icon": "subdirectory-arrow-left"
+    },
+    {
+        "icon": "subdirectory-arrow-right"
+    },
+    {
+        "icon": "subject"
+    },
+    {
+        "icon": "subscriptions"
+    },
+    {
+        "icon": "subtitles"
+    },
+    {
+        "icon": "subway"
+    },
+    {
+        "icon": "supervisor-account"
+    },
+    {
+        "icon": "surround-sound"
+    },
+    {
+        "icon": "swap-calls"
+    },
+    {
+        "icon": "swap-horiz"
+    },
+    {
+        "icon": "swap-vert"
+    },
+    {
+        "icon": "swap-vertical-circle"
+    },
+    {
+        "icon": "switch-camera"
+    },
+    {
+        "icon": "switch-video"
+    },
+    {
+        "icon": "sync"
+    },
+    {
+        "icon": "sync-disabled"
+    },
+    {
+        "icon": "sync-problem"
+    },
+    {
+        "icon": "system-update"
+    },
+    {
+        "icon": "system-update-alt"
+    },
+    {
+        "icon": "tab"
+    },
+    {
+        "icon": "tab-unselected"
+    },
+    {
+        "icon": "tablet"
+    },
+    {
+        "icon": "tablet-android"
+    },
+    {
+        "icon": "tablet-mac"
+    },
+    {
+        "icon": "tag-faces"
+    },
+    {
+        "icon": "tap-and-play"
+    },
+    {
+        "icon": "terrain"
+    },
+    {
+        "icon": "text-fields"
+    },
+    {
+        "icon": "text-format"
+    },
+    {
+        "icon": "textsms"
+    },
+    {
+        "icon": "texture"
+    },
+    {
+        "icon": "theaters"
+    },
+    {
+        "icon": "thumb-down"
+    },
+    {
+        "icon": "thumb-up"
+    },
+    {
+        "icon": "thumbs-up-down"
+    },
+    {
+        "icon": "time-to-leave"
+    },
+    {
+        "icon": "timelapse"
+    },
+    {
+        "icon": "timeline"
+    },
+    {
+        "icon": "timer"
+    },
+    {
+        "icon": "timer-10"
+    },
+    {
+        "icon": "timer-3"
+    },
+    {
+        "icon": "timer-off"
+    },
+    {
+        "icon": "title"
+    },
+    {
+        "icon": "toc"
+    },
+    {
+        "icon": "today"
+    },
+    {
+        "icon": "toll"
+    },
+    {
+        "icon": "tonality"
+    },
+    {
+        "icon": "touch-app"
+    },
+    {
+        "icon": "toys"
+    },
+    {
+        "icon": "track-changes"
+    },
+    {
+        "icon": "traffic"
+    },
+    {
+        "icon": "train"
+    },
+    {
+        "icon": "tram"
+    },
+    {
+        "icon": "transfer-within-a-station"
+    },
+    {
+        "icon": "transform"
+    },
+    {
+        "icon": "translate"
+    },
+    {
+        "icon": "trending-down"
+    },
+    {
+        "icon": "trending-flat"
+    },
+    {
+        "icon": "trending-up"
+    },
+    {
+        "icon": "tune"
+    },
+    {
+        "icon": "turned-in"
+    },
+    {
+        "icon": "turned-in-not"
+    },
+    {
+        "icon": "tv"
+    },
+    {
+        "icon": "unarchive"
+    },
+    {
+        "icon": "undo"
+    },
+    {
+        "icon": "unfold-less"
+    },
+    {
+        "icon": "unfold-more"
+    },
+    {
+        "icon": "update"
+    },
+    {
+        "icon": "usb"
+    },
+    {
+        "icon": "verified-user"
+    },
+    {
+        "icon": "vertical-align-bottom"
+    },
+    {
+        "icon": "vertical-align-center"
+    },
+    {
+        "icon": "vertical-align-top"
+    },
+    {
+        "icon": "vibration"
+    },
+    {
+        "icon": "video-call"
+    },
+    {
+        "icon": "video-label"
+    },
+    {
+        "icon": "video-library"
+    },
+    {
+        "icon": "videocam"
+    },
+    {
+        "icon": "videocam-off"
+    },
+    {
+        "icon": "videogame-asset"
+    },
+    {
+        "icon": "view-agenda"
+    },
+    {
+        "icon": "view-array"
+    },
+    {
+        "icon": "view-carousel"
+    },
+    {
+        "icon": "view-column"
+    },
+    {
+        "icon": "view-comfy"
+    },
+    {
+        "icon": "view-compact"
+    },
+    {
+        "icon": "view-day"
+    },
+    {
+        "icon": "view-headline"
+    },
+    {
+        "icon": "view-list"
+    },
+    {
+        "icon": "view-module"
+    },
+    {
+        "icon": "view-quilt"
+    },
+    {
+        "icon": "view-stream"
+    },
+    {
+        "icon": "view-week"
+    },
+    {
+        "icon": "vignette"
+    },
+    {
+        "icon": "visibility"
+    },
+    {
+        "icon": "visibility-off"
+    },
+    {
+        "icon": "voice-chat"
+    },
+    {
+        "icon": "voicemail"
+    },
+    {
+        "icon": "volume-down"
+    },
+    {
+        "icon": "volume-mute"
+    },
+    {
+        "icon": "volume-off"
+    },
+    {
+        "icon": "volume-up"
+    },
+    {
+        "icon": "vpn-key"
+    },
+    {
+        "icon": "vpn-lock"
+    },
+    {
+        "icon": "wallpaper"
+    },
+    {
+        "icon": "warning"
+    },
+    {
+        "icon": "watch"
+    },
+    {
+        "icon": "watch-later"
+    },
+    {
+        "icon": "wb-auto"
+    },
+    {
+        "icon": "wb-cloudy"
+    },
+    {
+        "icon": "wb-incandescent"
+    },
+    {
+        "icon": "wb-iridescent"
+    },
+    {
+        "icon": "wb-sunny"
+    },
+    {
+        "icon": "wc"
+    },
+    {
+        "icon": "web"
+    },
+    {
+        "icon": "web-asset"
+    },
+    {
+        "icon": "weekend"
+    },
+    {
+        "icon": "whatshot"
+    },
+    {
+        "icon": "widgets"
+    },
+    {
+        "icon": "wifi"
+    },
+    {
+        "icon": "wifi-lock"
+    },
+    {
+        "icon": "wifi-tethering"
+    },
+    {
+        "icon": "work"
+    },
+    {
+        "icon": "wrap-text"
+    },
+    {
+        "icon": "youtube-searched-for"
+    },
+    {
+        "icon": "zoom-in"
+    },
+    {
+        "icon": "zoom-out"
+    },
+    {
+        "icon": "zoom-out-map"
+    }
+]

@@ -4,7 +4,8 @@
         "allowJs": true,
         "esModuleInterop": true,
         "noImplicitAny": true,
-        "target": "ES2015"
+        "target": "ES2015",
+        "resolveJsonModule": true
     },
     "files": [
         "src/scripts/data.ts",

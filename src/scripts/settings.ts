@@ -24,7 +24,7 @@ const SPECIAL_CONTROL_HEADLINE = "Special Control {txt:msx-white-soft:({ITEMS})}
 /******************************************************************************/
 class SettingsHandler implements tvx.TVXInteractionPluginHander {
 
-    private specialConrolPanel: tvx.MSXContentRoot = {
+    private specialConrolPanel = {
         cache: false,
         headline: SPECIAL_CONTROL_HEADLINE.replace("{ITEMS}", "0"),
         template: {
@@ -37,9 +37,9 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
             }
         },
         items: this.createSpecialControls(48)
-    };
+    } as tvx.MSXContentRoot;
 
-    private settings: tvx.MSXContentRoot = {
+    private settings = {
         cache: false,
         type: "pages",
         headline: "Settings Example",
@@ -224,7 +224,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
                 action: "panel:request:interaction:special"
             }]
         }]
-    };
+    } as tvx.MSXContentRoot;
 
     private createRadioButton(id: string, x: number, y: number, checked: boolean) {
         return {
@@ -240,7 +240,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
             data: {
                 action: "settings:item:radio_button_" + id
             }
-        };
+        } as tvx.MSXContentItem;
     }
 
     private createCheckBox(id: string, x: number, y: number, checked: boolean) {
@@ -257,7 +257,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
             data: {
                 action: "settings:item:check_box_" + id
             }
-        };
+        } as tvx.MSXContentItem;
     }
 
     private createSwitch(id: string, x: number, y: number, checked: boolean) {
@@ -273,7 +273,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
             data: {
                 action: "settings:item:switch_" + id
             }
-        };
+        } as tvx.MSXContentItem;
     }
 
     private createSelectionControl(id: string, x: number, y: number, label: string, subLabels: string[]) {
@@ -307,7 +307,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
                 },
                 items: subItems
             }
-        };
+        } as tvx.MSXContentItem;
     }
 
     private createStarsLabel(stars: number) {
@@ -324,7 +324,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
     }
 
     private createSpecialControls(count: number) {
-        let items = [];
+        let items: tvx.MSXContentItem[] = [];
         for (let i = 0; i < count; i++) {
             items.push({
                 id: "special_control_" + i,
@@ -337,8 +337,8 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
 
     private updateSettingsItem(id: string, data: tvx.AnyObject) {
         if (id != null) {
-            var type = "default";
-            var prefix = null;
+            let type = "default";
+            let prefix = null;
             if (id.indexOf("radio_button_0-") == 0) {
                 type = "radioButton";
                 prefix = "radio_button_0-";
@@ -354,10 +354,10 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
             } else if (id.indexOf("special_control_") == 0) {
                 type = "special";
             }
-            for (var p in this.settings.pages) {
-                var page = this.settings.pages[p];
-                for (var i in page.items) {
-                    var item = page.items[i];
+            for (let p in this.settings.pages) {
+                let page = this.settings.pages[p];
+                for (let i in page.items) {
+                    let item = page.items[i];
                     if (item.id != null) {
                         if (type == "radioButton") {
                             if (item.id == id) {
@@ -387,8 +387,8 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
                             }
                         } else if (type == "selection") {
                             if (item.id == id && data.label != null) {
-                                for (var si in item.data.items) {
-                                    var subItem = item.data.items[si];
+                                for (let si in item.data.items) {
+                                    let subItem = item.data.items[si];
                                     if (data.label == subItem.label) {
                                         subItem.focus = true;
                                         subItem.extensionIcon = SELECTION_CONTROL_CHECKED;
@@ -401,9 +401,9 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
                             }
                         } else if (type == "special") {
                             if (item.id == "special_control") {
-                                var count = 0;
-                                for (var si in this.specialConrolPanel.items) {
-                                    var specialItem = this.specialConrolPanel.items[si];
+                                let count = 0;
+                                for (let si in this.specialConrolPanel.items) {
+                                    let specialItem = this.specialConrolPanel.items[si];
                                     if (specialItem.id == id) {
                                         specialItem.checked = !specialItem.checked;
                                         if (specialItem.checked) {
@@ -441,9 +441,9 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
 
     handleData(data: tvx.AnyObject) {
         if (data.data != null && tvx.Tools.isFullStr(data.data.action)) {
-            var action = data.data.action;
+            let action = data.data.action;
             if (action.indexOf("settings:") == 0) {
-                var settingsAction = action.substr(9);
+                let settingsAction = action.substr(9);
                 if (settingsAction.indexOf("item:") == 0) {
                     this.updateSettingsItem(settingsAction.substr(5), data.data);
                     this.reloadSettings();

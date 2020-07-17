@@ -5,7 +5,7 @@ import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";
 
 /******************************************************************************/
-//TemplateHandler
+//Template Handler
 /******************************************************************************/
 class TemplateHandler implements tvx.TVXInteractionPluginHander {
     private logger = new tvx.Logger();
