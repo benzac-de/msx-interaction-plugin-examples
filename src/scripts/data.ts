@@ -1,4 +1,5 @@
 import { MSXMenuRoot, MSXContentRoot, Tools } from "./lib/tvx-plugin-module.min";
+import startData from "../msx/start.json";
 
 /******************************************************************************/
 //Interaction Data
@@ -133,6 +134,8 @@ export const ImageData: MSXContentRoot = {
 //Menu Data
 /******************************************************************************/
 export const MenuData: MSXMenuRoot = {
+    name: startData.name,
+    version: startData.version,
     headline: "Interaction Plugin Test",
     menu: [{
         icon: "gamepad",
