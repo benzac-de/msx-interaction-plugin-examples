@@ -35,7 +35,7 @@ By default, the index page is available under: http://localhost:8080/index.html
 Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:8080/index.html
 
 ### Testing on TV device
-* Copy folder ./src/msx to ./dist/msx
+* Copy folder `./src/msx` to `./dist/msx`
 * Install and launch Media Station X application on TV device
 * Navigate to Settings -> Start Parameter -> Setup
 * Enter IP address and port of your local server (e.g. 192.168.0.10:8080)
