@@ -7,12 +7,12 @@ This project contains examples of how you can use the Media Station X applicatio
 
 ## Installing
 ```
-$ npm install
+npm install
 ```
 
 ## Testing on local dev server
 ```
-$ npm run dev
+npm run dev
 ```
 By default, the index page is available under: http://localhost:1234/index.html
 
@@ -21,13 +21,13 @@ Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost
 
 ## Building for deployment
 ```
-$ npm run build
+npm run build
 ```
 
 ## Deploying on local server
 ```
-$ npm install --global http-server
-$ http-server ./dist --cors
+npm install --global http-server
+http-server ./dist --cors
 ```
 By default, the index page is available under: http://localhost:8080/index.html
 
