@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.40.2 (Module)
+// Type definitions for TVX Plugin v0.0.40.3 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -799,7 +799,7 @@ declare interface TVXVideoPluginPlayer {
     getSpeed?(): number;
     /**
      * Sets the speed (0.125 .. 8.0).
-     * @param speed The speed value from 0.125 to 0.8.
+     * @param speed The speed value from 0.125 to 8.0.
      */
     setSpeed?(speed: number): void;
     /**
@@ -829,20 +829,20 @@ declare interface TVXVideoPluginPlayer {
 */
 declare interface TVXVideoPlugin {
     /**
-     * Sets up a player object (see TVXVideoPluginPlayer interface).
+     * Sets up the player object (see TVXVideoPluginPlayer interface).
      * @param player The player object.
      */
     setupPlayer(player: TVXVideoPluginPlayer): void;
     /**
      * Sets the seek delay (in milliseconds).
-     * @param delay The delay in in milliseconds.
+     * @param delay The delay in milliseconds.
      */
     setSeekDelay(delay: number): void;
     /** Gets the seek delay (in milliseconds). */
     getSeekDelay(): number;
     /**
      * Sets the loading delay (in milliseconds).
-     * @param delay The delay in in milliseconds.
+     * @param delay The delay in milliseconds.
      */
     setLoadingDelay(delay: number): void;
     /** Gets the loading delay (in milliseconds). */
@@ -877,7 +877,7 @@ declare interface TVXVideoPlugin {
     getDuration(): number;
     /**
      * Sets the speed (0.125 .. 8.0).
-     * @param speed The speed value from 0.125 to 0.8.
+     * @param speed The speed value from 0.125 to 8.0.
      * @param commit Indicates if the player values should be directly comitted (default: false).
      */
     setSpeed(speed: number, commit?: boolean): void;
@@ -1204,7 +1204,7 @@ declare interface TVXInteractionPluginHander {
 */
 declare interface TVXInteractionPlugin {
     /**
-     * Sets up an interaction handler (see TVXInteractionPluginHander interface).
+     * Sets up the interaction handler (see TVXInteractionPluginHander interface).
      * @param handler The interaction handler.
      */
     setupHandler(handler: TVXInteractionPluginHander): void;
