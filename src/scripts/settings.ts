@@ -338,7 +338,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHander {
     private updateSettingsItem(id: string, data: tvx.AnyObject) {
         if (id != null) {
             let type = "default";
-            let prefix = null;
+            let prefix: string = null;
             if (id.indexOf("radio_button_0-") == 0) {
                 type = "radioButton";
                 prefix = "radio_button_0-";

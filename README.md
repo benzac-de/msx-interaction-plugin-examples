@@ -38,5 +38,8 @@ Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost
 * Copy folder `./src/msx` to `./dist/msx`
 * Install and launch Media Station X application on TV device
 * Navigate to Settings -> Start Parameter -> Setup
-* Enter IP address and port of your local server (e.g. 192.168.0.10:8080)
+* Enter IP address and port of your local server (e.g. `192.168.0.10:8080`)
 * Complete setup
+
+## Example Screenshot
+![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png)

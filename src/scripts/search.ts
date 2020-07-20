@@ -135,22 +135,18 @@ class SearchHandler implements tvx.TVXInteractionPluginHander {
                         icon: item.icon,
                         action: "panel:data",
                         data: {
-                            pages: [
-                                {
-                                    items: [
-                                        {
-                                            type: "default",
-                                            layout: "2,1,4,4",
-                                            offset: "0,0,0,-0.33",
-                                            color: "msx-glass",
-                                            iconSize: "large",
-                                            label: item.icon,
-                                            icon: item.icon,
-                                            action: "back"
-                                        }
-                                    ]
-                                }
-                            ]
+                            pages: [{
+                                items: [{
+                                    type: "default",
+                                    layout: "2,1,4,4",
+                                    offset: "0,0,0,-0.33",
+                                    color: "msx-glass",
+                                    iconSize: "large",
+                                    label: item.icon,
+                                    icon: item.icon,
+                                    action: "back"
+                                }]
+                            }]
                         }
                     } as tvx.MSXContentItem;
                     itemCallback(item, pageItem, index);
