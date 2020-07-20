@@ -90,7 +90,7 @@ class SearchHandler implements tvx.TVXInteractionPluginHander {
     }
 
     private createControlButton(control: string, key: string, x: number, y: number) {
-        let label = null;
+        let label: string = null;
         if (control == "back") {
             label = "{ico:backspace}";
         } else if (control == "clear") {
