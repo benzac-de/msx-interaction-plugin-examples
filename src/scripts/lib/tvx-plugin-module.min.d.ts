@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.40.3 (Module)
+// Type definitions for TVX Plugin v0.0.40.4 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1148,7 +1148,7 @@ declare interface TVXVideoPlugin {
 }
 
 /** This interface defines the structure of an interaction handler. */
-declare interface TVXInteractionPluginHander {
+declare interface TVXInteractionPluginHandler {
     /** Initializes the handler. */
     init?(): void;
     /** This function is called when the handler is ready. */
@@ -1204,10 +1204,10 @@ declare interface TVXInteractionPluginHander {
 */
 declare interface TVXInteractionPlugin {
     /**
-     * Sets up the interaction handler (see TVXInteractionPluginHander interface).
+     * Sets up the interaction handler (see TVXInteractionPluginHandler interface).
      * @param handler The interaction handler.
      */
-    setupHandler(handler: TVXInteractionPluginHander): void;
+    setupHandler(handler: TVXInteractionPluginHandler): void;
     /**
      * Sets the loading delay (in milliseconds).
      * @param delay The delay in milliseconds.

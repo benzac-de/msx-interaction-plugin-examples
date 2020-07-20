@@ -17,7 +17,7 @@ const RESULTS_HEADLINE = "{ITEMS} found";
 /******************************************************************************/
 //Search Handler
 /******************************************************************************/
-class SearchHandler implements tvx.TVXInteractionPluginHander {
+class SearchHandler implements tvx.TVXInteractionPluginHandler {
     private searchInput = tvx.Services.urlParams.getFullStr("input", "");
     private testItems: tvx.AnyObject[] = icons;
     private resultItems: tvx.MSXContentItem[] = null;

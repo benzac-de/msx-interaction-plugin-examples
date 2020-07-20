@@ -7,7 +7,7 @@ import * as tvx from "./lib/tvx-plugin-module.min";
 /******************************************************************************/
 //Template Handler
 /******************************************************************************/
-class TemplateHandler implements tvx.TVXInteractionPluginHander {
+class TemplateHandler implements tvx.TVXInteractionPluginHandler {
     private logger = new tvx.Logger();
 
     init() {

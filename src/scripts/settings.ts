@@ -22,7 +22,7 @@ const SPECIAL_CONTROL_HEADLINE = "Special Control {txt:msx-white-soft:({ITEMS})}
 /******************************************************************************/
 //Settings Handler
 /******************************************************************************/
-class SettingsHandler implements tvx.TVXInteractionPluginHander {
+class SettingsHandler implements tvx.TVXInteractionPluginHandler {
 
     private specialConrolPanel = {
         cache: false,

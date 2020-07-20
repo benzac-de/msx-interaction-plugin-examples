@@ -7,7 +7,7 @@ import { InteractionData, VideoData, AudioData, ImageData, MenuData } from "./da
 /******************************************************************************/
 //Init Handler
 /******************************************************************************/
-class InitHandler implements tvx.TVXInteractionPluginHander {
+class InitHandler implements tvx.TVXInteractionPluginHandler {
 
     handleRequest(dataId: string, data: tvx.AnyObject, callback: (respData?: tvx.AnyObject) => void) {
         if (dataId == "init") {
