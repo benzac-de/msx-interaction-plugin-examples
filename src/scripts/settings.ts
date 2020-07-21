@@ -108,108 +108,18 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
         }, {
             headline: "Selection Controls",
             items: [
-                this.createSelectionControl("0", 0, 0, "Label 0",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("1", 0, 1, "Label 1",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("2", 0, 2, "Label 2",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("3", 0, 3, "Label 3",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("4", 0, 4, "Label 4",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("5", 0, 5, "Label 5",
-                    [
-                        "Label 0",
-                        "Label 1",
-                        "Label 2",
-                        "Label 3",
-                        "Label 4",
-                        "Label 5"
-                    ]),
-                this.createSelectionControl("6", 6, 0, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ]),
-                this.createSelectionControl("7", 6, 1, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ]),
-                this.createSelectionControl("8", 6, 2, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ]),
-                this.createSelectionControl("9", 6, 3, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ]),
-                this.createSelectionControl("10", 6, 4, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ]),
-                this.createSelectionControl("11", 6, 5, this.createStarsLabel(0),
-                    [
-                        this.createStarsLabel(1),
-                        this.createStarsLabel(2),
-                        this.createStarsLabel(3),
-                        this.createStarsLabel(4),
-                        this.createStarsLabel(5)
-                    ])
+                this.createSelectionControl("0", 0, 0, this.createSelectionLabel(0), this.createSelectionLabels()),
+                this.createSelectionControl("1", 0, 1, this.createSelectionLabel(1), this.createSelectionLabels()),
+                this.createSelectionControl("2", 0, 2, this.createSelectionLabel(2), this.createSelectionLabels()),
+                this.createSelectionControl("3", 0, 3, this.createSelectionLabel(3), this.createSelectionLabels()),
+                this.createSelectionControl("4", 0, 4, this.createSelectionLabel(4), this.createSelectionLabels()),
+                this.createSelectionControl("5", 0, 5, this.createSelectionLabel(5), this.createSelectionLabels()),
+                this.createSelectionControl("6", 6, 0, this.createStarsLabel(0), this.createStarsLabels()),
+                this.createSelectionControl("7", 6, 1, this.createStarsLabel(0), this.createStarsLabels()),
+                this.createSelectionControl("8", 6, 2, this.createStarsLabel(0), this.createStarsLabels()),
+                this.createSelectionControl("9", 6, 3, this.createStarsLabel(0), this.createStarsLabels()),
+                this.createSelectionControl("10", 6, 4, this.createStarsLabel(0), this.createStarsLabels()),
+                this.createSelectionControl("11", 6, 5, this.createStarsLabel(0), this.createStarsLabels())
             ]
         }, {
             headline: "Special Control",
@@ -277,7 +187,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
     }
 
     private createSelectionControl(id: string, x: number, y: number, label: string, subLabels: string[]) {
-        let subItems = [];
+        let subItems: tvx.MSXContentItem[] = [];
         for (let i in subLabels) {
             subItems.push({
                 focus: subLabels[i] === label,
@@ -310,6 +220,21 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
         } as tvx.MSXContentItem;
     }
 
+    private createSelectionLabel(index: number) {
+        return "Label " + index;
+    }
+
+    private createSelectionLabels() {
+        return [
+            this.createSelectionLabel(0),
+            this.createSelectionLabel(1),
+            this.createSelectionLabel(2),
+            this.createSelectionLabel(3),
+            this.createSelectionLabel(4),
+            this.createSelectionLabel(5)
+        ];
+    }
+
     private createStarsLabel(stars: number) {
         let label = "";
         for (let s = 0; s < 5; s++) {
@@ -321,6 +246,16 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
             }
         }
         return label;
+    }
+
+    private createStarsLabels() {
+        return [
+            this.createStarsLabel(1),
+            this.createStarsLabel(2),
+            this.createStarsLabel(3),
+            this.createStarsLabel(4),
+            this.createStarsLabel(5)
+        ];
     }
 
     private createSpecialControls(count: number) {
