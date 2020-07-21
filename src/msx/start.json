@@ -1,5 +1,6 @@
 {
     "name": "Interaction Plugin Examples (TypeScript Edition)",
     "version": "1.0.1",
-    "parameter": "menu:request:interaction:init@{PREFIX}{SERVER}/index.html"
+    "parameter": "menu:request:interaction:init@{PREFIX}{SERVER}/index.html",
+    "note": "For this service, Media Station X 0.1.97 or higher is needed."
 }
