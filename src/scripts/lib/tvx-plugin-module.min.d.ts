@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.40.4 (Module)
+// Type definitions for TVX Plugin v0.0.40.5 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1242,7 +1242,7 @@ declare interface TVXInteractionPlugin {
      */
     info(message: string, log?: boolean, show?: boolean): void;
     /**
-     * Logs (and shows) an warning message.
+     * Logs (and shows) a warning message.
      * @param message A message.
      * @param log Indicates if the message should be logged (default: true).
      * @param show Indicates if the message should be shown (default: true).
