@@ -237,7 +237,7 @@ class SearchHandler implements tvx.TVXInteractionPluginHandler {
 
     handleData(data: tvx.AnyObject) {
         if (data.data != null && tvx.Tools.isFullStr(data.data.action)) {
-            let action = data.data.action;
+            let action = data.data.action as string;
             if (action.indexOf("search:") == 0) {
                 let searchAction = action.substr(7);
                 if (searchAction.indexOf("init:") == 0) {

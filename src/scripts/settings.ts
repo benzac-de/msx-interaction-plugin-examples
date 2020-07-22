@@ -24,7 +24,7 @@ const SPECIAL_CONTROL_HEADLINE = "Special Control {txt:msx-white-soft:({ITEMS})}
 /******************************************************************************/
 class SettingsHandler implements tvx.TVXInteractionPluginHandler {
 
-    private specialConrolPanel = {
+    private specialControlPanel = {
         cache: false,
         headline: SPECIAL_CONTROL_HEADLINE.replace("{ITEMS}", "0"),
         template: {
@@ -337,8 +337,8 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
                         } else if (type == "special") {
                             if (item.id == "special_control") {
                                 let count = 0;
-                                for (let si in this.specialConrolPanel.items) {
-                                    let specialItem = this.specialConrolPanel.items[si];
+                                for (let si in this.specialControlPanel.items) {
+                                    let specialItem = this.specialControlPanel.items[si];
                                     if (specialItem.id == id) {
                                         specialItem.checked = !specialItem.checked;
                                         if (specialItem.checked) {
@@ -352,7 +352,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
                                     }
                                 }
                                 item.badge = tvx.Tools.strValue(count);
-                                this.specialConrolPanel.headline = SPECIAL_CONTROL_HEADLINE.replace("{ITEMS}", tvx.Tools.strValue(count));
+                                this.specialControlPanel.headline = SPECIAL_CONTROL_HEADLINE.replace("{ITEMS}", tvx.Tools.strValue(count));
                                 tvx.InteractionPlugin.executeAction("reload:panel");
                             }
                         }
@@ -399,7 +399,7 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
         if (dataId == "init") {
             callback(this.settings);
         } else if (dataId == "special") {
-            callback(this.specialConrolPanel);
+            callback(this.specialControlPanel);
         } else {
             tvx.InteractionPlugin.warn(`Unknown request data ID: '${dataId}'`);
             callback();
