@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.40.5 (Module)
+// Type definitions for TVX Plugin v0.0.41.1 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -13,6 +13,7 @@ declare interface MSXStart extends AnyObject {
     name: string;
     version: string;
     parameter: string;
+    welcome: string;
 }
 
 /** MSX - Menu Root Object
@@ -306,7 +307,7 @@ declare interface TVXTools {
     base64DecodeId(str: string): string;
     utf8Encode(str: string): string;
     utf8Decode(str: string): string;
-    createHash(str: string): number;
+    createHash(str: string, reverse?: boolean): number;
     serialize(obj: any, name?: string): string;
     deserialize(json: string): any;
     isSecureContext(): boolean;
@@ -714,6 +715,7 @@ declare abstract class TVXBlobService {
     setEntry(id: string, entry: AnyObject): void;
     getError(id: string): AnyObject;
     setError(id: string, error: AnyObject): void;
+    executeBlob(id: string, url: string, data: string, callback?: TVXBlobServiceCallback, options?: TVXAjaxOptions): void;
     loadBlob(id: string, url: string, callback?: TVXBlobServiceCallback, options?: TVXAjaxOptions): void;
     clearBlob(id: string): void;
     clear(): void;
@@ -1336,6 +1338,12 @@ declare interface TVXInteractionPlugin {
      * @param callback The callback that contains the result data with the normalized string.
      */
     normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    /**
+     * Creates a hash key.
+     * @param string A string.
+     * @param scope The scope.
+     */
+    createHashKey(string: string, scope?: string): string;
     /** Initializes the interaction plugin. */
     init(): void;
     /** Indicates if the interaction plugin is initialized. */
