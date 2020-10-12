@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.41.1 (Module)
+// Type definitions for TVX Plugin v0.0.44.0 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -7,7 +7,7 @@ declare interface AnyObject {
 }
 
 /** MSX - Start Object
- * @see: {@link http://msx.benzac.de/info/?tab=StartAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=StartAPI&section=StartObject}
 */
 declare interface MSXStart extends AnyObject {
     name: string;
@@ -17,22 +17,24 @@ declare interface MSXStart extends AnyObject {
 }
 
 /** MSX - Menu Root Object
- * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI&section=MenuRootObject}
 */
 declare interface MSXMenuRoot extends AnyObject {
     name?: string;
     version?: string;
     reuse?: boolean;
     cache?: boolean;
+    restore?: boolean;
     logo?: string;
     headline?: string;
     background?: string;
     extension?: string;
+    dictionary?: string;
     menu: MSXMenuItem[];
 }
 
 /** MSX - Menu Item Object
- * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI&section=MenuItemObject}
 */
 declare interface MSXMenuItem extends AnyObject {
     id?: string;
@@ -49,20 +51,23 @@ declare interface MSXMenuItem extends AnyObject {
 }
 
 /** MSX - Content Root Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentRootObject}
 */
 declare interface MSXContentRoot extends AnyObject {
     name?: string;
     version?: string;
     reuse?: boolean;
     cache?: boolean;
+    restore?: boolean;
     imortant?: boolean;
     wrap?: boolean;
+    transparent?: boolean;
     type?: string;
     preload?: string;
     headline?: string;
     background?: string;
     extension?: string;
+    dictionary?: string;
     template?: MSXContentItem;
     items?: MSXContentItem[];
     pages?: MSXContentPage[];
@@ -73,12 +78,13 @@ declare interface MSXContentRoot extends AnyObject {
 }
 
 /** MSX - Content Page Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentPageObject}
 */
 declare interface MSXContentPage extends AnyObject {
     display?: boolean;
     important?: boolean;
     wrap?: boolean;
+    transparent?: boolean;
     headline?: string;
     background?: string;
     offset?: string;
@@ -86,7 +92,7 @@ declare interface MSXContentPage extends AnyObject {
 }
 
 /** MSX - Content Item Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI}
+ * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentItemObject}
 */
 declare interface MSXContentItem extends AnyObject {
     id?: string;
@@ -134,6 +140,7 @@ declare interface MSXContentItem extends AnyObject {
     properties?: MSXProperties;
     live?: MSXLive;
     selection?: MSXSelection;
+    options?: MSXContentPage;
 }
 
 /** MSX - Extended Properties
@@ -331,6 +338,7 @@ declare interface TVXDateTools {
     applyDictionary(dictionary: TVXDictionary): void;
     getTimestamp(): number;
     getNow(): Date;
+    getFormatSeparator(): string;
     getFormattedDateStr(date: Date | number, format: string, y?: number, m?: number, d?: number): string;
     getDayStr(date: Date | number, y?: number, m?: number, d?: number): string;
     getDayLongStr(date: Date | number, y?: number, m?: number, d?: number): string;
@@ -375,6 +383,7 @@ declare interface TVXPropertyTools {
     put(data: AnyObject, key: string, value: any): void;
     remove(data: AnyObject, key: string): void;
     clear(data: AnyObject): void;
+    count(data: AnyObject): number;
 }
 
 declare interface TVXVideoState {
@@ -515,6 +524,7 @@ declare abstract class TVXObservers {
     onEvent(name: string, handler?: (data: AnyObject) => void): void;
     notifyObserver(name: string, data: AnyObject): void;
     notifyObservers(data: AnyObject): void;
+    clear(): void;
 }
 
 declare abstract class TVXEventObservers {
@@ -526,6 +536,7 @@ declare abstract class TVXEventObservers {
     onEvent(eventName: string, handlerName: string, handler?: (data: AnyObject) => void): void;
     notifyObserver(eventName: string, handlerName: string, data: AnyObject): void;
     notifyObservers(eventName: string, data: AnyObject): void;
+    clear(eventName?: string): void;
 }
 
 declare abstract class TVXQueue {
@@ -615,10 +626,14 @@ declare abstract class TVXLogger {
 declare abstract class TVXDictionary {
     constructor();
     onReady(name: string, handler?: () => void): void;
-    init(dictionary: AnyObject): void;
+    init(data: AnyObject): void;
+    getName(): string;
+    getVersion(): string;
+    getSize(): number;
+    isInitialized(): boolean;
     getValueForKey(key: string, defaultValue: string): string;
-    isValidExpr(expr: string): boolean;
     getValueForExpr(expr: string): string;
+    getData(): AnyObject;
 }
 
 declare abstract class TVXClock {
@@ -1126,6 +1141,21 @@ declare interface TVXVideoPlugin {
      * @param callback The callback that contains the result data with the normalized string.
      */
     normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    /**
+     * Indicates if content observers exist.
+     */
+    hasContentObservers(): boolean;
+    /**
+     * Adds a content observer.
+     * @param name The handler name.
+     * @param handler The handler function.
+     */
+    addContentObserver(name: string, handler: (state: AnyObject) => void): void;
+    /**
+     * Removes a content observer.
+     * @param name The handler name.
+     */
+    removeContentObserver(name: string): void;
     /** Initializes the player. */
     init(): void;
     /** Commits all player values. */
@@ -1344,6 +1374,21 @@ declare interface TVXInteractionPlugin {
      * @param scope The scope.
      */
     createHashKey(string: string, scope?: string): string;
+    /**
+     * Indicates if content observers exist.
+     */
+    hasContentObservers(): boolean;
+    /**
+     * Adds a content observer.
+     * @param name The handler name.
+     * @param handler The handler function.
+     */
+    addContentObserver(name: string, handler: (state: AnyObject) => void): void;
+    /**
+     * Removes a content observer.
+     * @param name The handler name.
+     */
+    removeContentObserver(name: string): void;
     /** Initializes the interaction plugin. */
     init(): void;
     /** Indicates if the interaction plugin is initialized. */
