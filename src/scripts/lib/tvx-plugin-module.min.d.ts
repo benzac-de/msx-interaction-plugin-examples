@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.44.0 (Module)
+// Type definitions for TVX Plugin v0.0.46 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -22,6 +22,7 @@ declare interface MSXStart extends AnyObject {
 declare interface MSXMenuRoot extends AnyObject {
     name?: string;
     version?: string;
+    flag?: string;
     reuse?: boolean;
     cache?: boolean;
     restore?: boolean;
@@ -31,6 +32,7 @@ declare interface MSXMenuRoot extends AnyObject {
     extension?: string;
     dictionary?: string;
     menu: MSXMenuItem[];
+    options?: MSXContentPage;
 }
 
 /** MSX - Menu Item Object
@@ -48,6 +50,7 @@ declare interface MSXMenuItem extends AnyObject {
     extensionIcon?: string;
     extensionLabel?: string;
     data?: string | MSXContentRoot;
+    options?: MSXContentPage;
 }
 
 /** MSX - Content Root Object
@@ -56,6 +59,7 @@ declare interface MSXMenuItem extends AnyObject {
 declare interface MSXContentRoot extends AnyObject {
     name?: string;
     version?: string;
+    flag?: string;
     reuse?: boolean;
     cache?: boolean;
     restore?: boolean;
@@ -75,6 +79,7 @@ declare interface MSXContentRoot extends AnyObject {
     footer?: MSXContentPage;
     overlay?: MSXContentPage;
     underlay?: MSXContentPage;
+    options?: MSXContentPage;
 }
 
 /** MSX - Content Page Object
@@ -89,6 +94,7 @@ declare interface MSXContentPage extends AnyObject {
     background?: string;
     offset?: string;
     items: MSXContentItem[];
+    options?: MSXContentPage;
 }
 
 /** MSX - Content Item Object
@@ -765,6 +771,8 @@ declare interface TVXPluginTools {
     checkFramework(data: AnyObject, minVersion: string, requiredName?: string): boolean;
     checkApplication(data: AnyObject, minVersion: string, requiredName?: string): boolean;
     checkContent(data: AnyObject, minVersion: string, requiredName?: string): boolean;
+    isSameContentState(state: AnyObject, state2: AnyObject): boolean;
+    createChangedContentState(currentState: AnyObject, newState: AnyObject): AnyObject,
 }
 
 declare interface TVXVideoUpdateData {
@@ -1156,6 +1164,10 @@ declare interface TVXVideoPlugin {
      * @param name The handler name.
      */
     removeContentObserver(name: string): void;
+    /**
+     * Removes all content observers.     
+     */
+    clearContentObservers(): void;
     /** Initializes the player. */
     init(): void;
     /** Commits all player values. */
@@ -1389,6 +1401,10 @@ declare interface TVXInteractionPlugin {
      * @param name The handler name.
      */
     removeContentObserver(name: string): void;
+    /**
+     * Removes all content observers.     
+     */
+    clearContentObservers(): void;
     /** Initializes the interaction plugin. */
     init(): void;
     /** Indicates if the interaction plugin is initialized. */
