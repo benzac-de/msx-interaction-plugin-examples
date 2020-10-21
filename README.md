@@ -42,4 +42,4 @@ Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost
 * Complete setup
 
 ## Example Screenshot
-![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png)
+![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png?v=2)
