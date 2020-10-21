@@ -31,6 +31,13 @@ div, label, img, input, span, i, b, p, video, audio, object, h1, h2, h3, pre, ca
     bottom: 36px;
 }
 
+.right-screen {
+    left: 55%;
+    right: 5%;
+    top: 5%;
+    bottom: 5%;
+}
+
 .log {
     text-align: left;
     font-size: 16px;
@@ -40,4 +47,8 @@ div, label, img, input, span, i, b, p, video, audio, object, h1, h2, h3, pre, ca
 .log span {
     display: inline;
     position: relative;
+}
+
+.log span.changed {
+    color: yellow;
 }

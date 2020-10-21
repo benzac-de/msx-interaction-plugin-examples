@@ -1,6 +1,6 @@
 {
   "name": "msx-interaction-plugin-examples",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Media Station X - Interaction Plugin Examples",
   "scripts": {
     "dev": "parcel src/*.html",

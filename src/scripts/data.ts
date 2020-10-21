@@ -22,6 +22,9 @@ export const InteractionData: MSXContentRoot = {
         title: "Settings Example",
         action: "content:request:interaction:init@" + Tools.getAbsoluteUrl("settings.html")
     }, {
+        title: "Observer Example",
+        action: "content:request:interaction:init@" + Tools.getAbsoluteUrl("observer.html")
+    }, {
         enumerate: false,
         type: "button",
         offset: "0,0,0,-1",
