@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.46 (Module)
+// Type definitions for TVX Plugin v0.0.46.1 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -32,6 +32,8 @@ declare interface MSXMenuRoot extends AnyObject {
     extension?: string;
     dictionary?: string;
     menu: MSXMenuItem[];
+    action?: string;
+    data?: AnyObject;
     options?: MSXContentPage;
 }
 
@@ -44,6 +46,7 @@ declare interface MSXMenuItem extends AnyObject {
     display?: boolean;
     enable?: boolean;
     focus?: boolean;
+    execute?: boolean;
     icon?: string;
     label?: string;
     background?: string;
@@ -66,6 +69,7 @@ declare interface MSXContentRoot extends AnyObject {
     imortant?: boolean;
     wrap?: boolean;
     transparent?: boolean;
+    compress?: boolean;
     type?: string;
     preload?: string;
     headline?: string;
@@ -79,6 +83,8 @@ declare interface MSXContentRoot extends AnyObject {
     footer?: MSXContentPage;
     overlay?: MSXContentPage;
     underlay?: MSXContentPage;
+    action?: string;
+    data?: AnyObject;
     options?: MSXContentPage;
 }
 
@@ -90,10 +96,13 @@ declare interface MSXContentPage extends AnyObject {
     important?: boolean;
     wrap?: boolean;
     transparent?: boolean;
+    compress?: boolean;
     headline?: string;
     background?: string;
     offset?: string;
     items: MSXContentItem[];
+    action?: string;
+    data?: AnyObject;
     options?: MSXContentPage;
 }
 
@@ -103,13 +112,16 @@ declare interface MSXContentPage extends AnyObject {
 declare interface MSXContentItem extends AnyObject {
     id?: string;
     type?: string;
+    key?: string;
     layout?: string;
     area?: string;
     offset?: string;
     display?: boolean;
     enable?: boolean;
     focus?: boolean;
+    execute?: boolean;
     enumerate?: boolean;
+    compress?: boolean;
     group?: string;
     color?: string;
     title?: string;
