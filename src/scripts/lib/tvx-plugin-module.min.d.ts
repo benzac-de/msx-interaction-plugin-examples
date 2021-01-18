@@ -1,5 +1,5 @@
 // Type definitions for TVX Plugin v0.0.46.2 (Module)
-// Project: http://msx.benzac.de/info/
+// Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
 declare interface AnyObject {
