@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.46.1 (Module)
+// Type definitions for TVX Plugin v0.0.46.2 (Module)
 // Project: http://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -7,7 +7,7 @@ declare interface AnyObject {
 }
 
 /** MSX - Start Object
- * @see: {@link http://msx.benzac.de/info/?tab=StartAPI&section=StartObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Start_Object}
 */
 declare interface MSXStart extends AnyObject {
     name: string;
@@ -17,7 +17,7 @@ declare interface MSXStart extends AnyObject {
 }
 
 /** MSX - Menu Root Object
- * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI&section=MenuRootObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
 */
 declare interface MSXMenuRoot extends AnyObject {
     name?: string;
@@ -38,7 +38,7 @@ declare interface MSXMenuRoot extends AnyObject {
 }
 
 /** MSX - Menu Item Object
- * @see: {@link http://msx.benzac.de/info/?tab=MenuAPI&section=MenuItemObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
 */
 declare interface MSXMenuItem extends AnyObject {
     id?: string;
@@ -57,7 +57,7 @@ declare interface MSXMenuItem extends AnyObject {
 }
 
 /** MSX - Content Root Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentRootObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Root_Object}
 */
 declare interface MSXContentRoot extends AnyObject {
     name?: string;
@@ -89,7 +89,7 @@ declare interface MSXContentRoot extends AnyObject {
 }
 
 /** MSX - Content Page Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentPageObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Page_Object}
 */
 declare interface MSXContentPage extends AnyObject {
     display?: boolean;
@@ -107,7 +107,7 @@ declare interface MSXContentPage extends AnyObject {
 }
 
 /** MSX - Content Item Object
- * @see: {@link http://msx.benzac.de/info/?tab=ContentAPI&section=ContentItemObject}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
 */
 declare interface MSXContentItem extends AnyObject {
     id?: string;
@@ -162,14 +162,14 @@ declare interface MSXContentItem extends AnyObject {
 }
 
 /** MSX - Extended Properties
- * @see: {@link http://msx.benzac.de/info/xp/?tab=ExtendedProperties}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Extended_Properties}
 */
 declare interface MSXProperties {
     [key: string]: string;
 }
 
 /** MSX - Live Object
- * @see: {@link http://msx.benzac.de/info/xp/?tab=LiveAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
     type?: string;
@@ -184,7 +184,7 @@ declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
 }
 
 /** MSX - Live Action
- * @see: {@link http://msx.benzac.de/info/xp/?tab=LiveAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLiveAction {
     action?: string;
@@ -192,7 +192,7 @@ declare interface MSXLiveAction {
 }
 
 /** MSX - Live Content Properties
- * @see: {@link http://msx.benzac.de/info/xp/?tab=LiveAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLiveProperties {
     color?: string;
@@ -216,14 +216,14 @@ declare interface MSXLiveProperties {
 }
 
 /** MSX - Live State Object
- * @see: {@link http://msx.benzac.de/info/xp/?tab=LiveAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLiveState extends MSXLiveProperties, MSXLiveAction {
     execute?: MSXLiveAction;
 }
 
 /** MSX - Live State Object (Running)
- * @see: {@link http://msx.benzac.de/info/xp/?tab=LiveAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLiveStateRunning extends MSXLiveState {
     quartile1?: MSXLiveProperties;
@@ -233,7 +233,7 @@ declare interface MSXLiveStateRunning extends MSXLiveState {
 }
 
 /** MSX - Selection Object
- * @see: {@link http://msx.benzac.de/info/xp/?tab=SelectionAPI}
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Selection_Object}
 */
 declare interface MSXSelection {
     important?: boolean;

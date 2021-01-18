@@ -2,8 +2,8 @@
 This project contains examples of how you can use the Media Station X application and the corresponding Interaction Plugin interface to create an interactive and highly customized media client.
 
 ## Documentation Links
-* Media Station X: http://msx.benzac.de/info/
-* Interaction Plugin: http://msx.benzac.de/info/xp/?tab=InteractionPlugin
+* Media Station X: https://msx.benzac.de/info/
+* Interaction Plugin: https://msx.benzac.de/wiki/index.php?title=Interaction_Plugin
 
 ## Installing
 ```
