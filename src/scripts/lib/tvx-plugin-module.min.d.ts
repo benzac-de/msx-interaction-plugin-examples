@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.46.2 (Module)
+// Type definitions for TVX Plugin v0.0.47.2 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -13,7 +13,7 @@ declare interface MSXStart extends AnyObject {
     name: string;
     version: string;
     parameter: string;
-    welcome: string;
+    welcome?: string;
 }
 
 /** MSX - Menu Root Object
@@ -133,6 +133,7 @@ declare interface MSXContentItem extends AnyObject {
     headline?: string;
     text?: string;
     alignment?: string;
+    truncation?: string;
     tag?: string;
     tagColor?: string;
     badge?: string;
@@ -252,6 +253,7 @@ declare interface TVXSettings {
     TIME_ZONE_OFFSET: number;
     ANIMATION_DURATION: number;
     ANIMATION_EASE: string;
+    AFK_DELAY: number;
     SCREEN_WIDTH: number;
     SCREEN_HEIGHT: number;
     SCREEN_FACTOR: number;
@@ -273,6 +275,7 @@ declare interface TVXSettings {
     SPEED: number;
     PLAYBACK: number;
     FULLSCREEN: number;
+    SUSPEND: number;
     APP: AnyObject;
 }
 
@@ -480,6 +483,7 @@ declare interface TVXAction {
     isVolumeAction(action: number): boolean;
     isNumberAction(action: number): boolean;
     isColorAction(action: number): boolean;
+    isSystemAction(action: number): boolean;
 }
 
 declare abstract class TVXCookies {
@@ -769,6 +773,14 @@ declare abstract class TVXRequestService {
     handleError(id: string, message?: string, type?: string): void;
 }
 
+declare abstract class TVXBusyService {
+    constructor();
+    isBusy(): boolean;
+    start(clear?: boolean): void;
+    stop(clear?: boolean): void;
+    onReady(handler: () => void): void;
+}
+
 declare interface TVXPluginTools {
     createCanvas(canvasClass: string, width: number, height: number): string;
     createIFrame(frameClass: string, src: string): string;
@@ -847,6 +859,41 @@ declare interface TVXVideoPluginPlayer {
     setSize?(width: number, height: number): void;
     /** Gets the update data (this function will be called each second). */
     getUpdateData?(): TVXVideoUpdateData;
+    /**
+     * Handles an event. The data.event property can contain following values:
+     * - "app:suspend"
+     * - "app:resume"
+     * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
+     * - "video:load"* (data.info property contains the loaded video info)
+     * - "video:play"*
+     * - "video:pause"*
+     * - "video:stop"*
+     * - "video:seek"* (data.position property contains the seeked position in seconds)
+     * - "video:restart"*
+     * - "video:speed"* (data.speed property contains the new speed value)
+     * - "video:volume"* (data.volume and data.muted properties contain the new volume level and muted state)
+     * - "slider:load" (data.info property contains the loaded slider info)
+     * - "slider:play"
+     * - "slider:pause"
+     * - "slider:stop"
+     * - "slider:position" (data.index, data.number, and data.listIndex properties contain the new item index, number, and list index)
+     * - "settings:animate" (data.value property contains the new settings value)
+     * - "settings:transform" (data.value property contains the new settings value)
+     * - "settings:input" (data.value property contains the new settings value)
+     * - "settings:remote" (data.value property contains the new settings value)
+     * - "settings:layout" (data.value property contains the new settings value)
+     * - "settings:scale" (data.value property contains the new settings value)
+     * - "settings:zoom" (data.value property contains the new settings value)
+     * - "settings:validate_links" (data.value property contains the new settings value)
+     * - "settings:random_playback" (data.value property contains the new settings value)
+     * - "settings:slideshow_interval" (data.value property contains the new settings value)
+     * - "settings:hover_effect" (data.value property contains the new settings value)
+     * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
+     * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
+     * *Note: Video events are usually not handled by the player, since the corresponding player function is also called (e.g. play() -> "video:play").
+     * @param data The event data.
+     */
+    handleEvent?(data: AnyObject): void;
     /**
      * Handles any data. User-defined data is optionally available in the data.data property.
      * @param data Any data.
@@ -1211,7 +1258,9 @@ declare interface TVXInteractionPluginHandler {
     ready?(): void;
     /**
      * Handles an event. The data.event property can contain following values:
-     * - "time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
+     * - "app:suspend"
+     * - "app:resume"
+     * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
      * - "video:load" (data.info property contains the loaded video info)
      * - "video:play"
      * - "video:pause"
@@ -1351,6 +1400,12 @@ declare interface TVXInteractionPlugin {
      */
     onValidatedSettings(callback: () => void): void;
     /**
+     * Triggers a custom event (that can be handled by the video/audio plugin).
+     * @param eventId The event ID.
+     * @param data Any event-related data;
+     */
+    triggerEvent(eventId: string, data?: AnyObject): void;
+    /**
      * Sets up a local steam.
      * @param baseSteam The base steam.
      */
@@ -1457,6 +1512,7 @@ export class DataLoader extends TVXDataLoader { }
 export class DataService extends TVXDataService { }
 export class BlobService extends TVXBlobService { }
 export class RequestService extends TVXRequestService { }
+export class BusyService extends TVXBusyService { }
 export const PluginTools: TVXPluginTools;
 export const VideoPlugin: TVXVideoPlugin;
 export const InteractionPlugin: TVXInteractionPlugin;
