@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.47.3 (Module)
+// Type definitions for TVX Plugin v0.0.48.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -799,6 +799,12 @@ declare interface TVXPluginTools {
     createChangedContentState(currentState: AnyObject, newState: AnyObject): AnyObject,
 }
 
+declare interface TVXPlayerButtonData {
+    icon?: string;
+    action?: string;
+    enable?: boolean;
+}
+
 declare interface TVXVideoUpdateData {
     state?: number;
     position?: number;
@@ -1083,6 +1089,37 @@ declare interface TVXVideoPlugin {
      */
     setupDurationLabel(label?: string): void;
     /**
+     * Sets up a player info text (only available for extended players).
+     * @param text The text. If no text is set the text is removed.
+     */
+    setupInfoText(text?: string): void;
+    /**
+     * Sets up a player info image (only available for extended players).
+     * @param image The image URL. If no image is set the image is removed.
+     */
+    setupInfoImage(image?: string): void;
+    /**
+     * Sets up a player button (all buttons except the eject button are supported).
+     * @param id The button ID.
+     * @param data The button data. If no data is set the default button is restored.
+     */
+    setupButton(id: string, data?: TVXPlayerButtonData): void;
+    /**
+    * Enables a player button (all buttons except the eject button are supported).
+    * @param id The button ID.
+    */
+    enableButton(id: string): void;
+    /**
+     * Disables a player button (all buttons except the eject button are supported).
+     * @param id The button ID.
+     */
+    disableButton(id: string): void;
+    /**
+     * Focuses a player button.
+     * @param id The button ID.
+     */
+    focusButton(id: string): void;
+    /**
      * Sets up the player progress color.
      * @param color The color. If no color is set the default color is used.
      */
@@ -1098,21 +1135,6 @@ declare interface TVXVideoPlugin {
     disableProgressMarker(): void;
     /** Invalidates the player progress marker (marker will be unfocused). */
     invalidateProgressMarker(): void;
-    /**
-     * Enables a player button (all buttons except the eject button are supported).
-     * @param id The button ID.
-     */
-    enableButton(id: string): void;
-    /**
-     * Disables a player button (all buttons except the eject button are supported).
-     * @param id The button ID.
-     */
-    disableButton(id: string): void;
-    /**
-     * Focuses a player button.
-     * @param id The button ID.
-     */
-    focusButton(id: string): void;
     /** Refreshes all player values. */
     refreshPlayer(): void;
     /** Resets custom player values that have been set at runtime. */
