@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.48.1 (Module)
+// Type definitions for TVX Plugin v0.0.49.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -34,7 +34,7 @@ declare interface MSXMenuRoot extends AnyObject {
     menu: MSXMenuItem[];
     action?: string;
     data?: AnyObject;
-    options?: MSXContentPage;
+    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Menu Item Object
@@ -48,12 +48,13 @@ declare interface MSXMenuItem extends AnyObject {
     focus?: boolean;
     execute?: boolean;
     icon?: string;
+    image?: string;
     label?: string;
     background?: string;
     extensionIcon?: string;
     extensionLabel?: string;
     data?: string | MSXContentRoot;
-    options?: MSXContentPage;
+    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Content Root Object
@@ -85,7 +86,8 @@ declare interface MSXContentRoot extends AnyObject {
     underlay?: MSXContentPage;
     action?: string;
     data?: AnyObject;
-    options?: MSXContentPage;
+    options?: MSXContentPage | MSXContentRoot;
+    caption?: string;
 }
 
 /** MSX - Content Page Object
@@ -103,7 +105,8 @@ declare interface MSXContentPage extends AnyObject {
     items: MSXContentItem[];
     action?: string;
     data?: AnyObject;
-    options?: MSXContentPage;
+    options?: MSXContentPage | MSXContentRoot;
+    caption?: string;
 }
 
 /** MSX - Content Item Object
@@ -159,7 +162,7 @@ declare interface MSXContentItem extends AnyObject {
     properties?: MSXProperties;
     live?: MSXLive;
     selection?: MSXSelection;
-    options?: MSXContentPage;
+    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Extended Properties
@@ -1088,6 +1091,11 @@ declare interface TVXVideoPlugin {
      * @param label The label. If no label is set the default label is used.
      */
     setupDurationLabel(label?: string): void;
+    /**
+    * Sets up the player speed label.
+    * @param label The label. If no label is set the default label is used.
+    */
+    setupSpeedLabel(label?: string): void;
     /**
      * Sets up a player info text (only available for extended players).
      * @param text The text. If no text is set the text is removed.
