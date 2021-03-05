@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.49.0 (Module)
+// Type definitions for TVX Plugin v0.0.49.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -27,6 +27,7 @@ declare interface MSXMenuRoot extends AnyObject {
     cache?: boolean;
     restore?: boolean;
     logo?: string;
+    logoSize?: string;
     headline?: string;
     background?: string;
     extension?: string;
