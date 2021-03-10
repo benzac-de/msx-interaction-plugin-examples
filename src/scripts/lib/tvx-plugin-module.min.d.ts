@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.49.1 (Module)
+// Type definitions for TVX Plugin v0.0.50.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -272,6 +272,7 @@ declare interface TVXSettings {
     ZOOM: string;
     CENTER: number;
     BACKGROUND: number;
+    LEAVE: number;
     EXIT: number;
     BACK: number;
     VOLUME: number;
