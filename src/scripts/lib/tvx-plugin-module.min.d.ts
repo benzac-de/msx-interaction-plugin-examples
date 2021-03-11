@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.50.0 (Module)
+// Type definitions for TVX Plugin v0.0.50.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -72,6 +72,7 @@ declare interface MSXContentRoot extends AnyObject {
     wrap?: boolean;
     transparent?: boolean;
     compress?: boolean;
+    shortcut?: boolean;
     type?: string;
     preload?: string;
     headline?: string;
