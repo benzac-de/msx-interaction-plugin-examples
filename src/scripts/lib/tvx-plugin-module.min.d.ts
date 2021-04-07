@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.50.1 (Module)
+// Type definitions for TVX Plugin v0.0.51.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -22,6 +22,7 @@ declare interface MSXStart extends AnyObject {
 declare interface MSXMenuRoot extends AnyObject {
     name?: string;
     version?: string;
+    reference?: string;
     flag?: string;
     reuse?: boolean;
     cache?: boolean;
@@ -64,6 +65,7 @@ declare interface MSXMenuItem extends AnyObject {
 declare interface MSXContentRoot extends AnyObject {
     name?: string;
     version?: string;
+    reference?: string;
     flag?: string;
     reuse?: boolean;
     cache?: boolean;
@@ -253,6 +255,7 @@ declare interface TVXSettings {
     readonly NAME: string;
     readonly SHORTCUT: string;
     readonly VERSION: string;
+    readonly SUFFIX: string;
     DUMMY_DATE: Date;
     TIME_OFFSET: number;
     TIME_ZONE_OFFSET: number;
