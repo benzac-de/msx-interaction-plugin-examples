@@ -90,23 +90,31 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
                 this.createLine(state.contentIndexChanged, "Current content index", tvx.Tools.strValue(state.contentIndex)) +
                 this.createLine(state.contentSizeChanged, "Current content size", tvx.Tools.strValue(state.contentSize)) +
                 this.createEmptyLine() +
-                this.createLine(state.sceneVisibleChanged, "Is main scene visible", state.sceneVisible ? "Yes" : "No") +
-                this.createLine(state.sceneActiveChanged, "Is main scene active", state.sceneActive ? "Yes" : "No") +
+                this.createLine(state.panelIdChanged, "Current panel ID", tvx.Tools.strTruncate(tvx.Tools.strFullCheck(state.panelId, "-"), 32)) +
+                this.createLine(state.panelFlagChanged, "Current panel flag", tvx.Tools.strFullCheck(state.panelFlag, "-")) +
+                this.createLine(state.panelFocusChanged, "Current panel focus", tvx.Tools.strFullCheck(state.panelFocus, "-")) +
+                this.createLine(state.panelIndexChanged, "Current panel index", tvx.Tools.strValue(state.panelIndex)) +
+                this.createLine(state.panelSizeChanged, "Current panel size", tvx.Tools.strValue(state.panelSize)) +
+                this.createEmptyLine() +
+                this.createLine(state.contentVisibleChanged, "Is content visible", state.contentVisible ? "Yes" : "No") +
+                this.createLine(state.panelVisibleChanged, "Is panel visible", state.panelVisible ? "Yes" : "No") +
                 this.createLine(state.videoVisibleChanged, "Is video/audio visible", state.videoVisible ? "Yes" : "No") +
                 this.createLine(state.videoActiveChanged, "Is video/audio active", state.videoActive ? "Yes" : "No") +
-                this.createLine(state.slideshowActiveChanged, "Is slideshow active", state.slideshowActive ? "Yes" : "No") +
-                this.createLine(state.overlayActiveChanged, "Is overlay active", state.overlayActive ? "Yes" : "No")
+                this.createLine(state.playerVisibleChanged, "Is player visible", state.playerVisible ? "Yes" : "No") +
+                this.createLine(state.slideshowVisibleChanged, "Is slideshow visible", state.slideshowVisible ? "Yes" : "No") +
+                this.createLine(state.volumeVisibleChanged, "Is volume visible", state.volumeVisible ? "Yes" : "No") +
+                this.createLine(state.logVisibleChanged, "Is log visible", state.logVisible ? "Yes" : "No")
             );
         }
     }
 
     private logContentState(state: tvx.AnyObject) {
         if (!state.init) {
-            if (state.sceneVisibleChanged) {
-                tvx.InteractionPlugin.debug("Main scene is now " + (state.sceneVisible ? "visible" : "hidden"));
+            if (state.contentVisibleChanged) {
+                tvx.InteractionPlugin.debug("Content is now " + (state.contentVisible ? "visible" : "hidden"));
             }
-            if (state.sceneActiveChanged) {
-                tvx.InteractionPlugin.debug("Main scene is now " + (state.sceneActive ? "active" : "inactive"));
+            if (state.panelVisibleChanged) {
+                tvx.InteractionPlugin.debug("Panel is now " + (state.panelVisible ? "visible" : "hidden"));
             }
             if (state.videoVisibleChanged) {
                 tvx.InteractionPlugin.debug("Video/Audio is now " + (state.videoVisible ? "visible" : "hidden"));
@@ -114,11 +122,17 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
             if (state.videoActiveChanged) {
                 tvx.InteractionPlugin.debug("Video/Audio is now " + (state.videoActive ? "active" : "inactive"));
             }
-            if (state.slideshowActiveChanged) {
-                tvx.InteractionPlugin.debug("Slideshow is now " + (state.slideshowActive ? "active" : "inactive"));
+            if (state.playerVisibleChanged) {
+                tvx.InteractionPlugin.debug("Player is now " + (state.playerVisible ? "visible" : "hidden"));
             }
-            if (state.overlayActiveChanged) {
-                tvx.InteractionPlugin.debug("Overlay is now " + (state.overlayActive ? "active" : "inactive"));
+            if (state.slideshowVisibleChanged) {
+                tvx.InteractionPlugin.debug("Slideshow is now " + (state.slideshowVisible ? "visible" : "hidden"));
+            }
+            if (state.volumeVisibleChanged) {
+                tvx.InteractionPlugin.debug("Volume is now " + (state.volumeVisible ? "visible" : "hidden"));
+            }
+            if (state.logVisibleChanged) {
+                tvx.InteractionPlugin.debug("Log is now " + (state.logVisible ? "visible" : "hidden"));
             }
         }
     }
