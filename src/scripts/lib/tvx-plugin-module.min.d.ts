@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.52.0 (Module)
+// Type definitions for TVX Plugin v0.0.52.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -879,6 +879,7 @@ declare interface TVXVideoPluginPlayer {
      * - "app:suspend"
      * - "app:resume"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
+     * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
      * - "video:load"* (data.info property contains the loaded video info)
      * - "video:play"*
      * - "video:pause"*
@@ -1297,6 +1298,7 @@ declare interface TVXInteractionPluginHandler {
      * - "app:suspend"
      * - "app:resume"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
+     * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
      * - "video:load" (data.info property contains the loaded video info)
      * - "video:play"
      * - "video:pause"
