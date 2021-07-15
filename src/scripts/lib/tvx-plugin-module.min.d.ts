@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.52.1 (Module)
+// Type definitions for TVX Plugin v0.0.53 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1246,6 +1246,26 @@ declare interface TVXVideoPlugin {
      */
     normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
     /**
+     * Creates a hash key.
+     * @param string A string.
+     * @param scope The scope.
+     */
+     createHashKey(string: string, scope?: string): string;    
+     /**
+      * Clears the device ID (if it was created).
+      */
+     clearDeviceId(): void;
+     /**
+      * Returns (or creates) the device ID.
+      * @param data The application info data.
+      */
+     getDeviceId(data?: AnyObject): string;
+     /**
+      * Requests the device ID.
+      * @param callback The callback that contains the result data with the device ID.
+      */
+     requestDeviceId(callback: (data: AnyObject) => void): void;
+    /**
      * Indicates if content observers exist.
      */
     hasContentObservers(): boolean;
@@ -1490,7 +1510,21 @@ declare interface TVXInteractionPlugin {
      * @param string A string.
      * @param scope The scope.
      */
-    createHashKey(string: string, scope?: string): string;
+    createHashKey(string: string, scope?: string): string;    
+    /**
+     * Clears the device ID (if it was created).
+     */
+    clearDeviceId(): void;
+    /**
+     * Returns (or creates) the device ID.
+     * @param data The application info data.
+     */
+    getDeviceId(data?: AnyObject): string;
+    /**
+     * Requests the device ID.
+     * @param callback The callback that contains the result data with the device ID.
+     */
+    requestDeviceId(callback: (data: AnyObject) => void): void;
     /**
      * Indicates if content observers exist.
      */
