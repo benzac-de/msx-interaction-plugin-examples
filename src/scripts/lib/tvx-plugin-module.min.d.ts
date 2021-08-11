@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.53 (Module)
+// Type definitions for TVX Plugin v0.0.54 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -163,17 +163,10 @@ declare interface MSXContentItem extends AnyObject {
     extensionLabel?: string;
     action?: string;
     data?: AnyObject;
-    properties?: MSXProperties;
+    properties?: MSXExtendedProperties;
     live?: MSXLive;
     selection?: MSXSelection;
     options?: MSXContentPage | MSXContentRoot;
-}
-
-/** MSX - Extended Properties
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Extended_Properties}
-*/
-declare interface MSXProperties {
-    [key: string]: string;
 }
 
 /** MSX - Live Object
@@ -251,6 +244,375 @@ declare interface MSXSelection {
     data?: AnyObject;
 }
 
+/** MSX - URL Parameters
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=URL_Parameters}
+*/
+declare interface MSXURLParameters {
+    [key: string]: string;
+}
+
+/** MSX - Extended Properties
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Extended_Properties}
+*/
+declare interface MSXExtendedProperties {
+    [key: string]: string | number | boolean;
+}
+
+/** MSX - Dictionary Properties
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Dictionary_Structure}
+*/
+declare interface MSXDictionaryProperties {
+    [key: string]: string;
+}
+
+/** MSX - Attached Data
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedData {
+    data?: AnyObject;
+    error?: string;
+}
+
+/** MSX - Attached Code
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedCode extends MSXAttachedData {
+    code?: string;
+}
+
+/** MSX - Attached Video Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoInfo {
+    id: string;
+    index: number;
+    number: number;
+    count: number;
+    listIndex: number;
+    listSize: number;
+    type: string;
+    url: string;
+    label: string;
+    background: string;
+    customLabel: string;
+    customBackground: string;
+    properties: MSXExtendedProperties;
+}
+
+/** MSX - Attached Video Data
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoData {
+    state: number;
+    position: number;
+    duration: number;
+    speed: number;
+    ended: boolean;
+}
+
+/** MSX - Attached Video Resume Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoResumeInfo {
+    key: string;
+    count: number;
+    resuming: boolean;
+    position: string;
+    progress: number;
+}
+
+/** MSX - Attached Video Volume Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoVolumeInfo {
+    type: string;
+    level: number;
+    muted: boolean;
+}
+
+/** MSX - Attached Video Container (request-dependent)
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoContainer {
+    info?: MSXAttachedVideoInfo;
+    data?: MSXAttachedVideoData;
+    resume?: MSXAttachedVideoResumeInfo;
+    volume?: MSXAttachedVideoVolumeInfo;
+    scene?: string;
+}
+
+/** MSX - Attached Video
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideo extends MSXAttachedData {
+    video?: MSXAttachedVideoContainer;
+}
+
+/** MSX - Attached Slider Container
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedSliderContainer {
+    state: number;
+    id: string;
+    index: number;
+    number: number;
+    count: number;
+    listIndex: number;
+    listSize: number;
+    url: string;
+    label: string;
+    color: string;
+    filler: string;
+    properties: MSXExtendedProperties;
+}
+
+/** MSX - Attached Slider
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedSlider extends MSXAttachedData {
+    slider?: MSXAttachedSliderContainer;
+}
+
+/** MSX - Attached Application Menu Button
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedApplicationMenuButton {
+    action: number;
+    keyCode: number;
+}
+
+/** MSX - Attached Application Settings
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedApplicationSettings {
+    validateLinks: number;
+    randomPlayback: number;
+    slideshowInterval: number;
+    hoverEffect: number;
+    menuButton: MSXAttachedApplicationMenuButton;
+}
+
+/** MSX - Attached Application Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedApplicationInfo {
+    name: string;
+    version: string;
+    suffix: string;
+    settings: MSXAttachedApplicationSettings;
+}
+
+/** MSX - Attached Framework Setttings
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedFrameworkSetttings {
+    animate: number;
+    transform: number;
+    input: number;
+    remote: number;
+    layout: string;
+    scale: string;
+    zoom: string,
+    center: number;
+    background: number;
+    leave: number;
+    exit: number;
+    back: number;
+    volume: number;
+    busy: number;
+    speed: number;
+    playback: number;
+    fullscreen: number;
+    suspend: number;
+    secure: number;
+}
+
+/** MSX - Attached Framework Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedFrameworkInfo {
+    name: string;
+    version: string;
+    suffix: string;
+    settings: MSXAttachedFrameworkSetttings;
+}
+
+/** MSX - Attached Content State
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedContentState {
+    start: boolean;
+    restored: boolean;
+    menuId: string;
+    menuFlag: string;
+    menuFocus: string;
+    menuIndex: number;
+    menuSize: number;
+    contentId: string;
+    contentFlag: string;
+    contentFocus: string;
+    contentIndex: number;
+    contentSize: number;
+    contentVisible: boolean;
+    panelId: string;
+    panelFlag: string;
+    panelFocus: string;
+    panelIndex: number;
+    panelSize: number;
+    panelVisible: boolean;
+    videoVisible: boolean;
+    videoActive: boolean;
+    playerVisible: boolean;
+    slideshowVisible: boolean;
+    volumeVisible: boolean;
+    logVisible: boolean;
+}
+
+/** MSX - Attached Content Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedContentInfo {
+    name: string;
+    version: string;
+    flag: string;
+    server: string;
+    secure: boolean;
+    parameter: string;
+    state: MSXAttachedContentState;
+    interaction: string;
+}
+
+/** MSX - Attached Dictionary Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedDictionaryInfo {
+    url: string;
+    name: string;
+    version: string;
+    size: number;
+}
+
+/** MSX - Attached Screen Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedScreenInfo {
+    width: number;
+    height: number;
+    factor: number;
+    zoomFactor: number;
+}
+
+/** MSX - Attached Time Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedTimeInfo {
+    timestamp: number;
+    now: number;
+    zone: number;
+    offset: number;
+    zoneOffset: number;
+}
+
+/** MSX - Attached System Info (platform-dependent)
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedSystemInfo {
+    name?: string;
+    model?: string;
+    manufacturer?: string;
+    firmware?: string;
+    version?: string;
+    country?: string;
+    language?: string;
+    ipAddress?: string;
+    macAddress?: string;
+    networkType?: string;
+    networkName?: string;
+    deviceId?: string;
+    deviceFamily?: string;
+    deviceVersion?: string;
+    vendorName?: string;
+    modelName?: string;
+    softwareVersion?: string;
+    hardwareVersion?: string;
+    buildVersion?: string;
+    sdkVersion?: string;
+    firmwareVersion?: string;
+    serialNumber?: string;
+}
+
+/** MSX - Attached Info Container (request-dependent)
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedInfoContainer {
+    host?: string;
+    secure?: boolean;
+    client?: string;
+    platform?: string;
+    player?: string;
+    userAgent?: string;
+    application?: MSXAttachedApplicationInfo;
+    framework?: MSXAttachedFrameworkInfo;
+    content?: MSXAttachedContentInfo;
+    dictionary?: MSXAttachedDictionaryInfo;
+    screen?: MSXAttachedScreenInfo;
+    time?: MSXAttachedTimeInfo;
+    urlParams?: MSXURLParameters;
+    system?: MSXAttachedSystemInfo;
+}
+
+/** MSX - Attached Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedInfo extends MSXAttachedData {
+    info?: MSXAttachedInfoContainer;
+}
+
+/** MSX - Attached Message
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedMessage extends MSXAttachedData {
+    message?: string;
+}
+
+/** MSX - Attached String
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedString extends MSXAttachedData {
+    string?: string;
+}
+
+/** MSX - Attached Response
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedResponse extends MSXAttachedData {
+    response?: AnyObject;
+}
+
+/** MSX - Attached Dictionary Container
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedDictionaryContainer {
+    name: string;
+    version: string;
+    size: number;
+    properties: MSXDictionaryProperties;
+}
+
+/** MSX - Attached Dictionary
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedDictionary extends MSXAttachedData {
+    dictionary?: MSXAttachedDictionaryContainer;
+}
+
+/** MSX - Attached Notification
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedNotification extends MSXAttachedData {
+    notification?: string;
+}
+
 declare interface TVXSettings {
     readonly NAME: string;
     readonly SHORTCUT: string;
@@ -285,6 +647,7 @@ declare interface TVXSettings {
     PLAYBACK: number;
     FULLSCREEN: number;
     SUSPEND: number;
+    SECURE: number;
     APP: AnyObject;
 }
 
@@ -795,17 +1158,52 @@ declare interface TVXPluginTools {
     createIFrame(frameClass: string, src: string): string;
     areSettingsValidated(): boolean;
     invalidateSettings(): void;
-    validateSettings(data: AnyObject): void;
+    validateSettings(data: MSXAttachedInfo): void;
     onValidatedSettings(callback: () => void): void;
     handleSettingsEvent(data: AnyObject): void;
-    getFrameworkInfo(data: AnyObject): string;
-    getApplicationInfo(data: AnyObject): string;
-    getContentInfo(data: AnyObject): string;
-    checkFramework(data: AnyObject, minVersion: string, requiredName?: string): boolean;
-    checkApplication(data: AnyObject, minVersion: string, requiredName?: string): boolean;
-    checkContent(data: AnyObject, minVersion: string, requiredName?: string): boolean;
-    isSameContentState(state: AnyObject, state2: AnyObject): boolean;
-    createChangedContentState(currentState: AnyObject, newState: AnyObject): AnyObject,
+    getFrameworkInfo(data: MSXAttachedInfo): string;
+    getApplicationInfo(data: MSXAttachedInfo): string;
+    getContentInfo(data: MSXAttachedInfo): string;
+    checkFramework(data: MSXAttachedInfo, minVersion: string, requiredName?: string): boolean;
+    checkApplication(data: MSXAttachedInfo, minVersion: string, requiredName?: string): boolean;
+    checkContent(data: MSXAttachedInfo, minVersion: string, requiredName?: string): boolean;
+    isSameContentState(state: MSXAttachedContentState, state2: MSXAttachedContentState): boolean;
+    createChangedContentState(currentState: TVXChangedContentState, newState: TVXChangedContentState): TVXChangedContentState,
+}
+
+declare interface TVXChangedContentState extends MSXAttachedContentState {
+    init: boolean;
+    initChanged: boolean;
+    startChanged: boolean;
+    restoredChanged: boolean;
+    menuIdChanged: boolean;
+    menuFlagChanged: boolean;
+    menuFocusChanged: boolean;
+    menuIndexChanged: boolean;
+    menuSizeChanged: boolean;
+    contentIdChanged: boolean;
+    contentFlagChanged: boolean;
+    contentFocusChanged: boolean;
+    contentIndexChanged: boolean;
+    contentSizeChanged: boolean;
+    contentVisibleChanged: boolean;
+    panelIdChanged: boolean;
+    panelFlagChanged: boolean;
+    panelFocusChanged: boolean;
+    panelIndexChanged: boolean;
+    panelSizeChanged: boolean;
+    panelVisibleChanged: boolean;
+    videoVisibleChanged: boolean;
+    videoActiveChanged: boolean;
+    playerVisibleChanged: boolean;
+    slideshowVisibleChanged: boolean;
+    volumeVisibleChanged: boolean;
+    logVisibleChanged: boolean;
+}
+
+declare interface TVXDeviceId {
+    deviceId?: string;
+    error?: string;
 }
 
 declare interface TVXPlayerButtonData {
@@ -880,13 +1278,13 @@ declare interface TVXVideoPluginPlayer {
      * - "app:resume"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
      * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
-     * - "video:load"* (data.info property contains the loaded video info)
-     * - "video:play"*
-     * - "video:pause"*
-     * - "video:stop"*
-     * - "video:seek"* (data.position property contains the seeked position in seconds)
-     * - "video:restart"*
-     * - "video:speed"* (data.speed property contains the new speed value)
+     * - "video:load"* (data.info property contains the loaded video info and data.data property contains the active video data before this event has been triggered)
+     * - "video:play"* (data.data property contains the active video data before this event has been triggered)
+     * - "video:pause"* (data.data property contains the active video data before this event has been triggered)
+     * - "video:stop"* (data.data property contains the active video data before this event has been triggered)
+     * - "video:seek"* (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event has been triggered)
+     * - "video:restart"* (data.data property contains the active video data before this event has been triggered)
+     * - "video:speed"* (data.speed property contains the new speed value and data.data property contains the active video data before this event has been triggered)
      * - "video:volume"* (data.volume and data.muted properties contain the new volume level and muted state)
      * - "slider:load" (data.info property contains the loaded slider info)
      * - "slider:play"
@@ -1061,19 +1459,22 @@ declare interface TVXVideoPlugin {
      * Shows (or loads) a menu (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showMenu(data: AnyObject | string): void;
+    showMenu(data: MSXMenuRoot | string): void;
     /**
      * Shows (or loads) a content page (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showContent(data: AnyObject | string): void;
+    showContent(data: MSXContentRoot | string): void;
     /**
      * Shows (or loads) a panel (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showPanel(data: AnyObject | string): void;
-    /** Shows the player. */
-    showPlayer(): void;
+    showPanel(data: MSXContentRoot | string): void;
+    /**
+     * Shows the player.
+     * @param key A remote key that should be applied (e.g. "execute", "left", "right", etc.).
+     */
+    showPlayer(key?: string): void;
     /** Shows the player action. */
     showAction(): void;
     /** Hides the player. */
@@ -1179,19 +1580,19 @@ declare interface TVXVideoPlugin {
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
+    requestData(dataId: string, callback?: (data: MSXAttachedData) => void, data?: AnyObject): void;
     /**
      * Requests a response from the interaction plugin.
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestInteractionResponse(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
+    requestInteractionResponse(dataId: string, callback?: (data: MSXAttachedResponse) => void, data?: AnyObject): void;
     /**
      * Validates (or revalidates) the settings (see TVXSettings interface).
      * @param callback The callback that contains the result data with the validated settings.
      */
-    validateSettings(callback?: (data: AnyObject) => void): void;
+    validateSettings(callback?: (data: MSXAttachedInfo) => void): void;
     /**
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
@@ -1237,34 +1638,34 @@ declare interface TVXVideoPlugin {
      * @param scope The scope.
      * @param callback The callback that contains the result data with the transformed string.
      */
-    transformStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    transformStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
     /**
      * Normalizes a string asynchronously.
      * @param string A string.
      * @param scope The scope.
      * @param callback The callback that contains the result data with the normalized string.
      */
-    normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    normalizeStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
     /**
      * Creates a hash key.
      * @param string A string.
      * @param scope The scope.
      */
-     createHashKey(string: string, scope?: string): string;    
-     /**
-      * Clears the device ID (if it was created).
-      */
-     clearDeviceId(): void;
-     /**
-      * Returns (or creates) the device ID.
-      * @param data The application info data.
-      */
-     getDeviceId(data?: AnyObject): string;
-     /**
-      * Requests the device ID.
-      * @param callback The callback that contains the result data with the device ID.
-      */
-     requestDeviceId(callback: (data: AnyObject) => void): void;
+    createHashKey(string: string, scope?: string): string;
+    /**
+     * Clears the device ID (if it was created).
+     */
+    clearDeviceId(): void;
+    /**
+     * Returns (or creates) the device ID.
+     * @param data The application info data.
+     */
+    getDeviceId(data?: MSXAttachedInfo): string;
+    /**
+     * Requests the device ID.
+     * @param callback The callback that contains the result data with the device ID.
+     */
+    requestDeviceId(callback: (data: TVXDeviceId) => void): void;
     /**
      * Indicates if content observers exist.
      */
@@ -1274,7 +1675,7 @@ declare interface TVXVideoPlugin {
      * @param name The handler name.
      * @param handler The handler function.
      */
-    addContentObserver(name: string, handler: (state: AnyObject) => void): void;
+    addContentObserver(name: string, handler: (state: TVXChangedContentState) => void): void;
     /**
      * Removes a content observer.
      * @param name The handler name.
@@ -1319,13 +1720,13 @@ declare interface TVXInteractionPluginHandler {
      * - "app:resume"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
      * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
-     * - "video:load" (data.info property contains the loaded video info)
-     * - "video:play"
-     * - "video:pause"
-     * - "video:stop"
-     * - "video:seek" (data.position property contains the seeked position in seconds)
-     * - "video:restart"
-     * - "video:speed" (data.speed property contains the new speed value)
+     * - "video:load" (data.info property contains the loaded video info and data.data property contains the active video data before this event has been triggered)
+     * - "video:play" (data.data property contains the active video data before this event has been triggered)
+     * - "video:pause" (data.data property contains the active video data before this event has been triggered)
+     * - "video:stop" (data.data property contains the active video data before this event has been triggered)
+     * - "video:seek" (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event has been triggered)
+     * - "video:restart" (data.data property contains the active video data before this event has been triggered)
+     * - "video:speed" (data.speed property contains the new speed value and data.data property contains the active video data before this event has been triggered)
      * - "video:volume" (data.volume and data.muted properties contain the new volume level and muted state)
      * - "slider:load" (data.info property contains the loaded slider info)
      * - "slider:play"
@@ -1422,36 +1823,36 @@ declare interface TVXInteractionPlugin {
      * Shows (or loads) a menu (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showMenu(data: AnyObject | string): void;
+    showMenu(data: MSXMenuRoot | string): void;
     /**
      * Shows (or loads) a content page (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showContent(data: AnyObject | string): void;
+    showContent(data: MSXContentRoot | string): void;
     /**
      * Shows (or loads) a panel (the data parameter can be a JSON or URL).
      * @param data A JSON or URL.
      */
-    showPanel(data: AnyObject | string): void;
+    showPanel(data: MSXContentRoot | string): void;
     /**
      * Requests any data (e.g. "info", "video", "code", etc.).
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
+    requestData(dataId: string, callback?: (data: MSXAttachedData) => void, data?: AnyObject): void;
     /**
      * Requests a response from the player (handled by the video/audio plugin).
      * @param dataId The data ID.
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestPlayerResponse(dataId: string, callback?: (data: AnyObject) => void, data?: AnyObject): void;
+    requestPlayerResponse(dataId: string, callback?: (data: MSXAttachedResponse) => void, data?: AnyObject): void;
     /**
      * Validates (or revalidates) the settings (see TVXSettings interface).
      * @param callback The callback that contains the result data with the validated settings.
      */
-    validateSettings(callback?: (data: AnyObject) => void): void;
+    validateSettings(callback?: (data: MSXAttachedInfo) => void): void;
     /**
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
@@ -1497,20 +1898,20 @@ declare interface TVXInteractionPlugin {
      * @param scope The scope.
      * @param callback The callback that contains the result data with the transformed string.
      */
-    transformStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    transformStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
     /**
      * Normalizes a string asynchronously.
      * @param string A string.
      * @param scope The scope.
      * @param callback The callback that contains the result data with the normalized string.
      */
-    normalizeStringAsync(string: string, scope?: string, callback?: (data: AnyObject) => void): void;
+    normalizeStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
     /**
      * Creates a hash key.
      * @param string A string.
      * @param scope The scope.
      */
-    createHashKey(string: string, scope?: string): string;    
+    createHashKey(string: string, scope?: string): string;
     /**
      * Clears the device ID (if it was created).
      */
@@ -1519,12 +1920,12 @@ declare interface TVXInteractionPlugin {
      * Returns (or creates) the device ID.
      * @param data The application info data.
      */
-    getDeviceId(data?: AnyObject): string;
+    getDeviceId(data?: MSXAttachedInfo): string;
     /**
      * Requests the device ID.
      * @param callback The callback that contains the result data with the device ID.
      */
-    requestDeviceId(callback: (data: AnyObject) => void): void;
+    requestDeviceId(callback: (data: TVXDeviceId) => void): void;
     /**
      * Indicates if content observers exist.
      */
@@ -1534,7 +1935,7 @@ declare interface TVXInteractionPlugin {
      * @param name The handler name.
      * @param handler The handler function.
      */
-    addContentObserver(name: string, handler: (state: AnyObject) => void): void;
+    addContentObserver(name: string, handler: (state: TVXChangedContentState) => void): void;
     /**
      * Removes a content observer.
      * @param name The handler name.

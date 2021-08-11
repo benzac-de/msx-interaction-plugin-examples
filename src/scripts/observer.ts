@@ -70,7 +70,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
         return this.createLineStart(false) + this.createLineEnd();
     }
 
-    private showContentState(state: tvx.AnyObject) {
+    private showContentState(state: tvx.TVXChangedContentState) {
         if (this.$info != null) {
             this.$info.html(
                 this.createLine(state.initChanged, "Is init state", state.init ? "Yes" : "No") +
@@ -108,7 +108,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
         }
     }
 
-    private logContentState(state: tvx.AnyObject) {
+    private logContentState(state: tvx.TVXChangedContentState) {
         if (!state.init) {
             if (state.contentVisibleChanged) {
                 tvx.InteractionPlugin.debug("Content is now " + (state.contentVisible ? "visible" : "hidden"));
@@ -142,7 +142,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
     }
 
     ready() {
-        tvx.InteractionPlugin.addContentObserver("observer", (state: tvx.AnyObject) => {
+        tvx.InteractionPlugin.addContentObserver("observer", (state: tvx.TVXChangedContentState) => {
             this.logContentState(state);
             this.showContentState(state);
         });
