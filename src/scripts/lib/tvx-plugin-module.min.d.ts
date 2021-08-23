@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.54 (Module)
+// Type definitions for TVX Plugin v0.0.54.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -610,6 +610,21 @@ declare interface MSXAttachedDictionary extends MSXAttachedData {
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
 declare interface MSXAttachedNotification extends MSXAttachedData {
+    notification?: string;
+}
+
+/** MSX - Attached Generic (request-dependent)
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedGeneric extends MSXAttachedData {
+    code?: string;
+    video?: MSXAttachedVideoContainer;
+    slider?: MSXAttachedSliderContainer;
+    info?: MSXAttachedInfoContainer;
+    message?: string;
+    string?: string;
+    response?: AnyObject;
+    dictionary?: MSXAttachedDictionaryContainer;
     notification?: string;
 }
 
@@ -1580,7 +1595,7 @@ declare interface TVXVideoPlugin {
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: MSXAttachedData) => void, data?: AnyObject): void;
+    requestData(dataId: string, callback?: (data: MSXAttachedGeneric) => void, data?: AnyObject): void;
     /**
      * Requests a response from the interaction plugin.
      * @param dataId The data ID.
@@ -1840,7 +1855,7 @@ declare interface TVXInteractionPlugin {
      * @param callback The callback that contains the result data. 
      * @param data Any request-related data.
      */
-    requestData(dataId: string, callback?: (data: MSXAttachedData) => void, data?: AnyObject): void;
+    requestData(dataId: string, callback?: (data: MSXAttachedGeneric) => void, data?: AnyObject): void;
     /**
      * Requests a response from the player (handled by the video/audio plugin).
      * @param dataId The data ID.
