@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.54.1 (Module)
+// Type definitions for TVX Plugin v0.0.55.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -16,6 +16,22 @@ declare interface MSXStart extends AnyObject {
     welcome?: string;
 }
 
+/** MSX - Menu Root Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
+*/
+declare enum MSXMenuRootType {
+    Default = "default",
+    Flat = "flat"
+}
+
+/** MSX - Menu Root Logo Size
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
+*/
+declare enum MSXMenuRootLogoSize {
+    Small = "small",
+    Large = "large"
+}
+
 /** MSX - Menu Root Object
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
 */
@@ -27,8 +43,10 @@ declare interface MSXMenuRoot extends AnyObject {
     reuse?: boolean;
     cache?: boolean;
     restore?: boolean;
+    transparent?: boolean;
+    type?: string;
     logo?: string;
-    logoSize?: string;
+    logoSize?: MSXMenuRootLogoSize;
     headline?: string;
     background?: string;
     extension?: string;
@@ -39,24 +57,52 @@ declare interface MSXMenuRoot extends AnyObject {
     options?: MSXContentPage | MSXContentRoot;
 }
 
+/** MSX - Menu Item Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
+*/
+declare enum MSXMenuItemtType {
+    Default = "default",
+    Separator = "separator"
+}
+
 /** MSX - Menu Item Object
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
 */
 declare interface MSXMenuItem extends AnyObject {
     id?: string;
-    type?: string;
+    type?: MSXMenuItemtType;
     display?: boolean;
     enable?: boolean;
     focus?: boolean;
     execute?: boolean;
+    transparent?: boolean;
     icon?: string;
     image?: string;
     label?: string;
     background?: string;
     extensionIcon?: string;
     extensionLabel?: string;
+    lineColor?: string;
     data?: string | MSXContentRoot;
     options?: MSXContentPage | MSXContentRoot;
+}
+
+/** MSX - Content Root Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Root_Object}
+*/
+declare enum MSXContentRootType {
+    Pages = "pages",
+    List = "list"
+}
+
+/** MSX - Content Root Preload
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Root_Object}
+*/
+declare enum MSXContentRootPreload {
+    None = "none",
+    Next = "next",
+    Prev = "prev",
+    Full = "full"
 }
 
 /** MSX - Content Root Object
@@ -75,8 +121,8 @@ declare interface MSXContentRoot extends AnyObject {
     transparent?: boolean;
     compress?: boolean;
     shortcut?: boolean;
-    type?: string;
-    preload?: string;
+    type?: MSXContentRootType;
+    preload?: MSXContentRootPreload;
     headline?: string;
     background?: string;
     extension?: string;
@@ -113,12 +159,64 @@ declare interface MSXContentPage extends AnyObject {
     caption?: string;
 }
 
+/** MSX - Content Item Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
+*/
+declare enum MSXContentItemType {
+    Default = "default",
+    Teaser = "teaser",
+    Button = "button",
+    Separate = "separate",
+    Space = "space",
+    Control = "control"
+}
+
+/** MSX - Content Item Icon Size
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
+*/
+declare enum MSXContentItemIconSize {
+    Small = "small",
+    Medium = "medium",
+    Large = "large",
+    ExtraLarge = "extra-large"
+}
+
+/** MSX - Content Item Image Filler
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
+*/
+declare enum MSXContentItemImageFiller {
+    Default = "default",
+    Width = "width",
+    WidthTop = "width-top",
+    WidthCenter = "width-center",
+    WidthBottom = "width-bottom",
+    Height = "height",
+    HeightLeft = "height-left",
+    HeightCenter = "height-center",
+    HeightRight = "height-right",
+    Fit = "fit",
+    Cover = "cover",
+    Smart = "smart"
+}
+
+/** MSX - Content Item Image Overlay
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
+*/
+declare enum MSXContentItemImageOverlay {
+    Automatic = -1,
+    Off = 0,
+    On = 1,
+    InvertedAutomatic = 2,
+    InvertedOff = 3,
+    InvertedOn = 4
+}
+
 /** MSX - Content Item Object
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
 */
 declare interface MSXContentItem extends AnyObject {
     id?: string;
-    type?: string;
+    type?: MSXContentItemType;
     key?: string;
     layout?: string;
     area?: string;
@@ -136,7 +234,7 @@ declare interface MSXContentItem extends AnyObject {
     titleFooter?: string;
     label?: string;
     icon?: string;
-    iconSize?: string;
+    iconSize?: MSXContentItemIconSize;
     headline?: string;
     text?: string;
     alignment?: string;
@@ -149,14 +247,14 @@ declare interface MSXContentItem extends AnyObject {
     progressColor?: string;
     wrapperColor?: string;
     image?: string;
-    imageFiller?: string;
+    imageFiller?: MSXContentItemImageFiller;
     imageWidth?: number;
     imageHeight?: number;
-    imageOverlay?: number;
+    imageOverlay?: MSXContentItemImageOverlay;
     imagePreload?: boolean;
     imageLabel?: string;
     imageColor?: string;
-    imageScreenFiller?: string;
+    imageScreenFiller?: MSXContentItemImageFiller;
     playerLabel?: string;
     background?: string;
     extensionIcon?: string;
@@ -549,6 +647,7 @@ declare interface MSXAttachedInfoContainer {
     secure?: boolean;
     client?: string;
     platform?: string;
+    id?: string;
     player?: string;
     userAgent?: string;
     application?: MSXAttachedApplicationInfo;
@@ -644,6 +743,7 @@ declare interface TVXSettings {
     SCREEN_FACTOR: number;
     ZOOM_FACTOR: number;
     PLATFORM: string;
+    ID: string;
     ANIMATE: number;
     TRANSFORM: number;
     INPUT: number;
@@ -897,6 +997,8 @@ declare abstract class TVXStorage {
     foreach(callback: (name: string, value: any) => void | boolean): void;
     remove(name: string): void;
     clear(): void;
+    getType(): string;
+    setType(type: string): void;
 }
 
 declare abstract class TVXUrlParams {
