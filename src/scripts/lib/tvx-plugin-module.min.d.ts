@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.55.0 (Module)
+// Type definitions for TVX Plugin v0.0.55.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -16,12 +16,15 @@ declare interface MSXStart extends AnyObject {
     welcome?: string;
 }
 
-/** MSX - Menu Root Type
+/** MSX - Menu Root Style
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
 */
-declare enum MSXMenuRootType {
+declare enum MSXMenuRootStyle {
     Default = "default",
-    Flat = "flat"
+    Flat = "flat",
+    FlatSeparator = "flat-separator",
+    Overlay = "overlay",
+    OverlaySeparator = "overlay-separator"
 }
 
 /** MSX - Menu Root Logo Size
@@ -44,7 +47,7 @@ declare interface MSXMenuRoot extends AnyObject {
     cache?: boolean;
     restore?: boolean;
     transparent?: boolean;
-    type?: string;
+    style?: MSXMenuRootStyle;
     logo?: string;
     logoSize?: MSXMenuRootLogoSize;
     headline?: string;
