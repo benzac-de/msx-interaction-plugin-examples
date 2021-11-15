@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.55.1 (Module)
+// Type definitions for TVX Plugin v0.0.55.2 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -14,6 +14,32 @@ declare interface MSXStart extends AnyObject {
     version: string;
     parameter: string;
     welcome?: string;
+}
+
+/** MSX - Menu Root Object
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
+*/
+declare interface MSXMenuRoot extends AnyObject {
+    name?: string;
+    version?: string;
+    reference?: string;
+    flag?: string;
+    reuse?: boolean;
+    cache?: boolean;
+    restore?: boolean;
+    transparent?: MSXTransparent | boolean;
+    style?: MSXMenuRootStyle;
+    logo?: string;
+    logoSize?: MSXMenuRootLogoSize;
+    headline?: string;
+    background?: string;
+    extension?: string;
+    dictionary?: string;
+    menu: MSXMenuItem[];
+    action?: string;
+    data?: AnyObject;
+    ready?: MSXReady;
+    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Menu Root Style
@@ -35,39 +61,6 @@ declare enum MSXMenuRootLogoSize {
     Large = "large"
 }
 
-/** MSX - Menu Root Object
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Root_Object}
-*/
-declare interface MSXMenuRoot extends AnyObject {
-    name?: string;
-    version?: string;
-    reference?: string;
-    flag?: string;
-    reuse?: boolean;
-    cache?: boolean;
-    restore?: boolean;
-    transparent?: boolean;
-    style?: MSXMenuRootStyle;
-    logo?: string;
-    logoSize?: MSXMenuRootLogoSize;
-    headline?: string;
-    background?: string;
-    extension?: string;
-    dictionary?: string;
-    menu: MSXMenuItem[];
-    action?: string;
-    data?: AnyObject;
-    options?: MSXContentPage | MSXContentRoot;
-}
-
-/** MSX - Menu Item Type
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
-*/
-declare enum MSXMenuItemtType {
-    Default = "default",
-    Separator = "separator"
-}
-
 /** MSX - Menu Item Object
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
 */
@@ -78,7 +71,7 @@ declare interface MSXMenuItem extends AnyObject {
     enable?: boolean;
     focus?: boolean;
     execute?: boolean;
-    transparent?: boolean;
+    transparent?: MSXTransparent | boolean;
     icon?: string;
     image?: string;
     label?: string;
@@ -88,6 +81,50 @@ declare interface MSXMenuItem extends AnyObject {
     lineColor?: string;
     data?: string | MSXContentRoot;
     options?: MSXContentPage | MSXContentRoot;
+}
+
+/** MSX - Menu Item Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Menu_Item_Object}
+*/
+declare enum MSXMenuItemtType {
+    Default = "default",
+    Separator = "separator",
+    Settings = "settings"
+}
+
+/** MSX - Content Root Object
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Root_Object}
+*/
+declare interface MSXContentRoot extends AnyObject {
+    name?: string;
+    version?: string;
+    reference?: string;
+    flag?: string;
+    reuse?: boolean;
+    cache?: boolean;
+    restore?: boolean;
+    imortant?: boolean;
+    wrap?: boolean;
+    compress?: boolean;
+    transparent?: MSXTransparent | boolean;
+    type?: MSXContentRootType;
+    preload?: MSXContentRootPreload;
+    headline?: string;
+    background?: string;
+    extension?: string;
+    dictionary?: string;
+    template?: MSXContentItem;
+    items?: MSXContentItem[];
+    pages?: MSXContentPage[];
+    header?: MSXContentPage;
+    footer?: MSXContentPage;
+    overlay?: MSXContentPage;
+    underlay?: MSXContentPage;
+    action?: string;
+    data?: AnyObject;
+    ready?: MSXReady;
+    options?: MSXContentPage | MSXContentRoot;
+    caption?: string;
 }
 
 /** MSX - Content Root Type
@@ -108,41 +145,6 @@ declare enum MSXContentRootPreload {
     Full = "full"
 }
 
-/** MSX - Content Root Object
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Root_Object}
-*/
-declare interface MSXContentRoot extends AnyObject {
-    name?: string;
-    version?: string;
-    reference?: string;
-    flag?: string;
-    reuse?: boolean;
-    cache?: boolean;
-    restore?: boolean;
-    imortant?: boolean;
-    wrap?: boolean;
-    transparent?: boolean;
-    compress?: boolean;
-    shortcut?: boolean;
-    type?: MSXContentRootType;
-    preload?: MSXContentRootPreload;
-    headline?: string;
-    background?: string;
-    extension?: string;
-    dictionary?: string;
-    template?: MSXContentItem;
-    items?: MSXContentItem[];
-    pages?: MSXContentPage[];
-    header?: MSXContentPage;
-    footer?: MSXContentPage;
-    overlay?: MSXContentPage;
-    underlay?: MSXContentPage;
-    action?: string;
-    data?: AnyObject;
-    options?: MSXContentPage | MSXContentRoot;
-    caption?: string;
-}
-
 /** MSX - Content Page Object
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Page_Object}
 */
@@ -150,8 +152,8 @@ declare interface MSXContentPage extends AnyObject {
     display?: boolean;
     important?: boolean;
     wrap?: boolean;
-    transparent?: boolean;
     compress?: boolean;
+    transparent?: MSXTransparent | boolean;
     headline?: string;
     background?: string;
     offset?: string;
@@ -160,6 +162,63 @@ declare interface MSXContentPage extends AnyObject {
     data?: AnyObject;
     options?: MSXContentPage | MSXContentRoot;
     caption?: string;
+}
+
+/** MSX - Content Item Object
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
+*/
+declare interface MSXContentItem extends AnyObject {
+    id?: string;
+    type?: MSXContentItemType;
+    key?: string;
+    layout?: string;
+    area?: string;
+    offset?: string;
+    display?: boolean;
+    enable?: boolean;
+    focus?: boolean;
+    execute?: boolean;
+    enumerate?: boolean;
+    compress?: boolean;
+    shortcut?: boolean;
+    group?: string;
+    color?: string;
+    title?: string;
+    titleHeader?: string;
+    titleFooter?: string;
+    label?: string;
+    icon?: string;
+    iconSize?: MSXContentItemIconSize;
+    headline?: string;
+    text?: string;
+    alignment?: string;
+    truncation?: string;
+    tag?: string;
+    tagColor?: string;
+    badge?: string;
+    badgeColor?: string;
+    progress?: number;
+    progressColor?: string;
+    wrapperColor?: string;
+    image?: string;
+    imageFiller?: MSXContentItemImageFiller;
+    imageWidth?: number;
+    imageHeight?: number;
+    imageOverlay?: MSXContentItemImageOverlay;
+    imagePreload?: boolean;
+    imageLabel?: string;
+    imageColor?: string;
+    imageScreenFiller?: MSXContentItemImageFiller;
+    playerLabel?: string;
+    background?: string;
+    extensionIcon?: string;
+    extensionLabel?: string;
+    action?: string;
+    data?: AnyObject;
+    properties?: MSXExtendedProperties;
+    live?: MSXLive;
+    selection?: MSXSelection;
+    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Content Item Type
@@ -214,60 +273,17 @@ declare enum MSXContentItemImageOverlay {
     InvertedOn = 4
 }
 
-/** MSX - Content Item Object
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Content_Item_Object}
-*/
-declare interface MSXContentItem extends AnyObject {
-    id?: string;
-    type?: MSXContentItemType;
-    key?: string;
-    layout?: string;
-    area?: string;
-    offset?: string;
-    display?: boolean;
-    enable?: boolean;
-    focus?: boolean;
-    execute?: boolean;
-    enumerate?: boolean;
-    compress?: boolean;
-    group?: string;
-    color?: string;
-    title?: string;
-    titleHeader?: string;
-    titleFooter?: string;
-    label?: string;
-    icon?: string;
-    iconSize?: MSXContentItemIconSize;
-    headline?: string;
-    text?: string;
-    alignment?: string;
-    truncation?: string;
-    tag?: string;
-    tagColor?: string;
-    badge?: string;
-    badgeColor?: string;
-    progress?: number;
-    progressColor?: string;
-    wrapperColor?: string;
-    image?: string;
-    imageFiller?: MSXContentItemImageFiller;
-    imageWidth?: number;
-    imageHeight?: number;
-    imageOverlay?: MSXContentItemImageOverlay;
-    imagePreload?: boolean;
-    imageLabel?: string;
-    imageColor?: string;
-    imageScreenFiller?: MSXContentItemImageFiller;
-    playerLabel?: string;
-    background?: string;
-    extensionIcon?: string;
-    extensionLabel?: string;
+//** MSX - Transparent*/
+declare enum MSXTransparent {
+    Off = 0,
+    On = 1,
+    ContextRelated = 2
+}
+
+//** MSX - Ready*/
+declare interface MSXReady {
     action?: string;
     data?: AnyObject;
-    properties?: MSXExtendedProperties;
-    live?: MSXLive;
-    selection?: MSXSelection;
-    options?: MSXContentPage | MSXContentRoot;
 }
 
 /** MSX - Live Object
@@ -381,6 +397,24 @@ declare interface MSXAttachedCode extends MSXAttachedData {
     code?: string;
 }
 
+/** MSX - Attached Video
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideo extends MSXAttachedData {
+    video?: MSXAttachedVideoContainer;
+}
+
+/** MSX - Attached Video Container (request-dependent)
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedVideoContainer {
+    info?: MSXAttachedVideoInfo;
+    data?: MSXAttachedVideoData;
+    resume?: MSXAttachedVideoResumeInfo;
+    volume?: MSXAttachedVideoVolumeInfo;
+    scene?: string;
+}
+
 /** MSX - Attached Video Info
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
@@ -431,22 +465,11 @@ declare interface MSXAttachedVideoVolumeInfo {
     muted: boolean;
 }
 
-/** MSX - Attached Video Container (request-dependent)
+/** MSX - Attached Slider
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
-declare interface MSXAttachedVideoContainer {
-    info?: MSXAttachedVideoInfo;
-    data?: MSXAttachedVideoData;
-    resume?: MSXAttachedVideoResumeInfo;
-    volume?: MSXAttachedVideoVolumeInfo;
-    scene?: string;
-}
-
-/** MSX - Attached Video
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
-*/
-declare interface MSXAttachedVideo extends MSXAttachedData {
-    video?: MSXAttachedVideoContainer;
+declare interface MSXAttachedSlider extends MSXAttachedData {
+    slider?: MSXAttachedSliderContainer;
 }
 
 /** MSX - Attached Slider Container
@@ -465,13 +488,6 @@ declare interface MSXAttachedSliderContainer {
     color: string;
     filler: string;
     properties: MSXExtendedProperties;
-}
-
-/** MSX - Attached Slider
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
-*/
-declare interface MSXAttachedSlider extends MSXAttachedData {
-    slider?: MSXAttachedSliderContainer;
 }
 
 /** MSX - Attached Application Menu Button
@@ -642,6 +658,13 @@ declare interface MSXAttachedSystemInfo {
     serialNumber?: string;
 }
 
+/** MSX - Attached Info
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedInfo extends MSXAttachedData {
+    info?: MSXAttachedInfoContainer;
+}
+
 /** MSX - Attached Info Container (request-dependent)
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
@@ -661,13 +684,6 @@ declare interface MSXAttachedInfoContainer {
     time?: MSXAttachedTimeInfo;
     urlParams?: MSXURLParameters;
     system?: MSXAttachedSystemInfo;
-}
-
-/** MSX - Attached Info
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
-*/
-declare interface MSXAttachedInfo extends MSXAttachedData {
-    info?: MSXAttachedInfoContainer;
 }
 
 /** MSX - Attached Message
@@ -691,6 +707,13 @@ declare interface MSXAttachedResponse extends MSXAttachedData {
     response?: AnyObject;
 }
 
+/** MSX - Attached Dictionary
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
+*/
+declare interface MSXAttachedDictionary extends MSXAttachedData {
+    dictionary?: MSXAttachedDictionaryContainer;
+}
+
 /** MSX - Attached Dictionary Container
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
@@ -699,13 +722,6 @@ declare interface MSXAttachedDictionaryContainer {
     version: string;
     size: number;
     properties: MSXDictionaryProperties;
-}
-
-/** MSX - Attached Dictionary
- * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
-*/
-declare interface MSXAttachedDictionary extends MSXAttachedData {
-    dictionary?: MSXAttachedDictionaryContainer;
 }
 
 /** MSX - Attached Notification
@@ -1180,11 +1196,6 @@ declare interface TVXServices {
     readonly ajax: TVXAjax;
 }
 
-declare interface TVXDataLoaderCallback {
-    success?(data: any, cached: boolean): void;
-    error?(message: string): void;
-}
-
 declare abstract class TVXDataLoader {
     constructor();
     load(url: string, cacheId: string, callback?: TVXDataLoaderCallback, options?: TVXAjaxOptions): void;
@@ -1192,15 +1203,9 @@ declare abstract class TVXDataLoader {
     clear(): void;
 }
 
-declare interface TVXDataServiceActionCallback {
-    success?(data: any): void;
-    error?(message: string, status: number, reason: AnyObject): void;
-}
-
-declare interface TVXDataServiceEntryCallback {
-    success?(entry: AnyObject): void;
-    error?(message: string, status: number, reason: AnyObject): void;
-    completed?(entry: AnyObject): void;
+declare interface TVXDataLoaderCallback {
+    success?(data: any, cached: boolean): void;
+    error?(message: string): void;
 }
 
 declare abstract class TVXDataService {
@@ -1225,7 +1230,12 @@ declare abstract class TVXDataService {
     clear(): void;
 }
 
-declare interface TVXBlobServiceCallback {
+declare interface TVXDataServiceActionCallback {
+    success?(data: any): void;
+    error?(message: string, status: number, reason: AnyObject): void;
+}
+
+declare interface TVXDataServiceEntryCallback {
     success?(entry: AnyObject): void;
     error?(message: string, status: number, reason: AnyObject): void;
     completed?(entry: AnyObject): void;
@@ -1250,9 +1260,10 @@ declare abstract class TVXBlobService {
     clear(): void;
 }
 
-declare interface TVXRequestServiceCallback {
-    success?(data: any): void;
-    error?(message: string, type: string): void;
+declare interface TVXBlobServiceCallback {
+    success?(entry: AnyObject): void;
+    error?(message: string, status: number, reason: AnyObject): void;
+    completed?(entry: AnyObject): void;
 }
 
 declare abstract class TVXRequestService {
@@ -1263,6 +1274,11 @@ declare abstract class TVXRequestService {
     isRequestPending(id: string): boolean;
     handleData(id: string, data?: any): void;
     handleError(id: string, message?: string, type?: string): void;
+}
+
+declare interface TVXRequestServiceCallback {
+    success?(data: any): void;
+    error?(message: string, type: string): void;
 }
 
 declare abstract class TVXBusyService {
@@ -1340,106 +1356,6 @@ declare interface TVXVideoUpdateData {
     ended?: boolean;
     volume?: number;
     muted?: boolean;
-}
-
-/** This interface defines the structure of a player object. */
-declare interface TVXVideoPluginPlayer {
-    /** Initializes the player. */
-    init?(): void;
-    /** This function is called when the player is ready. */
-    ready?(): void;
-    /** Plays the player. */
-    play?(): void;
-    /** Pauses the player. */
-    pause?(): void;
-    /** Stops the player. */
-    stop?(): void;
-    /** Gets the duration (in seconds). */
-    getDuration?(): number;
-    /** Gets the position (in seconds). */
-    getPosition?(): number;
-    /**
-     * Sets the position (in seconds).
-     * @param position The position in seconds.
-     */
-    setPosition?(position: number): void;
-    /**
-     * Sets the volume (0 .. 100).
-     * @param volume The volume level from 0 to 100.
-     */
-    setVolume?(volume: number): void;
-    /** Gets the volume (0 .. 100). */
-    getVolume?(): number;
-    /**
-     * Sets if the player is muted.
-     * @param muted The muted state.
-     */
-    setMuted?(muted: boolean): void;
-    /** Indicates if the player is muted. */
-    isMuted?(): boolean;
-    /** Gets the speed (0.125 .. 8.0). */
-    getSpeed?(): number;
-    /**
-     * Sets the speed (0.125 .. 8.0).
-     * @param speed The speed value from 0.125 to 8.0.
-     */
-    setSpeed?(speed: number): void;
-    /**
-     * Sets the window size (in pixels).
-     * @param width The width in pixels.
-     * @param height The height in pixels.
-     */
-    setSize?(width: number, height: number): void;
-    /** Gets the update data (this function will be called each second). */
-    getUpdateData?(): TVXVideoUpdateData;
-    /**
-     * Handles an event. The data.event property can contain following values:
-     * - "app:suspend"
-     * - "app:resume"
-     * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
-     * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
-     * - "video:load"* (data.info property contains the loaded video info and data.data property contains the active video data before this event occurred)
-     * - "video:play"* (data.data property contains the active video data before this event occurred)
-     * - "video:pause"* (data.data property contains the active video data before this event occurred)
-     * - "video:stop"* (data.data property contains the active video data before this event occurred)
-     * - "video:seek"* (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event occurred)
-     * - "video:restart"* (data.data property contains the active video data before this event occurred)
-     * - "video:speed"* (data.speed property contains the new speed value and data.data property contains the active video data before this event occurred)
-     * - "video:volume"* (data.volume and data.muted properties contain the new volume level and muted state)
-     * - "slider:load" (data.info property contains the loaded slider info)
-     * - "slider:play"
-     * - "slider:pause"
-     * - "slider:stop"
-     * - "slider:position" (data.index, data.number, and data.listIndex properties contain the new item index, number, and list index)
-     * - "settings:animate" (data.value property contains the new settings value)
-     * - "settings:transform" (data.value property contains the new settings value)
-     * - "settings:input" (data.value property contains the new settings value)
-     * - "settings:remote" (data.value property contains the new settings value)
-     * - "settings:layout" (data.value property contains the new settings value)
-     * - "settings:scale" (data.value property contains the new settings value)
-     * - "settings:zoom" (data.value property contains the new settings value)
-     * - "settings:validate_links" (data.value property contains the new settings value)
-     * - "settings:random_playback" (data.value property contains the new settings value)
-     * - "settings:slideshow_interval" (data.value property contains the new settings value)
-     * - "settings:hover_effect" (data.value property contains the new settings value)
-     * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
-     * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
-     * *Note: Video events are usually not handled by the player, since the corresponding player function is also called (e.g. play() -> "video:play").
-     * @param data The event data.
-     */
-    handleEvent?(data: AnyObject): void;
-    /**
-     * Handles any data. User-defined data is optionally available in the data.data property.
-     * @param data Any data.
-     */
-    handleData?(data: AnyObject): void;
-    /**
-     * Handles a request. User-defined data is optionally available in the data.data property.
-     * @param dataId The data ID.
-     * @param data Any data.
-     * @param callback The callback that has to be called with the result data.
-     */
-    handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
 }
 
 /** This is the interface for a video/audio plugin. 
@@ -1828,26 +1744,70 @@ declare interface TVXVideoPlugin {
     stopLoading(): void;
 }
 
-/** This interface defines the structure of an interaction handler. */
-declare interface TVXInteractionPluginHandler {
-    /** Initializes the handler. */
+/** This interface defines the structure of a player object. */
+declare interface TVXVideoPluginPlayer {
+    /** Initializes the player. */
     init?(): void;
-    /** This function is called when the handler is ready. */
+    /** This function is called when the player is ready. */
     ready?(): void;
+    /** Plays the player. */
+    play?(): void;
+    /** Pauses the player. */
+    pause?(): void;
+    /** Stops the player. */
+    stop?(): void;
+    /** Gets the duration (in seconds). */
+    getDuration?(): number;
+    /** Gets the position (in seconds). */
+    getPosition?(): number;
+    /**
+     * Sets the position (in seconds).
+     * @param position The position in seconds.
+     */
+    setPosition?(position: number): void;
+    /**
+     * Sets the volume (0 .. 100).
+     * @param volume The volume level from 0 to 100.
+     */
+    setVolume?(volume: number): void;
+    /** Gets the volume (0 .. 100). */
+    getVolume?(): number;
+    /**
+     * Sets if the player is muted.
+     * @param muted The muted state.
+     */
+    setMuted?(muted: boolean): void;
+    /** Indicates if the player is muted. */
+    isMuted?(): boolean;
+    /** Gets the speed (0.125 .. 8.0). */
+    getSpeed?(): number;
+    /**
+     * Sets the speed (0.125 .. 8.0).
+     * @param speed The speed value from 0.125 to 8.0.
+     */
+    setSpeed?(speed: number): void;
+    /**
+     * Sets the window size (in pixels).
+     * @param width The width in pixels.
+     * @param height The height in pixels.
+     */
+    setSize?(width: number, height: number): void;
+    /** Gets the update data (this function will be called each second). */
+    getUpdateData?(): TVXVideoUpdateData;
     /**
      * Handles an event. The data.event property can contain following values:
      * - "app:suspend"
      * - "app:resume"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
      * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
-     * - "video:load" (data.info property contains the loaded video info and data.data property contains the active video data before this event occurred)
-     * - "video:play" (data.data property contains the active video data before this event occurred)
-     * - "video:pause" (data.data property contains the active video data before this event occurred)
-     * - "video:stop" (data.data property contains the active video data before this event occurred)
-     * - "video:seek" (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event occurred)
-     * - "video:restart" (data.data property contains the active video data before this event occurred)
-     * - "video:speed" (data.speed property contains the new speed value and data.data property contains the active video data before this event occurred)
-     * - "video:volume" (data.volume and data.muted properties contain the new volume level and muted state)
+     * - "video:load"* (data.info property contains the loaded video info and data.data property contains the active video data before this event occurred)
+     * - "video:play"* (data.data property contains the active video data before this event occurred)
+     * - "video:pause"* (data.data property contains the active video data before this event occurred)
+     * - "video:stop"* (data.data property contains the active video data before this event occurred)
+     * - "video:seek"* (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event occurred)
+     * - "video:restart"* (data.data property contains the active video data before this event occurred)
+     * - "video:speed"* (data.speed property contains the new speed value and data.data property contains the active video data before this event occurred)
+     * - "video:volume"* (data.volume and data.muted properties contain the new volume level and muted state)
      * - "slider:load" (data.info property contains the loaded slider info)
      * - "slider:play"
      * - "slider:pause"
@@ -1866,6 +1826,7 @@ declare interface TVXInteractionPluginHandler {
      * - "settings:hover_effect" (data.value property contains the new settings value)
      * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
+     * *Note: Video events are usually not handled by the player, since the corresponding player function is also called (e.g. play() -> "video:play").
      * @param data The event data.
      */
     handleEvent?(data: AnyObject): void;
@@ -2075,6 +2036,61 @@ declare interface TVXInteractionPlugin {
     startLoading(): void;
     /** Stops a loading process. */
     stopLoading(): void;
+}
+
+/** This interface defines the structure of an interaction handler. */
+declare interface TVXInteractionPluginHandler {
+    /** Initializes the handler. */
+    init?(): void;
+    /** This function is called when the handler is ready. */
+    ready?(): void;
+    /**
+     * Handles an event. The data.event property can contain following values:
+     * - "app:suspend"
+     * - "app:resume"
+     * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
+     * - "app:result" (data.id property contains the request ID, data.code property contains the result code, and data.extra property contains the extra data)
+     * - "video:load" (data.info property contains the loaded video info and data.data property contains the active video data before this event occurred)
+     * - "video:play" (data.data property contains the active video data before this event occurred)
+     * - "video:pause" (data.data property contains the active video data before this event occurred)
+     * - "video:stop" (data.data property contains the active video data before this event occurred)
+     * - "video:seek" (data.position property contains the seeked position in seconds and data.data property contains the active video data before this event occurred)
+     * - "video:restart" (data.data property contains the active video data before this event occurred)
+     * - "video:speed" (data.speed property contains the new speed value and data.data property contains the active video data before this event occurred)
+     * - "video:volume" (data.volume and data.muted properties contain the new volume level and muted state)
+     * - "slider:load" (data.info property contains the loaded slider info)
+     * - "slider:play"
+     * - "slider:pause"
+     * - "slider:stop"
+     * - "slider:position" (data.index, data.number, and data.listIndex properties contain the new item index, number, and list index)
+     * - "settings:animate" (data.value property contains the new settings value)
+     * - "settings:transform" (data.value property contains the new settings value)
+     * - "settings:input" (data.value property contains the new settings value)
+     * - "settings:remote" (data.value property contains the new settings value)
+     * - "settings:layout" (data.value property contains the new settings value)
+     * - "settings:scale" (data.value property contains the new settings value)
+     * - "settings:zoom" (data.value property contains the new settings value)
+     * - "settings:validate_links" (data.value property contains the new settings value)
+     * - "settings:random_playback" (data.value property contains the new settings value)
+     * - "settings:slideshow_interval" (data.value property contains the new settings value)
+     * - "settings:hover_effect" (data.value property contains the new settings value)
+     * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
+     * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
+     * @param data The event data.
+     */
+    handleEvent?(data: AnyObject): void;
+    /**
+     * Handles any data. User-defined data is optionally available in the data.data property.
+     * @param data Any data.
+     */
+    handleData?(data: AnyObject): void;
+    /**
+     * Handles a request. User-defined data is optionally available in the data.data property.
+     * @param dataId The data ID.
+     * @param data Any data.
+     * @param callback The callback that has to be called with the result data.
+     */
+    handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
 }
 
 export const Settings: TVXSettings;
