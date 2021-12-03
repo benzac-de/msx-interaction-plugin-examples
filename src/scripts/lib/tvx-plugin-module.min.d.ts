@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.55.2 (Module)
+// Type definitions for TVX Plugin v0.0.56.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
