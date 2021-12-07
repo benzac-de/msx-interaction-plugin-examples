@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.56.1 (Module)
+// Type definitions for TVX Plugin v0.0.57.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1008,6 +1008,8 @@ declare abstract class TVXStorage {
     clear(): void;
     getType(): string;
     setType(type: string): void;
+    isReady(): boolean;   
+    onReady(handler: () => void): void;
 }
 
 declare abstract class TVXUrlParams {
@@ -1294,7 +1296,9 @@ declare interface TVXPluginTools {
     checkApplication(data: MSXAttachedInfo, minVersion: string, requiredName?: string): boolean;
     checkContent(data: MSXAttachedInfo, minVersion: string, requiredName?: string): boolean;
     isSameContentState(state: MSXAttachedContentState, state2: MSXAttachedContentState): boolean;
-    createChangedContentState(currentState: TVXChangedContentState, newState: TVXChangedContentState): TVXChangedContentState,
+    createChangedContentState(currentState: TVXChangedContentState, newState: TVXChangedContentState): TVXChangedContentState;
+    isReady(): boolean;
+    onReady(handler: () => void): void;
 }
 
 declare interface TVXChangedContentState extends MSXAttachedContentState {
