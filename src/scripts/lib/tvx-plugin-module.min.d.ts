@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.57.0 (Module)
+// Type definitions for TVX Plugin v0.0.58.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1299,6 +1299,8 @@ declare interface TVXPluginTools {
     createChangedContentState(currentState: TVXChangedContentState, newState: TVXChangedContentState): TVXChangedContentState;
     isReady(): boolean;
     onReady(handler: () => void): void;
+    startInitService(): void;
+    stopInitService(): void;
 }
 
 declare interface TVXChangedContentState extends MSXAttachedContentState {
