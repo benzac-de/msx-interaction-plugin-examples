@@ -1,7 +1,7 @@
 # Media Station X - Interaction Plugin Examples
 This project contains examples of how you can use the **Media Station X** application and the corresponding **Interaction Plugin** interface to create an interactive and highly customized media client.
 
-## Documentation links
+## Documentation Links
 * Media Station X: https://msx.benzac.de/info/
 * Interaction Plugin: https://msx.benzac.de/wiki/index.php?title=Interaction_Plugin
 
@@ -41,8 +41,8 @@ http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:8080/
 * Enter IP address and port of your local server (e.g. `192.168.0.10:8080`)
 * Complete setup
 
-## Example screenshot
+## Example Screenshot
 ![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png?v=2)
 
-## Hosted example
+## Hosted Example
 http://msx.benzac.de/?start=menu:request:interaction:init@http://msx.benzac.de/github/msx-interaction-plugin-examples/index.html
