@@ -17,7 +17,7 @@ npm run dev
 By default, the index page is available under: http://localhost:1234/index.html
 
 ### Testing in browser
-Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:1234/index.html
+http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:1234/index.html
 
 ## Building for deployment
 ```
@@ -32,7 +32,7 @@ http-server ./dist --cors
 By default, the index page is available under: http://localhost:8080/index.html
 
 ### Testing in browser
-Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:8080/index.html
+http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:8080/index.html
 
 ### Testing on TV device
 * Copy folder `./src/msx` to `./dist/msx`
@@ -45,4 +45,4 @@ Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost
 ![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png?v=2)
 
 ## Hosted Example
-Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://msx.benzac.de/github/msx-interaction-plugin-examples/index.html
+http://msx.benzac.de/?start=menu:request:interaction:init@http://msx.benzac.de/github/msx-interaction-plugin-examples/index.html
