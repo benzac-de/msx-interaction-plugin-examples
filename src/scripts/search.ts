@@ -277,6 +277,8 @@ class SearchHandler implements tvx.TVXInteractionPluginHandler {
 /******************************************************************************/
 //Setup
 /******************************************************************************/
-tvx.InteractionPlugin.setupHandler(new SearchHandler());
-tvx.InteractionPlugin.init();
+tvx.PluginTools.onReady(() => {
+    tvx.InteractionPlugin.setupHandler(new SearchHandler());
+    tvx.InteractionPlugin.init();
+});
 /******************************************************************************/

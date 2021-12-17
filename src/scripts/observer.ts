@@ -158,6 +158,8 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
 /******************************************************************************/
 //Setup
 /******************************************************************************/
-tvx.InteractionPlugin.setupHandler(new ObserverHandler());
-tvx.InteractionPlugin.init();
+tvx.PluginTools.onReady(() => {
+    tvx.InteractionPlugin.setupHandler(new ObserverHandler());
+    tvx.InteractionPlugin.init();
+});
 /******************************************************************************/

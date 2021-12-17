@@ -411,6 +411,8 @@ class SettingsHandler implements tvx.TVXInteractionPluginHandler {
 /******************************************************************************/
 //Setup
 /******************************************************************************/
-tvx.InteractionPlugin.setupHandler(new SettingsHandler());
-tvx.InteractionPlugin.init();
+tvx.PluginTools.onReady(() => {
+    tvx.InteractionPlugin.setupHandler(new SettingsHandler());
+    tvx.InteractionPlugin.init();
+});
 /******************************************************************************/

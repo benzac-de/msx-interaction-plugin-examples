@@ -43,3 +43,6 @@ Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost
 
 ## Example Screenshot
 ![Interaction Plugin Test](https://msx.benzac.de/info/img/github.png?v=2)
+
+## Hosted Example
+Open: http://msx.benzac.de/?start=menu:request:interaction:init@http://msx.benzac.de/github/msx-interaction-plugin-examples/index.html

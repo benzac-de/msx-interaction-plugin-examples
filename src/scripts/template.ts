@@ -39,6 +39,8 @@ class TemplateHandler implements tvx.TVXInteractionPluginHandler {
 /******************************************************************************/
 //Setup
 /******************************************************************************/
-tvx.InteractionPlugin.setupHandler(new TemplateHandler());
-tvx.InteractionPlugin.init();
+tvx.PluginTools.onReady(() => {
+    tvx.InteractionPlugin.setupHandler(new TemplateHandler());
+    tvx.InteractionPlugin.init();
+});
 /******************************************************************************/
