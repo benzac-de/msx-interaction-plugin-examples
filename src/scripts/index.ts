@@ -30,6 +30,8 @@ class InitHandler implements tvx.TVXInteractionPluginHandler {
 /******************************************************************************/
 //Setup
 /******************************************************************************/
-tvx.InteractionPlugin.setupHandler(new InitHandler());
-tvx.InteractionPlugin.init();
+tvx.PluginTools.onReady(() => {
+    tvx.InteractionPlugin.setupHandler(new InitHandler());
+    tvx.InteractionPlugin.init();
+});
 /******************************************************************************/
