@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.58.0 (Module)
+// Type definitions for TVX Plugin v0.0.60.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -477,6 +477,9 @@ declare interface MSXAttachedSliderContainer {
     label: string;
     color: string;
     filler: string;
+    rotation: number;
+    customLabel: string;
+    customColor: string;
     properties: MSXExtendedProperties;
 }
 
@@ -823,6 +826,7 @@ declare interface TVXTools {
     htmlAttrEscape(str: string): string;
     htmlAttrUnescape(str: string): string;
     htmlTextEscape(str: string): string;
+    htmlCharacter(str: string): string;
     base64Encode(str: string): string;
     base64EncodeUrl(str: string): string;
     base64EncodeId(str: string): string;
@@ -1008,7 +1012,7 @@ declare abstract class TVXStorage {
     clear(): void;
     getType(): string;
     setType(type: string): void;
-    isReady(): boolean;   
+    isReady(): boolean;
     onReady(handler: () => void): void;
 }
 
@@ -1546,6 +1550,11 @@ declare interface TVXVideoPlugin {
      * @param image The image URL. If no image is set the image is removed.
      */
     setupInfoImage(image?: string): void;
+    /**
+    * Sets up a custom player control action (replacement for the action that is executed if the OK key is pressed while the video/audio is in foreground).
+    * @param action The action. If no action is set the default action is used.
+    */
+    setupControlAction(action?: string): void;
     /**
      * Sets up a player button (all buttons except the eject button are supported).
      * @param id The button ID.
