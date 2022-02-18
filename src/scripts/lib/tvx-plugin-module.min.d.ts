@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.60.0 (Module)
+// Type definitions for TVX Plugin v0.0.61.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -905,6 +905,7 @@ declare interface TVXPropertyTools {
     remove(data: AnyObject, key: string): void;
     clear(data: AnyObject): void;
     count(data: AnyObject): number;
+    extend(data: AnyObject, extension: AnyObject): void;
 }
 
 declare interface TVXVideoState {
@@ -1184,14 +1185,6 @@ declare abstract class TVXClock {
     stop(): void;
 }
 
-declare interface TVXServices {
-    readonly logger: TVXLogger;
-    readonly cookies: TVXCookies;
-    readonly storage: TVXStorage;
-    readonly urlParams: TVXUrlParams;
-    readonly ajax: TVXAjax;
-}
-
 declare abstract class TVXDataLoader {
     constructor();
     load(url: string, cacheId: string, callback?: TVXDataLoaderCallback, options?: TVXAjaxOptions): void;
@@ -1202,6 +1195,15 @@ declare abstract class TVXDataLoader {
 declare interface TVXDataLoaderCallback {
     success?(data: any, cached: boolean): void;
     error?(message: string): void;
+}
+
+declare interface TVXServices {
+    readonly logger: TVXLogger;
+    readonly cookies: TVXCookies;
+    readonly storage: TVXStorage;
+    readonly urlParams: TVXUrlParams;
+    readonly ajax: TVXAjax;
+    readonly loader: TVXDataLoader;
 }
 
 declare abstract class TVXDataService {
@@ -2121,8 +2123,8 @@ export const LogLevel: TVXLogLevel;
 export class Logger extends TVXLogger { }
 export class Dictionary extends TVXDictionary { }
 export class Clock extends TVXClock { }
-export const Services: TVXServices;
 export class DataLoader extends TVXDataLoader { }
+export const Services: TVXServices;
 export class DataService extends TVXDataService { }
 export class BlobService extends TVXBlobService { }
 export class RequestService extends TVXRequestService { }
