@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.62.0 (Module)
+// Type definitions for TVX Plugin v0.0.63.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -188,10 +188,13 @@ declare interface MSXContentItem extends AnyObject {
     text?: string;
     alignment?: string;
     truncation?: string;
+    centration?: string;
     tag?: string;
     tagColor?: string;
     badge?: string;
     badgeColor?: string;
+    stamp?: string;
+    stampColor?: string;
     progress?: number;
     progressColor?: string;
     wrapperColor?: string;
@@ -204,6 +207,7 @@ declare interface MSXContentItem extends AnyObject {
     imageLabel?: string;
     imageColor?: string;
     imageScreenFiller?: MSXContentItemImageFiller;
+    imageBoundary?: boolean;
     playerLabel?: string;
     background?: string;
     extensionIcon?: string;
@@ -280,16 +284,37 @@ declare interface MSXReady {
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
-    type?: string;
+    type?: MSXLiveType;
     from?: number;
     to?: number;
     duration?: number;
     delay?: number;
+    source?: MSXLiveSource;
     coming?: MSXLiveState;
     running?: MSXLiveStateRunning;
     over?: MSXLiveState;
     execute?: MSXLiveAction;
 }
+
+/** MSX - Live Type
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
+*/
+declare type MSXLiveType =
+    "schedule" |
+    "lifetime" |
+    "airtime" |
+    "playback" |
+    "setup";
+
+/** MSX - Live Source
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
+*/
+declare type MSXLiveSource =
+    "id" |
+    "url" |
+    "key" |
+    "current" |
+    "none";
 
 /** MSX - Live Action
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
@@ -315,6 +340,8 @@ declare interface MSXLiveProperties {
     tagColor?: string;
     badge?: string;
     badgeColor?: string;
+    stamp?: string;
+    stampColor?: string;
     progress?: number;
     progressColor?: string;
     wrapperColor?: string;
@@ -809,6 +836,7 @@ declare interface TVXTools {
     strFullCheck(str: any, defaultValue: string): string;
     strTrim(str: any): string;
     strClear(str: any): string;
+    strFlatten(str: any): string;
     strTruncate(str: any, length: number): string;
     strShuffle(str: any): string;
     strReplace(str: any, find: string, replace?: any): string;
@@ -1521,48 +1549,58 @@ declare interface TVXVideoPlugin {
     hidePlayer(): void;
     /**
      * Sets up the player content label.
-     * @param label The label. If no label is set the default label is used.
+     * @param label The label. If no label is set, the default label is used.
      */
     setupContentLabel(label?: string): void;
     /**
      * Sets up an additional player extension label.
-     * @param label The label. If no label is set the default label is used.
+     * @param label The label. If no label is set, the default label is used.
      */
     setupExtensionLabel(label?: string): void;
     /**
      * Sets up the player position label.
-     * @param label The label. If no label is set the default label is used.
+     * @param label The label. If no label is set, the default label is used.
      */
     setupPositionLabel(label?: string): void;
     /**
      * Sets up the player duration label.
-     * @param label The label. If no label is set the default label is used.
+     * @param label The label. If no label is set, the default label is used.
      */
     setupDurationLabel(label?: string): void;
     /**
     * Sets up the player speed label.
-    * @param label The label. If no label is set the default label is used.
+    * @param label The label. If no label is set, the default label is used.
     */
     setupSpeedLabel(label?: string): void;
     /**
      * Sets up a player info text (only available for extended players).
-     * @param text The text. If no text is set the text is removed.
+     * @param text The text. If no text is set, the text is removed.
      */
     setupInfoText(text?: string): void;
     /**
      * Sets up a player info image (only available for extended players).
-     * @param image The image URL. If no image is set the image is removed.
+     * @param image The image URL. If no image is set, the image is removed.
      */
     setupInfoImage(image?: string): void;
     /**
+    * Sets up the player info overlay (only available for extended players).
+    * @param overlay The overlay type. If no overlay is set, the default overlay is used.
+    */
+    setupInfoOverlay(overlay?: string): void;
+    /**
+    * Sets up the size of the player info image area (only available for extended players).
+    * @param overlay The size of the image area. If no size is set, the default size is used.
+    */
+    setupInfoSize(overlay?: string): void;
+    /**
     * Sets up a custom player control action (replacement for the action that is executed if the OK key is pressed while the video/audio is in foreground).
-    * @param action The action. If no action is set the default action is used.
+    * @param action The action. If no action is set, the default action is used.
     */
     setupControlAction(action?: string): void;
     /**
      * Sets up a player button (all buttons except the eject button are supported).
      * @param id The button ID.
-     * @param data The button data. If no data is set the default button is restored.
+     * @param data The button data. If no data is set, the default button is restored.
      */
     setupButton(id: string, data?: TVXPlayerButtonData): void;
     /**
@@ -1581,13 +1619,23 @@ declare interface TVXVideoPlugin {
      */
     focusButton(id: string): void;
     /**
+     * Sets up the player progress position.
+     * @param position The position. If no position is set, the default position is used.
+     */
+    setupProgressPosition(position?: number): void;
+    /**
+    * Sets up the player progress duration.
+    * @param duration The duration. If no duration is set, the default duration is used.
+    */
+    setupProgressDuration(duration?: number): void;
+    /**
      * Sets up the player progress color.
-     * @param color The color. If no color is set the default color is used.
+     * @param color The color. If no color is set, the default color is used.
      */
     setupProgressColor(color?: string): void;
     /**
      * Sets up the player progress type.
-     * @param type The type. If no type is set the default type is used.
+     * @param type The type. If no type is set, the default type is used.
      */
     setupProgressType(type?: string): void;
     /** Enables the player progress marker. */
@@ -1747,8 +1795,11 @@ declare interface TVXVideoPlugin {
     stopPlayback(): void;
     /** Cancels the playback. */
     cancelPlayback(): void;
-    /** Starts a loading process (shows a busy indicator after the loading delay). */
-    startLoading(): void;
+    /** 
+     * Starts a loading process (shows a busy indicator after the loading delay). 
+     * @param restart Indicates if a running loading delay should be restarted (default: true).
+     */
+    startLoading(restart?: boolean): void;
     /** Stops a loading process. */
     stopLoading(): void;
 }
@@ -2043,8 +2094,11 @@ declare interface TVXInteractionPlugin {
     isInitialized(): boolean;
     /** Indicates if the interaction plugin is ready. */
     isReady(): boolean;
-    /** Starts a loading process (shows a busy indicator after the loading delay). */
-    startLoading(): void;
+    /** 
+     * Starts a loading process (shows a busy indicator after the loading delay). 
+     * @param restart Indicates if a running loading delay should be restarted (default: true).
+     */
+    startLoading(restart?: boolean): void;
     /** Stops a loading process. */
     stopLoading(): void;
 }
