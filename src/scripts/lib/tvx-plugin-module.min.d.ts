@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.63.1 (Module)
+// Type definitions for TVX Plugin v0.0.64.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -526,6 +526,7 @@ declare interface MSXAttachedApplicationSettings {
     randomPlayback: number;
     slideshowInterval: number;
     hoverEffect: number;
+    immersiveMode: number;
     menuButton: MSXAttachedApplicationMenuButton;
 }
 
@@ -1414,6 +1415,26 @@ declare interface TVXVideoPlugin {
     /** Gets the loading delay (in milliseconds). */
     getLoadingDelay(): number;
     /**
+     * Indicates if the fullscreen mode is enabled.
+     * @param element The element that should be checked (e.g. the video element). If not specified (or not accessible), the global fullscreen mode is checked.
+     */
+    isFullscreenEnabled(element?: AnyObject): boolean;
+    /**
+     * Indicates if the fullscreen mode is active.
+     * @param element The element that should be checked (e.g. the video element). If not specified (or not accessible), the global fullscreen mode is checked.
+     */
+    isFullscreenActive(element?: AnyObject): boolean;
+    /**
+     * Requests the fullscreen mode for an element (returns true on success).
+     * @param element The element that should be displayed in fullscreen mode (e.g. the video element).
+     */
+    requestFullscreen(element: AnyObject): boolean;
+    /**
+     * Exits the fullscreen mode (returns true on success).
+     * @param element The element that is displayed in fullscreen mode (e.g. the video element). If not specified (or not accessible), the global fullscreen exit function is used.
+     */
+    exitFullscreen(element?: AnyObject): boolean;
+    /**
      * Sets the state (see TVXVideoState interface).
      * @param state The state.
      * @param commit Indicates if the player values should be directly comitted (default: false).
@@ -1858,6 +1879,7 @@ declare interface TVXVideoPluginPlayer {
      * Handles an event. The data.event property can contain following values:
      * - "app:suspend"
      * - "app:resume"
+     * - "app:resize"
      * - "app:connect"
      * - "app:disconnect"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
@@ -1886,6 +1908,7 @@ declare interface TVXVideoPluginPlayer {
      * - "settings:random_playback" (data.value property contains the new settings value)
      * - "settings:slideshow_interval" (data.value property contains the new settings value)
      * - "settings:hover_effect" (data.value property contains the new settings value)
+     * - "settings:immersive_mode" (data.value property contains the new settings value)
      * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
      * *Note: Video events are usually not handled by the player, since the corresponding player function is also called (e.g. play() -> "video:play").
@@ -2113,6 +2136,7 @@ declare interface TVXInteractionPluginHandler {
      * Handles an event. The data.event property can contain following values:
      * - "app:suspend"
      * - "app:resume"
+     * - "app:resize"
      * - "app:connect"
      * - "app:disconnect"
      * - "app:time" (data.offset and data.zoneOffset properties contain the new time and zone offset)
@@ -2141,6 +2165,7 @@ declare interface TVXInteractionPluginHandler {
      * - "settings:random_playback" (data.value property contains the new settings value)
      * - "settings:slideshow_interval" (data.value property contains the new settings value)
      * - "settings:hover_effect" (data.value property contains the new settings value)
+     * - "settings:immersive_mode" (data.value property contains the new settings value)
      * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
      * @param data The event data.
