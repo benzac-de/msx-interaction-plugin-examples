@@ -1324,7 +1324,7 @@ declare interface TVXPluginTools {
     areSettingsValidated(): boolean;
     invalidateSettings(): void;
     validateSettings(data: MSXAttachedInfo): void;
-    onValidatedSettings(callback: () => void): void;
+    onValidatedSettings(callback: (data: MSXAttachedInfo) => void): void;
     handleSettingsEvent(data: AnyObject): void;
     getFrameworkInfo(data: MSXAttachedInfo): string;
     getApplicationInfo(data: MSXAttachedInfo): string;
@@ -1711,7 +1711,7 @@ declare interface TVXVideoPlugin {
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
      */
-    onValidatedSettings(callback: () => void): void;
+    onValidatedSettings(callback: (data: MSXAttachedInfo) => void): void;
     /**
      * Triggers a custom event (that can be handled by the interaction plugin).
      * @param eventId The event ID.
@@ -2023,7 +2023,7 @@ declare interface TVXInteractionPlugin {
      * Validates the settings if they are not validated (see TVXSettings interface).
      * @param callback The callback that is called after completion.
      */
-    onValidatedSettings(callback: () => void): void;
+    onValidatedSettings(callback: (data: MSXAttachedInfo) => void): void;
     /**
      * Triggers a custom event (that can be handled by the video/audio plugin).
      * @param eventId The event ID.
