@@ -9,6 +9,7 @@
     },
     "files": [
         "src/scripts/data.ts",
+        "src/scripts/im-controller.ts",
         "src/scripts/index.ts",
         "src/scripts/template.ts",
         "src/scripts/settings.ts",

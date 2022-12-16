@@ -24,6 +24,13 @@ div, label, img, input, span, i, b, p, video, audio, object, h1, h2, h3, pre, ca
     bottom: 0px;
 }
 
+.content-wrapper {
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
 .content-screen {
     left: 64px;
     right: 64px;
