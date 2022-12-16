@@ -3,16 +3,23 @@
   "version": "1.1.0",
   "description": "Media Station X - Interaction Plugin Examples",
   "scripts": {
-    "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url ."
+    "start": "parcel",
+    "build": "parcel build"
   },
+  "browserslist": "> 0.1%",
+  "source": [
+    "src/index.html",
+    "src/observer.html",
+    "src/search.html",
+    "src/settings.html",
+    "src/template.html"
+  ],
   "keywords": [],
   "author": "Benjamin Zachey",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/jquery": "^3.5.1",
-    "parcel": "^2.0.0",
-    "typescript": "^3.9.6"
+    "parcel": "latest"
   },
   "dependencies": {
     "jquery": "^3.5.1"

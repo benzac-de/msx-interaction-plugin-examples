@@ -12,7 +12,7 @@ npm install
 
 ## Testing on local dev server
 ```
-npm run dev
+npm run start
 ```
 By default, the index page is available under: http://localhost:1234/index.html
 

@@ -9,9 +9,7 @@ import { ImmersiveModeController } from "./im-controller";
 //Observer Handler
 /******************************************************************************/
 class ObserverHandler implements tvx.TVXInteractionPluginHandler {
-
     private imController: ImmersiveModeController = new ImmersiveModeController();
-
     private $info: tvx.AnyObject = null;
 
     private observerData = {
@@ -141,8 +139,8 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
     }
 
     init() {
-        this.$info = $("#info");
         this.imController.init($(".content-wrapper"));
+        this.$info = $("#info");        
     }
 
     ready() {
