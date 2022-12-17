@@ -9,7 +9,7 @@
   "browserslist": "> 0.1% and not ie <= 11",
   "targets": {
     "default": {
-      "publicUrl": "./"
+      "publicUrl": "."
     }
   },
   "source": [
@@ -19,6 +19,9 @@
     "src/settings.html",
     "src/template.html"
   ],
+  "@parcel/bundler-default": {
+    "maxParallelRequests": 1
+  },
   "keywords": [],
   "author": "Benjamin Zachey",
   "license": "GPL-3.0-or-later",

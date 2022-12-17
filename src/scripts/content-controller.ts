@@ -55,7 +55,9 @@ export class ContentController {
         if (data != null) {
             if (data.event == "app:resize") {
                 //Zoom factor may have changed -> Validate settings and setup wrapper
-                tvx.InteractionPlugin.validateSettings(this.setupWrapper);
+                tvx.InteractionPlugin.validateSettings(() => {
+                    this.setupWrapper();
+                });
             } else if (data.event == "settings:immersive_mode") {
                 //Immersive mode has been changed -> Apply value and setup wrapper
                 this.immersiveMode = tvx.Tools.strToNum(data.value, -1);
