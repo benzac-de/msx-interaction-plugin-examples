@@ -1,9 +1,9 @@
 /******************************************************************************/
-//Immersive Mode Controller (TypeScript Edition)
+//Content Controller (TypeScript Edition)
 /******************************************************************************/
 import * as tvx from "./lib/tvx-plugin-module.min";
 
-export class ImmersiveModeController {
+export class ContentController {
     private contentWrapper: tvx.AnyObject = null;
     private immersiveMode: number = -1;
 

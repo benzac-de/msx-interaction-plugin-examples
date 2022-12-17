@@ -3,13 +3,13 @@
 /******************************************************************************/
 import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";
-import { ImmersiveModeController } from "./im-controller";
+import { ContentController } from "./content-controller";
 
 /******************************************************************************/
 //Observer Handler
 /******************************************************************************/
 class ObserverHandler implements tvx.TVXInteractionPluginHandler {
-    private imController: ImmersiveModeController = new ImmersiveModeController();
+    private contentController: ContentController = new ContentController();
     private $info: tvx.AnyObject = null;
 
     private observerData = {
@@ -139,12 +139,12 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
     }
 
     init() {
-        this.imController.init($(".content-wrapper"));
+        this.contentController.init($(".content-wrapper"));
         this.$info = $("#info");        
     }
 
     ready() {
-        this.imController.validate();
+        this.contentController.validate();
         tvx.InteractionPlugin.addContentObserver("observer", (state: tvx.TVXChangedContentState) => {
             this.logContentState(state);
             this.showContentState(state);
@@ -152,7 +152,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
     }
 
     handleEvent(data: tvx.AnyObject) {
-        this.imController.handleEvent(data);
+        this.contentController.handleEvent(data);
     }
 
     handleRequest(dataId: string, data: tvx.AnyObject, callback: (respData?: tvx.AnyObject) => void) {

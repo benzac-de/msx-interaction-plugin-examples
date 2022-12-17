@@ -3,29 +3,29 @@
 /******************************************************************************/
 import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";
-import { ImmersiveModeController } from "./im-controller";
+import { ContentController } from "./content-controller";
 
 /******************************************************************************/
 //Template Handler
 /******************************************************************************/
 class TemplateHandler implements tvx.TVXInteractionPluginHandler {
-    private imController: ImmersiveModeController = new ImmersiveModeController();
+    private contentController: ContentController = new ContentController();
     private logger = new tvx.Logger();
 
     init() {        
-        this.imController.init($(".content-wrapper"));
+        this.contentController.init($(".content-wrapper"));
         this.logger.registerControl($("#log"));
         this.logger.debug("Init");        
     }
 
     ready() {
-        this.imController.validate();
+        this.contentController.validate();
         this.logger.debug("Ready");
         tvx.InteractionPlugin.success("Template handler ready.");
     }
 
     handleEvent(data: tvx.AnyObject) {
-        this.imController.handleEvent(data);
+        this.contentController.handleEvent(data);
         this.logger.debug("Handle event: " + tvx.Tools.serialize(data));
     }
 

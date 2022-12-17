@@ -6,7 +6,12 @@
     "start": "parcel",
     "build": "parcel build"
   },
-  "browserslist": "> 0.1%",
+  "browserslist": "> 0.1% and not ie <= 11",
+  "targets": {
+    "default": {
+      "publicUrl": "./"
+    }
+  },
   "source": [
     "src/index.html",
     "src/observer.html",
