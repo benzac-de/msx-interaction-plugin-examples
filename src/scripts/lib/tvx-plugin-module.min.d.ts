@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.65.0 (Module)
+// Type definitions for TVX Plugin v0.0.66.0 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1823,6 +1823,12 @@ declare interface TVXVideoPlugin {
     startLoading(restart?: boolean): void;
     /** Stops a loading process. */
     stopLoading(): void;
+    /**
+     * Executes a handler function and handles all errors that occur.
+     * @param handler A handler function that should return a data object if a callback function is also set.
+     * @param callback A callback function that is called with null when an error has occurred.
+     */
+    executeHandler(handler: (() => void) | (() => AnyObject), callback?: (data?: AnyObject) => void): void;
 }
 
 /** This interface defines the structure of a player object. */
@@ -1927,6 +1933,12 @@ declare interface TVXVideoPluginPlayer {
      * @param callback The callback that has to be called with the result data.
      */
     handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
+    /**
+     * This function is called when an error has occurred. The error is already logged and shown, therefore, the error should only be evaluated here for debug purposes.
+     * @param message The error message.
+     * @param error The error object.
+     */
+    onError?(message: string, error: AnyObject): void;
 }
 
 /** This is the interface for an interaction plugin. 
@@ -2124,6 +2136,12 @@ declare interface TVXInteractionPlugin {
     startLoading(restart?: boolean): void;
     /** Stops a loading process. */
     stopLoading(): void;
+    /**
+     * Executes a handler function and handles all errors that occur.
+     * @param handler A handler function that should return a data object if a callback function is also set.
+     * @param callback A callback function that is called with null when an error has occurred.
+     */
+    executeHandler(handler: (() => void) | (() => AnyObject), callback?: (data?: AnyObject) => void): void;
 }
 
 /** This interface defines the structure of an interaction handler. */
@@ -2183,6 +2201,12 @@ declare interface TVXInteractionPluginHandler {
      * @param callback The callback that has to be called with the result data.
      */
     handleRequest?(dataId: string, data: AnyObject, callback: (respData?: AnyObject) => void): void;
+    /**
+     * This function is called when an error has occurred. The error is already logged and shown, therefore, the error should only be evaluated here for debug purposes.
+     * @param message The error message.
+     * @param error The error object.
+     */
+    onError?(message: string, error: AnyObject): void;
 }
 
 export const Settings: TVXSettings;

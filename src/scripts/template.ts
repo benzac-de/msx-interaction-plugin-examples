@@ -12,10 +12,10 @@ class TemplateHandler implements tvx.TVXInteractionPluginHandler {
     private contentController: ContentController = new ContentController();
     private logger = new tvx.Logger();
 
-    init() {        
+    init() {
         this.contentController.init($(".content-wrapper"));
         this.logger.registerControl($("#log"));
-        this.logger.debug("Init");        
+        this.logger.debug("Init");
     }
 
     ready() {
@@ -36,7 +36,27 @@ class TemplateHandler implements tvx.TVXInteractionPluginHandler {
     handleRequest(dataId: string, data: tvx.AnyObject, callback: (respData?: tvx.AnyObject) => void) {
         this.logger.debug("Handle request: " + dataId);
         this.logger.debug("Request data: " + tvx.Tools.serialize(data));
-        callback(null);
+        if (dataId == "error") {
+            throw new Error("An error has occurred");
+        }
+        if (dataId.indexOf("delayed:") == 0) {
+            dataId = dataId.substr(8);
+            setTimeout(() => {
+                tvx.InteractionPlugin.executeHandler(() => {
+                    if (dataId == "error") {
+                        throw new Error("An error has occurred");
+                    }
+                    return null;
+                }, callback);
+            }, 3000);
+        } else {
+            callback(null);
+        }
+    }
+
+    onError(message: string, error: tvx.AnyObject): void {
+        this.logger.error(message + ": " + error);
+        console.error(error);
     }
 }
 /******************************************************************************/
