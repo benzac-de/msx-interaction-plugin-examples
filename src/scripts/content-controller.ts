@@ -1,13 +1,10 @@
-/******************************************************************************/
-//Content Controller (TypeScript Edition)
-/******************************************************************************/
 import * as tvx from "./lib/tvx-plugin-module.min";
 
 export class ContentController {
-    private contentWrapper: tvx.AnyObject = null;
+    private contentWrapper: any = null;
     private immersiveMode: number = -1;
 
-    private setupWrapper() {
+    private setupWrapper(): void {
         if (this.contentWrapper != null && this.contentWrapper.length > 0) {
             if (this.immersiveMode == 0) {
                 //Reset wrapper
@@ -35,11 +32,11 @@ export class ContentController {
         }
     }
 
-    init(wrapper: tvx.AnyObject) {
+    public init(wrapper: any): void {
         this.contentWrapper = wrapper;
     }
 
-    validate() {
+    public validate(): void {
         tvx.InteractionPlugin.onValidatedSettings((data: tvx.AnyObject) => {
             if (data != null &&
                 data.info != null &&
@@ -51,7 +48,7 @@ export class ContentController {
         });
     }
 
-    handleEvent(data: tvx.AnyObject) {
+    public handleEvent(data: tvx.AnyObject): void {
         if (data != null) {
             if (data.event == "app:resize") {
                 //Zoom factor may have changed -> Validate settings and setup wrapper
@@ -66,4 +63,3 @@ export class ContentController {
         }
     }
 }
-/******************************************************************************/

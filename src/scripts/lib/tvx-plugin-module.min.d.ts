@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.67.0 (Module)
+// Type definitions for TVX Plugin v0.0.67.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -185,7 +185,7 @@ declare interface MSXContentItem extends AnyObject {
     icon?: string;
     iconSize?: MSXContentItemIconSize;
     headline?: string;
-    text?: string;
+    text?: string | string[];
     alignment?: string;
     truncation?: string;
     centration?: string;
@@ -335,7 +335,7 @@ declare interface MSXLiveProperties {
     label?: string;
     icon?: string;
     headline?: string;
-    text?: string;
+    text?: string | string[];
     tag?: string;
     tagColor?: string;
     badge?: string;
