@@ -5,7 +5,23 @@ body {
     color: white;
 }
 
-div, label, img, input, span, i, b, p, video, audio, object, h1, h2, h3, pre, canvas, iframe {
+div,
+label,
+img,
+input,
+span,
+i,
+b,
+p,
+video,
+audio,
+object,
+h1,
+h2,
+h3,
+pre,
+canvas,
+iframe {
     position: absolute;
     margin: 0px;
     padding: 0px;

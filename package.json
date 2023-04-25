@@ -3,8 +3,10 @@
   "version": "1.1.0",
   "description": "Media Station X - Interaction Plugin Examples",
   "scripts": {
+    "clean": "rimraf dist/*.*",
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "clean-build": "npm run clean && npm run build"
   },
   "browserslist": "since 2010",
   "targets": {
@@ -26,10 +28,11 @@
   "author": "Benjamin Zachey",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@types/jquery": "^3.5.1",
-    "parcel": "latest"
+    "@types/jquery": "^3.5.16",
+    "parcel": "latest",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "jquery": "^3.5.1"
+    "jquery": "^3.6.4"
   }
 }

@@ -3,6 +3,9 @@
 /******************************************************************************/
 import * as tvx from "./lib/tvx-plugin-module.min";
 import { InteractionData, VideoData, AudioData, ImageData, MenuData } from "./data";
+import { polyfix } from "./parcel-polyfix";
+
+polyfix();
 
 /******************************************************************************/
 //Init Handler

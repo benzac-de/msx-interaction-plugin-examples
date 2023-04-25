@@ -4,6 +4,9 @@
 import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";
 import { ContentController } from "./content-controller";
+import { polyfix } from "./parcel-polyfix";
+
+polyfix();
 
 /******************************************************************************/
 //Template Handler

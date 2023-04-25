@@ -4,6 +4,9 @@
 import $ from "jquery";
 import * as tvx from "./lib/tvx-plugin-module.min";
 import { ContentController } from "./content-controller";
+import { polyfix } from "./parcel-polyfix";
+
+polyfix();
 
 /******************************************************************************/
 //Observer Handler
@@ -140,7 +143,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
 
     init() {
         this.contentController.init($(".content-wrapper"));
-        this.$info = $("#info");        
+        this.$info = $("#info");
     }
 
     ready() {

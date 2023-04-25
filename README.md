@@ -21,7 +21,7 @@ http://msx.benzac.de/?start=menu:request:interaction:init@http://localhost:1234/
 
 ## Building for deployment
 ```
-npm run build
+npm run clean-build
 ```
 
 ## Deploying on local server

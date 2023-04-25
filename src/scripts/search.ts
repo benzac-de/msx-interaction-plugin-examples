@@ -3,6 +3,9 @@
 /******************************************************************************/
 import * as tvx from "./lib/tvx-plugin-module.min";
 import icons from "../data/icons.json";
+import { polyfix } from "./parcel-polyfix";
+
+polyfix();
 
 /******************************************************************************/
 //Search Constants
