@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.67.1 (Module)
+// Type definitions for TVX Plugin v0.0.68 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -803,15 +803,15 @@ declare interface TVXSettings {
     FULLSCREEN: number;
     SUSPEND: number;
     SECURE: number;
-    APP: AnyObject;
+    APP: any;
 }
 
 declare interface TVXStyles {
-    readonly COMMON: AnyObject;
-    readonly LOGGER: AnyObject;
-    readonly RENDERER: AnyObject;
-    readonly REMOTE: AnyObject;
-    APP: AnyObject;
+    readonly COMMON: any;
+    readonly LOGGER: any;
+    readonly RENDERER: any;
+    readonly REMOTE: any;
+    APP: any;
 }
 
 declare interface TVXVersion {
@@ -841,7 +841,7 @@ declare interface TVXTools {
     strTruncate(str: any, length: number): string;
     strShuffle(str: any): string;
     strReplace(str: any, find: string, replace?: any): string;
-    strReplaceMap(str: any, map: AnyObject): string;
+    strReplaceMap(str: any, map: any): string;
     strToBool(str: any, defaultValue: boolean): boolean;
     strToNum(str: any, defaultValue: number): number;
     strToAction(str: any): string;
@@ -923,18 +923,18 @@ declare interface TVXDateFormatter {
 }
 
 declare interface TVXPropertyTools {
-    foreach(data: AnyObject, callback: (key: string, value: any) => void | boolean): void;
-    getValue(data: AnyObject, key: string, defaultValue: any): any;
-    get(data: AnyObject, key: string, defaultValue: string): string;
-    getFullStr(data: AnyObject, key: string, defaultValue: string): string;
-    getNum(data: AnyObject, ke: string, defaultValue: number): number;
-    getBool(data: AnyObject, key: string, defaultValue: boolean): boolean;
-    has(data: AnyObject, key: string, hasValue?: boolean): boolean;
-    put(data: AnyObject, key: string, value: any): void;
-    remove(data: AnyObject, key: string): void;
-    clear(data: AnyObject): void;
-    count(data: AnyObject): number;
-    extend(data: AnyObject, extension: AnyObject): void;
+    foreach(data: any, callback: (key: string, value: any) => void | boolean): void;
+    getValue(data: any, key: string, defaultValue: any): any;
+    get(data: any, key: string, defaultValue: string): string;
+    getFullStr(data: any, key: string, defaultValue: string): string;
+    getNum(data: any, ke: string, defaultValue: number): number;
+    getBool(data: any, key: string, defaultValue: boolean): boolean;
+    has(data: any, key: string, hasValue?: boolean): boolean;
+    put(data: any, key: string, value: any): void;
+    remove(data: any, key: string): void;
+    clear(data: any): void;
+    count(data: any): number;
+    extend(data: any, extension: any): void;
 }
 
 declare interface TVXVideoState {
@@ -1059,12 +1059,12 @@ declare abstract class TVXUrlParams {
     foreach(callback: (name: string, value: any) => void | boolean): void;
     remove(name: string): void;
     clear(): void;
-    create(url: string): AnyObject;
+    create(url: string): any;
     build(encoded?: boolean, separator?: string): string;
 }
 
 declare abstract class TVXOptions {
-    constructor(options: AnyObject, defaultOptions?: AnyObject);
+    constructor(options: any, defaultOptions?: any);
     getValue(name: string): any;
     get(name: string): string;
     getFullStr(name: string): string;
@@ -1077,11 +1077,11 @@ declare abstract class TVXObservers {
     constructor();
     hasObserver(name: string): boolean;
     hasObservers(): boolean;
-    addObserver(name: string, handler: (data: AnyObject) => void): void;
+    addObserver(name: string, handler: (data: any) => void): void;
     removeObserver(name: string): void;
-    onEvent(name: string, handler?: (data: AnyObject) => void): void;
-    notifyObserver(name: string, data: AnyObject): void;
-    notifyObservers(data: AnyObject): void;
+    onEvent(name: string, handler?: (data: any) => void): void;
+    notifyObserver(name: string, data: any): void;
+    notifyObservers(data: any): void;
     clear(): void;
 }
 
@@ -1089,17 +1089,17 @@ declare abstract class TVXEventObservers {
     constructor();
     hasObserver(eventName: string, handlerName: string): boolean;
     hasObservers(eventName: string): boolean;
-    addObserver(eventName: string, handlerName: string, handler: (data: AnyObject) => void): void;
+    addObserver(eventName: string, handlerName: string, handler: (data: any) => void): void;
     removeObserver(eventName: string, handlerName: string): void;
-    onEvent(eventName: string, handlerName: string, handler?: (data: AnyObject) => void): void;
-    notifyObserver(eventName: string, handlerName: string, data: AnyObject): void;
-    notifyObservers(eventName: string, data: AnyObject): void;
+    onEvent(eventName: string, handlerName: string, handler?: (data: any) => void): void;
+    notifyObserver(eventName: string, handlerName: string, data: any): void;
+    notifyObservers(eventName: string, data: any): void;
     clear(eventName?: string): void;
 }
 
 declare abstract class TVXQueue {
     constructor();
-    delegate: AnyObject;
+    delegate: any;
     execute(): void;
     process(): void;
     reset(): void;
@@ -1130,7 +1130,7 @@ declare abstract class TVXDelay {
 
 declare abstract class TVXClick {
     constructor();
-    click(clicked: AnyObject): number;
+    click(clicked: any): number;
 }
 
 declare interface TVXAjaxOptions {
@@ -1138,7 +1138,7 @@ declare interface TVXAjaxOptions {
     isForm?: boolean;
     withCredentials?: boolean;
     accurateHeaders?: boolean;
-    headers?: AnyObject;
+    headers?: any;
 }
 
 declare interface TVXAjaxCallback {
@@ -1170,8 +1170,8 @@ declare abstract class TVXLogger {
     maxInfoLength: number;
     maxWarnLength: number;
     maxErrorLength: number;
-    registerControl(control: AnyObject, print?: boolean): void;
-    unregisterControl(control: AnyObject): void;
+    registerControl(control: any, print?: boolean): void;
+    unregisterControl(control: any): void;
     print(): void;
     clear(): void;
     log(level: number, message: string): void;
@@ -1184,14 +1184,14 @@ declare abstract class TVXLogger {
 declare abstract class TVXDictionary {
     constructor();
     onReady(name: string, handler?: () => void): void;
-    init(data: AnyObject): void;
+    init(data: any): void;
     getName(): string;
     getVersion(): string;
     getSize(): number;
     isInitialized(): boolean;
     getValueForKey(key: string, defaultValue: string): string;
     getValueForExpr(expr: string): string;
-    getData(): AnyObject;
+    getData(): any;
 }
 
 declare abstract class TVXClock {
@@ -1207,8 +1207,8 @@ declare abstract class TVXClock {
     addHook(name: string, hook: () => void): void;
     removeHook(name: string): void;
     onTick(name: string, hook?: () => void): void;
-    registerControl(control: AnyObject): void;
-    unregisterControl(control: AnyObject): void;
+    registerControl(control: any): void;
+    unregisterControl(control: any): void;
     update(): void;
     validate(): void;
     process(): void;
@@ -1242,13 +1242,13 @@ declare abstract class TVXDataService {
     onReady(name: string, handler?: TVXDataServiceEntryCallback): void;
     onError(name: string, handler?: TVXDataServiceEntryCallback): void;
     onCompleted(name: string, handler?: TVXDataServiceEntryCallback): void;
-    foreachEntry(callback: (entry: AnyObject) => void | boolean): void;
-    foreachError(callback: (error: AnyObject) => void | boolean): void;
+    foreachEntry(callback: (entry: any) => void | boolean): void;
+    foreachError(callback: (error: any) => void | boolean): void;
     getData(id: string): any;
-    getEntry(id: string): AnyObject;
-    setEntry(id: string, entry: AnyObject): void;
-    getError(id: string): AnyObject;
-    setError(id: string, error: AnyObject): void;
+    getEntry(id: string): any;
+    setEntry(id: string, entry: any): void;
+    getError(id: string): any;
+    setError(id: string, error: any): void;
     shouldStoreData(id: string): boolean;
     createData(id: string, resp: any): void;
     putData(url: string, data: string, callback?: TVXDataServiceActionCallback, options?: TVXAjaxOptions): void;
@@ -1261,13 +1261,13 @@ declare abstract class TVXDataService {
 
 declare interface TVXDataServiceActionCallback {
     success?(data: any): void;
-    error?(message: string, status: number, reason: AnyObject): void;
+    error?(message: string, status: number, reason: any): void;
 }
 
 declare interface TVXDataServiceEntryCallback {
-    success?(entry: AnyObject): void;
-    error?(message: string, status: number, reason: AnyObject): void;
-    completed?(entry: AnyObject): void;
+    success?(entry: any): void;
+    error?(message: string, status: number, reason: any): void;
+    completed?(entry: any): void;
 }
 
 declare abstract class TVXBlobService {
@@ -1275,14 +1275,14 @@ declare abstract class TVXBlobService {
     onReady(name: string, handler?: TVXBlobServiceCallback): void;
     onError(name: string, handler?: TVXBlobServiceCallback): void;
     onCompleted(name: string, handler?: TVXBlobServiceCallback): void;
-    foreachEntry(callback: (entry: AnyObject) => void | boolean): void;
-    foreachError(callback: (error: AnyObject) => void | boolean): void;
-    getBlob(id: string): AnyObject;
+    foreachEntry(callback: (entry: any) => void | boolean): void;
+    foreachError(callback: (error: any) => void | boolean): void;
+    getBlob(id: string): any;
     getUrl(id: string): string;
-    getEntry(id: string): AnyObject;
-    setEntry(id: string, entry: AnyObject): void;
-    getError(id: string): AnyObject;
-    setError(id: string, error: AnyObject): void;
+    getEntry(id: string): any;
+    setEntry(id: string, entry: any): void;
+    getError(id: string): any;
+    setError(id: string, error: any): void;
     executeBlob(id: string, url: string, data: string, callback?: TVXBlobServiceCallback, options?: TVXAjaxOptions): void;
     loadBlob(id: string, url: string, callback?: TVXBlobServiceCallback, options?: TVXAjaxOptions): void;
     clearBlob(id: string): void;
@@ -1290,9 +1290,9 @@ declare abstract class TVXBlobService {
 }
 
 declare interface TVXBlobServiceCallback {
-    success?(entry: AnyObject): void;
-    error?(message: string, status: number, reason: AnyObject): void;
-    completed?(entry: AnyObject): void;
+    success?(entry: any): void;
+    error?(message: string, status: number, reason: any): void;
+    completed?(entry: any): void;
 }
 
 declare abstract class TVXRequestService {
@@ -1325,7 +1325,7 @@ declare interface TVXPluginTools {
     invalidateSettings(): void;
     validateSettings(data: MSXAttachedInfo): void;
     onValidatedSettings(callback: (data: MSXAttachedInfo) => void): void;
-    handleSettingsEvent(data: AnyObject): void;
+    handleSettingsEvent(data: any): void;
     getFrameworkInfo(data: MSXAttachedInfo): string;
     getApplicationInfo(data: MSXAttachedInfo): string;
     getContentInfo(data: MSXAttachedInfo): string;
@@ -1418,22 +1418,22 @@ declare interface TVXVideoPlugin {
      * Indicates if the fullscreen mode is enabled.
      * @param element The element that should be checked (e.g. the video element). If not specified (or not accessible), the global fullscreen mode is checked.
      */
-    isFullscreenEnabled(element?: AnyObject): boolean;
+    isFullscreenEnabled(element?: any): boolean;
     /**
      * Indicates if the fullscreen mode is active.
      * @param element The element that should be checked (e.g. the video element). If not specified (or not accessible), the global fullscreen mode is checked.
      */
-    isFullscreenActive(element?: AnyObject): boolean;
+    isFullscreenActive(element?: any): boolean;
     /**
      * Requests the fullscreen mode for an element (returns true on success).
      * @param element The element that should be displayed in fullscreen mode (e.g. the video element).
      */
-    requestFullscreen(element: AnyObject): boolean;
+    requestFullscreen(element: any): boolean;
     /**
      * Exits the fullscreen mode (returns true on success).
      * @param element The element that is displayed in fullscreen mode (e.g. the video element). If not specified (or not accessible), the global fullscreen exit function is used.
      */
-    exitFullscreen(element?: AnyObject): boolean;
+    exitFullscreen(element?: any): boolean;
     /**
      * Sets the state (see TVXVideoState interface).
      * @param state The state.
