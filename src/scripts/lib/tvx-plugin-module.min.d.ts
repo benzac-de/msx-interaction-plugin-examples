@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70 (Module)
+// Type definitions for TVX Plugin v0.0.70.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -27,6 +27,7 @@ declare interface MSXMenuRoot extends AnyObject {
     reuse?: boolean;
     cache?: boolean;
     restore?: boolean;
+    refocus?: MSXRefocus | boolean;
     transparent?: MSXTransparent | boolean;
     style?: MSXMenuRootStyle;
     logo?: string;
@@ -103,6 +104,7 @@ declare interface MSXContentRoot extends AnyObject {
     imortant?: boolean;
     wrap?: boolean;
     compress?: boolean;
+    refocus?: MSXRefocus | boolean;
     transparent?: MSXTransparent | boolean;
     type?: MSXContentRootType;
     preload?: MSXContentRootPreload;
@@ -267,6 +269,12 @@ declare type MSXContentItemImageOverlay =
     2 |
     3 |
     4;
+
+//** MSX - Refocus*/
+declare type MSXRefocus =
+    0 |
+    1 |
+    2;
 
 //** MSX - Transparent*/
 declare type MSXTransparent =
