@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70.1 (Module)
+// Type definitions for TVX Plugin v0.0.70.2 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -479,6 +479,7 @@ declare interface MSXAttachedVideoResumeInfo {
     resuming: boolean;
     position: string;
     progress: number;
+    duration: number;
 }
 
 /** MSX - Attached Video Volume Info
