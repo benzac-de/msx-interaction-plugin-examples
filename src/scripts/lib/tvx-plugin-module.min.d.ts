@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70.2 (Module)
+// Type definitions for TVX Plugin v0.0.70.3 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -298,8 +298,8 @@ declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
     duration?: number;
     delay?: number;
     source?: MSXLiveSource;
-    coming?: MSXLiveState;
-    running?: MSXLiveStateRunning;
+    coming?: MSXLiveStateExtended;
+    running?: MSXLiveStateExtended;
     over?: MSXLiveState;
     execute?: MSXLiveAction;
 }
@@ -365,10 +365,10 @@ declare interface MSXLiveState extends MSXLiveProperties, MSXLiveAction {
     execute?: MSXLiveAction;
 }
 
-/** MSX - Live State Object (Running)
+/** MSX - Live State Object (Extended)
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
-declare interface MSXLiveStateRunning extends MSXLiveState {
+declare interface MSXLiveStateExtended extends MSXLiveState {
     quartile1?: MSXLiveProperties;
     quartile2?: MSXLiveProperties;
     quartile3?: MSXLiveProperties;
