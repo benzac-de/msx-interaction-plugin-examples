@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70.3 (Module)
+// Type definitions for TVX Plugin v0.0.70.4 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -369,10 +369,12 @@ declare interface MSXLiveState extends MSXLiveProperties, MSXLiveAction {
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Live_Object}
 */
 declare interface MSXLiveStateExtended extends MSXLiveState {
+    ready?: MSXLiveProperties;
     quartile1?: MSXLiveProperties;
     quartile2?: MSXLiveProperties;
     quartile3?: MSXLiveProperties;
     quartile4?: MSXLiveProperties;
+    complete?: MSXLiveProperties;
 }
 
 /** MSX - Selection Object
@@ -475,6 +477,7 @@ declare interface MSXAttachedVideoData {
 */
 declare interface MSXAttachedVideoResumeInfo {
     key: string;
+    context: string;
     count: number;
     resuming: boolean;
     position: string;
