@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70.4 (Module)
+// Type definitions for TVX Plugin v0.0.70.5 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -124,6 +124,7 @@ declare interface MSXContentRoot extends AnyObject {
     ready?: MSXReady;
     options?: MSXContentPage | MSXContentRoot;
     caption?: string;
+    captionUnderlay?: MSXContentCaptionUnderlay;
 }
 
 /** MSX - Content Root Type
@@ -159,6 +160,7 @@ declare interface MSXContentPage extends AnyObject {
     data?: AnyObject;
     options?: MSXContentPage | MSXContentRoot;
     caption?: string;
+    captionUnderlay?: MSXContentCaptionUnderlay;
 }
 
 /** MSX - Content Item Object
@@ -269,6 +271,12 @@ declare type MSXContentItemImageOverlay =
     2 |
     3 |
     4;
+
+/** MSX - Content Caption Underlay*/
+declare type MSXContentCaptionUnderlay =
+    -1 |
+    0 |
+    1;
 
 //** MSX - Refocus*/
 declare type MSXRefocus =
