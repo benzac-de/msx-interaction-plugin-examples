@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.70.5 (Module)
+// Type definitions for TVX Plugin v0.0.71 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -1787,6 +1787,11 @@ declare interface TVXVideoPlugin {
      */
     normalizeStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
     /**
+     * Transforms a URL.
+     * @param url A URL.
+     */
+    transformUrl(url: string): string;
+    /**
      * Creates a hash key.
      * @param string A string.
      * @param scope The scope.
@@ -2110,6 +2115,11 @@ declare interface TVXInteractionPlugin {
      * @param callback The callback that contains the result data with the normalized string.
      */
     normalizeStringAsync(string: string, scope?: string, callback?: (data: MSXAttachedString) => void): void;
+    /**
+     * Transforms a URL.
+     * @param url A URL.
+     */
+    transformUrl(url: string): string;
     /**
      * Creates a hash key.
      * @param string A string.
