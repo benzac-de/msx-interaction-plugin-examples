@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.75 (Module)
+// Type definitions for TVX Plugin v0.0.75.2 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -326,6 +326,7 @@ declare interface MSXLive extends MSXLiveProperties, MSXLiveAction {
     running?: MSXLiveStateExtended;
     over?: MSXLiveState;
     execute?: MSXLiveAction;
+    preload?: boolean;
 }
 
 /** MSX - Live Type
@@ -857,6 +858,7 @@ declare interface TVXSettings {
     FULLSCREEN: number;
     SUSPEND: number;
     SECURE: number;
+    CAPTION: number;
     APP: any;
 }
 
@@ -1649,10 +1651,10 @@ declare interface TVXVideoPlugin {
     * @param label The label. If no label is set, the default label is used.
     */
     setupSpeedLabel(label?: string): void;
-   /**
-     * Sets up a player info headline (only available for extended players).
-     * @param headline The headline. If no headline is set, the headline is removed.
-     */
+    /**
+      * Sets up a player info headline (only available for extended players).
+      * @param headline The headline. If no headline is set, the headline is removed.
+      */
     setupInfoHeadline(headline?: string): void;
     /**
      * Sets up a player info text (only available for extended players).
