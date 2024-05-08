@@ -24,6 +24,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
         underlay: {
             items: [{
                 type: "space",
+                round: false,
                 layout: "0,0,6,6",
                 offset: "-0.75,-1,1.12,1.67",
                 color: "msx-black-soft"
