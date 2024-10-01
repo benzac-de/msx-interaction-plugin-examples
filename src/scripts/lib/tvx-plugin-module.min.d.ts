@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.75.2 (Module)
+// Type definitions for TVX Plugin v0.0.76.2 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -104,6 +104,7 @@ declare interface MSXContentRoot extends AnyObject {
     imortant?: boolean;
     wrap?: boolean;
     compress?: boolean;
+    preselect?: boolean;
     refocus?: MSXRefocus | boolean;
     transparent?: MSXTransparent | boolean;
     type?: MSXContentRootType;
@@ -581,6 +582,8 @@ declare interface MSXAttachedApplicationSettings {
     hoverEffect: number;
     immersiveMode: number;
     roundedStyle: number;
+    sleepTimeout: number;
+    ejectTimeout: number;
     menuButton: MSXAttachedApplicationMenuButton;
 }
 
@@ -617,6 +620,8 @@ declare interface MSXAttachedFrameworkSetttings {
     fullscreen: number;
     suspend: number;
     secure: number;
+    caption: number;
+    pointer: number;
 }
 
 /** MSX - Attached Framework Info
@@ -859,6 +864,7 @@ declare interface TVXSettings {
     SUSPEND: number;
     SECURE: number;
     CAPTION: number;
+    POINTER: number;
     APP: any;
 }
 
@@ -1966,6 +1972,8 @@ declare interface TVXVideoPluginPlayer {
      * Handles an event. The data.event property can contain following values:
      * - "app:suspend"
      * - "app:resume"
+     * - "app:sleep"
+     * - "app:wake"
      * - "app:resize"
      * - "app:connect"
      * - "app:disconnect"
@@ -2241,6 +2249,8 @@ declare interface TVXInteractionPluginHandler {
      * Handles an event. The data.event property can contain following values:
      * - "app:suspend"
      * - "app:resume"
+     * - "app:sleep"
+     * - "app:wake"
      * - "app:resize"
      * - "app:connect"
      * - "app:disconnect"
