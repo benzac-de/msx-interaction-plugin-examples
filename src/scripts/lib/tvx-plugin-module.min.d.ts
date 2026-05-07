@@ -1,4 +1,4 @@
-// Type definitions for TVX Plugin v0.0.76.2 (Module)
+// Type definitions for TVX Plugin v0.0.79.1 (Module)
 // Project: https://msx.benzac.de/info/
 // Definitions by: Benjamin Zachey
 
@@ -14,6 +14,16 @@ declare interface MSXStart extends AnyObject {
     version: string;
     parameter: string;
     welcome?: string;
+    launcher?: MSXLauncher;
+}
+
+/** MSX - Launcher Object
+ * @see: {@link https://msx.benzac.de/wiki/index.php?title=Start_Object}
+*/
+declare interface MSXLauncher extends AnyObject {
+    icon?: string;
+    image?: string;
+    color?: string;
 }
 
 /** MSX - Menu Root Object
@@ -127,6 +137,8 @@ declare interface MSXContentRoot extends AnyObject {
     options?: MSXContentPage | MSXContentRoot;
     caption?: string;
     captionUnderlay?: MSXContentCaptionUnderlay;
+    navigationOffset?: number;
+    navigationSpan?: number;
 }
 
 /** MSX - Content Root Type
@@ -166,6 +178,8 @@ declare interface MSXContentPage extends AnyObject {
     options?: MSXContentPage | MSXContentRoot;
     caption?: string;
     captionUnderlay?: MSXContentCaptionUnderlay;
+    navigationOffset?: number;
+    navigationSpan?: number;
 }
 
 /** MSX - Content Item Object
@@ -584,6 +598,7 @@ declare interface MSXAttachedApplicationSettings {
     roundedStyle: number;
     sleepTimeout: number;
     ejectTimeout: number;
+    visualExecution: number;
     menuButton: MSXAttachedApplicationMenuButton;
 }
 
@@ -683,9 +698,11 @@ declare interface MSXAttachedContentInfo {
  * @see: {@link https://msx.benzac.de/wiki/index.php?title=Attached_Data_Examples}
 */
 declare interface MSXAttachedDictionaryInfo {
+    custom: boolean;
     url: string;
     name: string;
     version: string;
+    language: string;
     size: number;
 }
 
@@ -722,9 +739,13 @@ declare interface MSXAttachedSystemInfo {
     country?: string;
     language?: string;
     ipAddress?: string;
+    ipAddress2?: string;
     macAddress?: string;
+    macAddress2?: string;
     networkType?: string;
+    networkType2?: string;
     networkName?: string;
+    networkName2?: string;
     deviceId?: string;
     deviceFamily?: string;
     deviceVersion?: string;
@@ -800,6 +821,7 @@ declare interface MSXAttachedDictionary extends MSXAttachedData {
 declare interface MSXAttachedDictionaryContainer {
     name: string;
     version: string;
+    language: string;
     size: number;
     properties: MSXDictionaryProperties;
 }
@@ -911,6 +933,7 @@ declare interface TVXTools {
     strToUrlStr(str: any): string;
     strContainsToken(str: any, token: string, start?: number, end?: number): boolean;
     strCountToken(str: any, token: string, start?: number, end?: number): number;
+    numToStr(num: number, thousandsSeparator?: string, decimalSeparator?: string, decimalDigits?: number, decimalTrimming?: number): string;
     htmlTrim(str: string): string;
     htmlEscape(str: string): string;
     htmlUnescape(str: string): string;
@@ -964,6 +987,7 @@ declare interface TVXDateTools {
     getFormattedDurationStr(timeInMs: number, format: string): string;
     getDurationStr(timeInMs: number, values?: string): string;
     getVideoStr(timeInMs: number, digits?: number): string;
+    getFormattedNumberStr(number: number, format?: string): string;
 }
 
 declare interface TVXDateFormatter {
@@ -974,12 +998,11 @@ declare interface TVXDateFormatter {
     toDayStr(date: Date | number): string;
     toDayLongStr(date: Date | number): string;
     toDayFullStr(date: Date | number): string;
-    toDateStr(date: Date | number): string;
-    toDateLongStr(date: Date | number): string;
-    toRecordingStr(date: Date | number): string;
     toDayTimeStr(date: Date | number): string;
     toDayTimeLongStr(date: Date | number): string;
     toDayTimeFullStr(date: Date | number): string;
+    toDateStr(date: Date | number): string;
+    toDateLongStr(date: Date | number): string;
     toDateTimeStr(date: Date | number): string;
     toDateTimeLongStr(date: Date | number): string;
 }
@@ -1250,6 +1273,7 @@ declare abstract class TVXDictionary {
     init(data: any): void;
     getName(): string;
     getVersion(): string;
+    getLanguage(): string;
     getSize(): number;
     isInitialized(): boolean;
     getValueForKey(key: string, defaultValue: string): string;
@@ -2005,6 +2029,9 @@ declare interface TVXVideoPluginPlayer {
      * - "settings:hover_effect" (data.value property contains the new settings value)
      * - "settings:immersive_mode" (data.value property contains the new settings value)
      * - "settings:rounded_style" (data.value property contains the new settings value)
+     * - "settings:sleep_timeout" (data.value property contains the new settings value)
+     * - "settings:eject_timeout" (data.value property contains the new settings value)
+     * - "settings:visual_execution" (data.value property contains the new settings value)
      * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
      * *Note: Video events are usually not handled by the player, since the corresponding player function is also called (e.g. play() -> "video:play").
@@ -2282,6 +2309,9 @@ declare interface TVXInteractionPluginHandler {
      * - "settings:hover_effect" (data.value property contains the new settings value)
      * - "settings:immersive_mode" (data.value property contains the new settings value)
      * - "settings:rounded_style" (data.value property contains the new settings value)
+     * - "settings:sleep_timeout" (data.value property contains the new settings value)
+     * - "settings:eject_timeout" (data.value property contains the new settings value)
+     * - "settings:visual_execution" (data.value property contains the new settings value)
      * - "settings:menu_button" (data.action and data.keyCode properties contain the new button action and key code)
      * - "custom:{EVENT_ID}" (data.data property optionally contains the event-related data)
      * @param data The event data.
