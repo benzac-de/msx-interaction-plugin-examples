@@ -21,6 +21,7 @@ class ObserverHandler implements tvx.TVXInteractionPluginHandler {
         type: "list",
         headline: "Observer Example",
         transparent: true,
+        navigationSpan: 6,
         underlay: {
             items: [{
                 type: "space",
